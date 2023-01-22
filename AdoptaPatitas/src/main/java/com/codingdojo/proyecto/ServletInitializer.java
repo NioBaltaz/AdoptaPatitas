@@ -1,4 +1,4 @@
-package com.codingdojo.sebastian;
+package com.codingdojo.proyecto;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
