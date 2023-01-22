@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-	<html>
-		<head>
+<html>
+	<head>
 		<meta charset="UTF-8">
-		<title>Prueba</title>
-		</head>
+		<title>Dashboard</title>
+	</head>
 	<body>
-		<h1>Hola :)</h1>
+		<h1>Hola</h1>
+		<a href="/login">Login</a>
 	</body>
 </html>
