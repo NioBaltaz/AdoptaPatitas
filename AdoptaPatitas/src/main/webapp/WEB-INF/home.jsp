@@ -20,7 +20,7 @@
 				<p>${a.name}</p>
 				<c:if test="${a.name.equals('ROLE_ADMIN')}">
 					<a href="/administradores">Zona de Administradores</a>
-					<a>Prueba</a>
+					<a>Prueba1</a>
 				</c:if>
 			</c:forEach>
 		</div>
