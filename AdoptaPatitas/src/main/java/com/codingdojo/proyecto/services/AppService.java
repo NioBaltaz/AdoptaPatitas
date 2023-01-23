@@ -5,7 +5,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.User;
+import com.codingdojo.proyecto.repositories.PetsRepository;
 import com.codingdojo.proyecto.repositories.RoleRepository;
 import com.codingdojo.proyecto.repositories.UserRepository;
 
@@ -16,6 +18,9 @@ public class AppService {
 
     @Autowired
     private RoleRepository roleRepository;
+    
+    @Autowired
+    private PetsRepository petRepository; 
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -63,5 +68,10 @@ public class AppService {
     //Regresa Usuario en base a su username
     public User findUserByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+    
+    //Crear Mascota
+    public Pet save_Pet(Pet newPet) {
+    	return petRepository.save(newPet);
     }
 }
