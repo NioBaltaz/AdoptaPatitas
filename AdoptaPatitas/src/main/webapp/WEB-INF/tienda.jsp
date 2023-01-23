@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Aqui estara la tienda</h1>
+<a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
 </body>
 </html>

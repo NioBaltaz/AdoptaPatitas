@@ -12,7 +12,7 @@
 
 <a class="button" href="/requisitos">Requisitos de Adopción</a>
 
-
+<a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
 
 
 </div>

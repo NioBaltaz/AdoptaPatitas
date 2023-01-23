@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>aqui ira el blog con los articulos</h1>
+<a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
 </body>
 </html>
