@@ -21,6 +21,12 @@
 				<a class="button" href="/apadrina">Apadrina</a>
 				<a class="button" href="/adopta">Adopta</a>
 				<a class="button" href="/tienda">Articulos</a>
+				<c:forEach items="${roles}" var="role">
+					<p>${a.name}</p>
+					<c:if test="${role.name.equals('ROLE_ADMIN')}">
+						<a href="/administradores">Zona de Administradores</a>
+					</c:if>
+				</c:forEach>
 	
 			</div>
 	 

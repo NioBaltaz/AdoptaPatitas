@@ -56,7 +56,7 @@ public class MainController {
         //Mandamos el usuario a home.jsp
         model.addAttribute("currentUser", currentUser);
 
-        model.addAttribute("asdasd", currentUser.getRoles());
+        model.addAttribute("roles", currentUser.getRoles());
         return "index.jsp";
     }
 
