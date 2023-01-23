@@ -23,6 +23,11 @@ public class MainController {
 
 	@Autowired
     private AppService service;
+	
+	@GetMapping ("/index")
+	public String index() {
+		return "index.jsp";
+	}
 
     @GetMapping("/registration")
     public String register(@ModelAttribute("user") User user) {
@@ -64,6 +69,8 @@ public class MainController {
     public String administradores() {
         return "administradores.jsp";
     }
+    
+   
 	
 	
 }
