@@ -36,11 +36,10 @@ public class User {
      name = "users_roles", 
      joinColumns = @JoinColumn(name = "user_id"), 
      inverseJoinColumns = @JoinColumn(name = "role_id"))
-
- @OneToMany(mappedBy="creator",fetch = FetchType.LAZY)
- 	private List<Pet> pets;
- 
  private List<Role> roles;
+ 
+ @OneToMany(mappedBy="creator",fetch = FetchType.LAZY)
+	private List<Pet> pets;
  
  public User() {
  }
