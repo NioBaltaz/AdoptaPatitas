@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -35,11 +36,26 @@ public class User {
      name = "users_roles", 
      joinColumns = @JoinColumn(name = "user_id"), 
      inverseJoinColumns = @JoinColumn(name = "role_id"))
+
+ @OneToMany(mappedBy="creator",fetch = FetchType.LAZY)
+ 	private List<Pet> pets;
+ 
  private List<Role> roles;
  
  public User() {
  }
- public Long getId() {
+
+ public List<Pet> getPets() {
+	return pets;
+}
+
+
+public void setPets(List<Pet> pets) {
+	this.pets = pets;
+}
+
+
+public Long getId() {
      return id;
  }
  public void setId(Long id) {
