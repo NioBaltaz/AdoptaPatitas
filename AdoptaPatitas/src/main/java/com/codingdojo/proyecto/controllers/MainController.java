@@ -23,11 +23,6 @@ public class MainController {
 
 	@Autowired
     private AppService service;
-	
-	@GetMapping ("/index")
-	public String index() {
-		return "index.jsp";
-	}
 
     @GetMapping("/registration")
     public String register(@ModelAttribute("user") User user) {
@@ -52,7 +47,7 @@ public class MainController {
         return "login.jsp";
     }
 
-    @RequestMapping(value= {"/", "/home"})
+    @RequestMapping(value= {"/","/index"})
     public String home(Principal principal, Model model) {
         //Me regresa el username del usuario que inició sesión
         String username = principal.getName();
@@ -62,7 +57,7 @@ public class MainController {
         model.addAttribute("currentUser", currentUser);
 
         model.addAttribute("asdasd", currentUser.getRoles());
-        return "home.jsp";
+        return "index.jsp";
     }
 
     @GetMapping("/administradores")
@@ -70,7 +65,28 @@ public class MainController {
         return "administradores.jsp";
     }
     
-   
-	
-	
+    @GetMapping("/blog")
+    public String blog() {    	
+    	return "blog.jsp";
+    }
+    
+    @GetMapping("/apadrina")
+    public String apadrina() {    	
+    	return "apadrina.jsp";
+    }
+    
+    @GetMapping("/adopta")
+    public String adopta() {    	
+    	return "adopta.jsp";
+    }
+    
+    @GetMapping("/tienda")
+    public String tienda() {    	
+    	return "tienda.jsp";
+    }
+    
+    @GetMapping("/requisitos")
+    public String requisitos() {
+    	return "requisitos.jsp";
+    }
 }
