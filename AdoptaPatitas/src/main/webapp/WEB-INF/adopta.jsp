@@ -12,7 +12,10 @@
 
 <a class="button" href="/requisitos">Requisitos de Adopción</a>
 
-<a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
+		<form action="/logout" method="POST">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+		</form>
 
 
 </div>

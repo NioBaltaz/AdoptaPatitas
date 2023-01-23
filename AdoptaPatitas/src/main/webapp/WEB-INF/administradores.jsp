@@ -7,7 +7,10 @@
 		<title>Dashboard</title>
 	</head>
 	<body>
-		<h1>Hola</h1>
-		<a href="/login">Login</a>
+		<h1>Zona solo Administradores</h1>
+		<form action="/logout" method="POST">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+		</form>
 	</body>
 </html>

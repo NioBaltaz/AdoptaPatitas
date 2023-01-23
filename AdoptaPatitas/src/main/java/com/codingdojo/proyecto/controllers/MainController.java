@@ -59,12 +59,6 @@ public class MainController {
         model.addAttribute("asdasd", currentUser.getRoles());
         return "index.jsp";
     }
-    
-    @GetMapping ("/logout")
-    public String logout(HttpSession session) {
-    	session.removeAttribute("user");
-    	return "redirect:/index";
-    }
 
     @GetMapping("/administradores")
     public String administradores() {
