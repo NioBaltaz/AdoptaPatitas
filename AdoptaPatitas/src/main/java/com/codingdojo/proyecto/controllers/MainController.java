@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,28 @@ public class MainController {
 
 	@Autowired
     private AppService service;
+	
+
+    @GetMapping("/")
+    public String home(Principal principal, Model model) {
+    	
+    	if(principal == null) {
+    		return "index.jsp";
+    	}
+    	
+        //Me regresa el username del usuario que inició sesión
+        String username = principal.getName();        
+        if(username == null) {
+        	return "";
+        }        
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+
+        model.addAttribute("roles", currentUser.getRoles());
+        return "index.jsp";
+    }
 
     @GetMapping("/registration")
     public String register(@ModelAttribute("user") User user) {
@@ -45,19 +68,6 @@ public class MainController {
             model.addAttribute("errorMessage", "Credenciales inválidas, intentar nuevamente.");
         }
         return "login.jsp";
-    }
-
-    @RequestMapping(value= {"/","/index"})
-    public String home(Principal principal, Model model) {
-        //Me regresa el username del usuario que inició sesión
-        String username = principal.getName();
-        //Obtenemos el objeto de Usuario
-        User currentUser = service.findUserByUsername(username);
-        //Mandamos el usuario a home.jsp
-        model.addAttribute("currentUser", currentUser);
-
-        model.addAttribute("roles", currentUser.getRoles());
-        return "index.jsp";
     }
 
     @GetMapping("/administradores")

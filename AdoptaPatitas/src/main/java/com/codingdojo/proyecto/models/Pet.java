@@ -1,7 +1,5 @@
 package com.codingdojo.proyecto.models;
 
-
-
 import java.util.Date;
 
 import javax.persistence.Column;

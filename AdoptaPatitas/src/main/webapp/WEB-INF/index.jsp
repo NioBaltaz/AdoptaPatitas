@@ -47,7 +47,7 @@
 		<div class="container-fluid">
 	
 			<div class= "header">	
-			<h1></h1>	
+				<h1></h1>	
 			</div>
 		
 			<div class="row">
@@ -56,34 +56,34 @@
     					<span class="navbar-toggler-icon"></span>
   					</button>
   					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    				<div class="navbar-nav">
-      					<a class="nav-item nav-link btn btn-outline-info " href="/blog">Blog</a>
-      					<a class="nav-item nav-link btn btn-outline-info " href="/apadrina">Apadrina</a>
-      					<a class="nav-item nav-link btn btn-outline-info " href="/adopta">Adopta</a>
-      					<a class="nav-item nav-link btn btn-outline-info " href="/tienda">Articulos</a>
-	      				<c:forEach items="${roles}" var="role">
-							<c:if test="${role.name.equals('ROLE_ADMIN')}">								<a href="/administradores">Zona de Administradores</a>
-								<a class="nav-item nav-link btn btn-info" href="/administradores">Zona de Administradores</a>
-							</c:if>
-						</c:forEach>
-    				</div>
+    					<div class="navbar-nav">
+      						<a class="nav-item nav-link btn btn-outline-info " href="/blog">Blog</a>
+      						<a class="nav-item nav-link btn btn-outline-info " href="/apadrina">Apadrina</a>
+      						<a class="nav-item nav-link btn btn-outline-info " href="/adopta">Adopta</a>
+      						<a class="nav-item nav-link btn btn-outline-info " href="/tienda">Articulos</a>
+	      					<c:forEach items="${roles}" var="role">
+								<c:if test="${role.name.equals('ROLE_ADMIN')}">
+									<a class="nav-item nav-link btn btn-info" href="/administradores">Zona de Administradores</a>
+								</c:if>
+							</c:forEach>
+    					</div>
   					</div>
 				</nav>	
 			</div>
 	 
-	 <div class="row">
-	 <h2> Nosotros</h2>
-	 <div>
-	 	<p class= "nosotros"> Nos une el amor por los animales y luchamos por justicia y respeto para ellos. Tenemos a cargo animales rescatados del maltrato, la explotación y el abandono en nuestro refugio y hogares temporales,donde podrás apadrinar también. El objetivo de esta página es otorgarles un canal entre varias fundaciones de distintas regiones de Chile. ¡Somos felices haciendo lo que amamos!</p>
-	 </div>
+	 		<div class="row">
+	 			<h2> Nosotros</h2>
+	 			<div>
+	 				<p class= "nosotros"> Nos une el amor por los animales y luchamos por justicia y respeto para ellos. Tenemos a cargo animales rescatados del maltrato, la explotación y el abandono en nuestro refugio y hogares temporales,donde podrás apadrinar también. El objetivo de esta página es otorgarles un canal entre varias fundaciones de distintas regiones de Chile. ¡Somos felices haciendo lo que amamos!</p>
+				 </div>
 	 
-	 </div>
+			</div>
 	
-	 	<div class="footer">
+	 		<div class="footer">
 	 
-	 		<h3>Aqui ira los nombres de las fundaciones con sus iconos y el boton que de a sus redes sociales</h3>
+	 			<h3>Aqui ira los nombres de las fundaciones con sus iconos y el boton que de a sus redes sociales</h3>
 		 	
-		 </div>
+		 	</div>
 		
 		</div>
 	</body>
