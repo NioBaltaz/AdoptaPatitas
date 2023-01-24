@@ -34,10 +34,7 @@ public class MainController {
     	}
     	
         //Me regresa el username del usuario que inició sesión
-        String username = principal.getName();        
-        if(username == null) {
-        	return "";
-        }        
+        String username = principal.getName();             
         //Obtenemos el objeto de Usuario
         User currentUser = service.findUserByUsername(username);              
         //Mandamos el usuario a home.jsp
