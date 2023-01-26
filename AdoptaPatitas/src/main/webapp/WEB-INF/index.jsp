@@ -41,13 +41,18 @@
            margin:40px;
            line-height: 50px;
            }
+			h4{
+			background-image: url(LogoAdoptaPatita2.0.jpeg);
+    		background-size: cover;
+			}
         </style> 
 	</head>
 	<body>
 		<div class="container-fluid">
 	
-			<div class= "header">	
-				<h1></h1>	
+			<div class= "header">
+				<h1></h1>
+				<h4></h4> 
 			</div>
 		
 			<div class="row">
