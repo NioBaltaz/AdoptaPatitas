@@ -92,8 +92,10 @@ public class MainController {
     	return "tienda.jsp";
     }
     
-    @GetMapping("/requisitos")
-    public String requisitos() {
-    	return "requisitos.jsp";
+    @GetMapping("/post")
+    public String post() {
+    	return "post.jsp";
     }
+
+    
 }
