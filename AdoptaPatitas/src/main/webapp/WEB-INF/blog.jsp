@@ -10,10 +10,27 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
-		<div class="row justify-content-center">
-		<h1>Blogs Patitas</h1>
-		</div>
+	<div class="container-fluid">
+	
+			<div class= "header">	
+				<h1>Blog Patitas</h1>	
+			</div>
+		
+			<div class="row">
+				<nav class="navbar navbar-expand-lg navbar-light">
+  					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    					<span class="navbar-toggler-icon"></span>
+  					</button>
+  					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    					<div class="navbar-nav">
+      						<a class="nav-item nav-link btn btn-outline-info " href="/blog">Blog</a>
+      						<a class="nav-item nav-link btn btn-outline-info " href="/apadrina">Apadrina</a>
+      						<a class="nav-item nav-link btn btn-outline-info " href="/adopta">Adopta</a>
+      						<a class="nav-item nav-link btn btn-outline-info " href="/tienda">Articulos</a>
+    					</div>
+  					</div>
+				</nav>	
+			</div>
 	</div>
 	<div class="row justify-content-center">
 		<p>¿Estás a punto de adoptar a tu primer perro?, ¿Tu conejo sufre con los calores?, ¿No sabes cual juguete es mejor para tu gato? Pues quedate aqui, en esta sección descubriras un monton de datos, tips e información util para poder mejorar tu vida junto a la de tu mascota.</p>	
