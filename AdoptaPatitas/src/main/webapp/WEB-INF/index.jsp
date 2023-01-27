@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>AdoptaPatitas</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <style> 
         
         	body{
@@ -68,7 +68,7 @@
       						<a class="nav-item nav-link btn btn-outline-info " href="/tienda">Articulos</a>
 	      					<c:forEach items="${roles}" var="role">
 								<c:if test="${role.name.equals('ROLE_ADMIN')}">
-									<a class="nav-item nav-link btn btn-info" href="/administradores">Zona de Administradores</a>
+									<a class="nav-item nav-link btn btn-info" href="/admins">Zona de Administradores</a>
 								</c:if>
 							</c:forEach>
     					</div>

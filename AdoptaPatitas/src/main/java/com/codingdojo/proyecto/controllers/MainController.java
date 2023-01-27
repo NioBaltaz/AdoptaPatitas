@@ -66,11 +66,6 @@ public class MainController {
         }
         return "login.jsp";
     }
-
-    @GetMapping("/administradores")
-    public String administradores() {
-        return "administradores.jsp";
-    }
     
     @GetMapping("/blog")
     public String blog() {    	

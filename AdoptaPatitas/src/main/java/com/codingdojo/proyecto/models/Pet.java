@@ -13,7 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,10 +36,10 @@ public class Pet {
 	@Size( min=1, max=15, message="El nombre tiene que tener entre 2 a 15 caracteres")
 	private String age;
 	
-	@NotEmpty(message="Debe colocar que vacuna tiene la mascota, campo obligatorio.")
-	@Size(min=0,max=20)
-	
+	@NotNull(message="Debe colocar que vacuna tiene la mascota, campo obligatorio.")
+	@Min(0)
 	private Integer vaccine;
+	
 	@NotEmpty(message="Campo obligatorio sobre desparatización.")
 	@Size(min=0,max=20)
 	private String deworming;
@@ -45,6 +47,8 @@ public class Pet {
 	@NotEmpty(message="Debe colocar si tiene chip, campo obligatorio.")
 	@Size(min=0,max=20)
     private String chip;
+	
+	private String image;
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -117,6 +121,14 @@ public class Pet {
 
 	public void setChip(String chip) {
 		this.chip = chip;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Date getCreated_at() {

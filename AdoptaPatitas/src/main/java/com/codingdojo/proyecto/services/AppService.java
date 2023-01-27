@@ -1,5 +1,7 @@
 package com.codingdojo.proyecto.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -70,8 +72,18 @@ public class AppService {
         return userRepository.findByUsername(username);
     }
     
-    //Crear Mascota
-    public Pet save_Pet(Pet newPet) {
+    		//Servicios Mascota
+    
+    //Crear nueva Mascota
+    public Pet newPet(Pet newPet, User user) {
+    	newPet.setCreator(user);
     	return petRepository.save(newPet);
     }
+    
+    //Buscar todas las Mascotas
+    public List<Pet> findAllPets(){
+    	return petRepository.findAll();
+    }
+    
+    
 }
