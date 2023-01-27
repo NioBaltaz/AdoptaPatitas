@@ -57,7 +57,7 @@ public class AdminsController {
             
             if(!imagen.isEmpty()) {
             	//Ruta
-            	Path directorioImagenes = Paths.get("/src/main/resources/static/img");
+            	Path directorioImagenes = Paths.get("src/main/resources/static/img");
             	//Ruta Absoluta
             	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
             	
