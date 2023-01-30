@@ -78,7 +78,7 @@
 			  </div>
 			  <div class="col">
 			    <div class="card">
-			      <img src="/img/gato-negro" class="card-img-top" alt="gato">
+			      <img src="/img/gato-negro.jpg" class="card-img-top" alt="gato">
 			      <div class="card-body">
 			        <h5 class="card-title">¿Conocias estas curiosidades de los gatos?</h5>
 			        <p class="card-text">Los gatos son animales fantasticos, pero también muy incomprendidos, por eso te ayudaremos con algunas curiosidades sobre ellos para que te sorprendas.</p>
@@ -88,7 +88,7 @@
 			  </div>
 			  <div class="col">
 			    <div class="card">
-			      <img src="/img/mascota" class="card-img-top" alt="mascota">
+			      <img src="/img/mascota.jpg" class="card-img-top" alt="mascota">
 			      <div class="card-body">
 			        <h5 class="card-title">Beneficios para la salud:¿Cómo el tener una mascota ayuda a nuestra salud?</h5>
 			        <p class="card-text">Según múltiples estudios realizados a lo largo del tiempo se ha llegado a descubrir como los animales nos ayudan no solo a nuestra salud física, sino que también mental.</p>
