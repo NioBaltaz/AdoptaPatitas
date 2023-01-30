@@ -25,11 +25,15 @@
 			<div class="row">
 		
 			<c:forEach items="${pets}" var="pet">
-				<div class="col-2 border border-dark">				
+				<div class="col-4 border border-dark">				
 					<c:if test="${not empty pet.image}">
 						<img src="/img/${pet.image}" class="img-fluid"/>
 					</c:if>
-					<h3>${pet.name}</h3>
+					<h4>${pet.name}</h4>
+					<h4>Edad: ${pet.age}</h4>
+					<h4>Vacunas: ${pet.vaccine}</h4>
+					<h4>Desparasitad@: ${pet.deworming}</h4>
+					<h4>Chip: ${pet.chip}</h4>
 					<a href="#" class="btn btn-primary">Más Información</a>					
 				</div>			
 			</c:forEach>			
