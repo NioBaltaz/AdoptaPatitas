@@ -43,7 +43,6 @@
 	</div>
 	<div class="container text-center">
 		<h1>Consejos para cuidar de tu perro en verano</h1>
-	
 	</div>
 
 </body>
