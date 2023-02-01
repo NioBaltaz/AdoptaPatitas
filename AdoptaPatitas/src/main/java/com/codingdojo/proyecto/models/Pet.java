@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -58,21 +59,25 @@ public class Pet {
 	private Date updated_at;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name= "user_id")
-	private User creator;
+	@JoinColumn(name= "creator_id")
+	private User creator_pet;
+	
+	@OneToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="user_adopt")
+    private User user_adopt;
 
 	public Pet() {
 	
 	}
 
-	public User getCreator() {
-		return creator;
+	public User getCreator_pet() {
+		return creator_pet;
 	}
 
-
-	public void setCreator(User creator) {
-		this.creator = creator;
+	public void setCreator_pet(User creator_pet) {
+		this.creator_pet = creator_pet;
 	}
+
 
 
 	public Long getId() {
@@ -129,6 +134,14 @@ public class Pet {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public User getUser_adopt() {
+		return user_adopt;
+	}
+
+	public void setUser_adopt(User user_adopt) {
+		this.user_adopt = user_adopt;
 	}
 
 	public Date getCreated_at() {

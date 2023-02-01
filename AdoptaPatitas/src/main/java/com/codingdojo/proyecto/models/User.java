@@ -3,6 +3,7 @@ package com.codingdojo.proyecto.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -38,8 +40,14 @@ public class User {
      inverseJoinColumns = @JoinColumn(name = "role_id"))
  private List<Role> roles;
  
- @OneToMany(mappedBy="creator",fetch = FetchType.LAZY)
+ @OneToMany(mappedBy="creator_pet",fetch = FetchType.LAZY)
 	private List<Pet> pets;
+ 
+ @OneToOne(mappedBy="user", fetch = FetchType.LAZY)
+ private Form form;
+ 
+ @OneToOne(mappedBy="user_adopt", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+ private Pet pet;
  
  public User() {
  }
@@ -78,7 +86,24 @@ public Long getId() {
  public void setPasswordConfirmation(String passwordConfirmation) {
      this.passwordConfirmation = passwordConfirmation;
  }
- public Date getCreatedAt() {
+ 
+ public Form getForm() {
+	return form;
+}
+
+public void setForm(Form form) {
+	this.form = form;
+}
+
+public Pet getPet() {
+	return pet;
+}
+
+public void setPet(Pet pet) {
+	this.pet = pet;
+}
+
+public Date getCreatedAt() {
      return createdAt;
  }
  public void setCreatedAt(Date createdAt) {

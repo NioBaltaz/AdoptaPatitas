@@ -34,7 +34,7 @@
 					<h4>Vacunas: ${pet.vaccine}</h4>
 					<h4>Desparasitad@: ${pet.deworming}</h4>
 					<h4>Chip: ${pet.chip}</h4>
-					<a href="#" class="btn btn-primary">Más Información</a>					
+					<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>					
 				</div>			
 			</c:forEach>			
 		</div>

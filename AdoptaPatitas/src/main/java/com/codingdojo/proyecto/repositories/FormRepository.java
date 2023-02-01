@@ -4,11 +4,10 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import com.codingdojo.proyecto.models.Pet;
+import com.codingdojo.proyecto.models.Form;
 
 @Repository
-public interface PetsRepository extends CrudRepository<Pet, Long>{
+public interface FormRepository extends CrudRepository<Form, Long>{
 
-	List<Pet> findAll();
-	Pet findByName(String nombre);
+	List<Form> findAll();
 }
