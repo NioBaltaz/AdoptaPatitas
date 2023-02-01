@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.codingdojo.proyecto.models.Pet;
+import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
 import com.codingdojo.proyecto.repositories.PetsRepository;
+import com.codingdojo.proyecto.repositories.ProductRepository;
 import com.codingdojo.proyecto.repositories.RoleRepository;
 import com.codingdojo.proyecto.repositories.UserRepository;
 
@@ -23,6 +25,9 @@ public class AppService {
     
     @Autowired
     private PetsRepository petRepository; 
+    
+    @Autowired
+    private ProductRepository productRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -85,5 +90,7 @@ public class AppService {
     	return petRepository.findAll();
     }
     
+    
+    //Servivio de los productos 
     
 }
