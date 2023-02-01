@@ -43,9 +43,13 @@
 	</div>
 	<div class="container text-center">
 		<h1>¿Conocias estas curiosidades de los gatos?</h1>
-	
 	</div>
-	
-
+	<div class="container">
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="post_content">
+				<p>Los felinos se han ido conviertiendo en una excelente compañia para el ser humano y se han ido ganando el corazón de sus tutores. Por eso, si eres uno de los afortunados en tener un gato como compañia te encantaran los datos que tenemos para ti.</p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
