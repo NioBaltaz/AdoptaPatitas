@@ -11,21 +11,22 @@
 	</head>
 	<body>
 		<h1>Aqui estara la tienda</h1>
-		
-					<div class="row">
+		<div class="container">
+		<div class="row">
 		
 			<c:forEach items="${products}" var="product">
 				<div class="col-4 border border-dark">				
 					<c:if test="${not empty product.image}">
 						<img src="/img/${product.image}" class="img-fluid"/>
 					</c:if>
-					<h4>${product.name}</h4>
+					<h4>${product.nombre}</h4>
 					<h4>Precio: ${product.precio}</h4>
-					<h4>Descripción: ${product.description}</h4>					
+					<h4>Descripción: ${product.description}</h4>
+					<a href="//${product.getId()}" class="btn btn-primary">Comprar</a>						
 				</div>			
 			</c:forEach>			
 		</div>
-		
+		</div>
 		
 		<form action="/logout" method="POST">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

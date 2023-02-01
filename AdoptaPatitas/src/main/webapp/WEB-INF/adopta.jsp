@@ -12,9 +12,6 @@
 	<body>
 
 		<div class="container">
-
-			<a class="button" href="/requisitos">Requisitos de Adopción</a>
-
 			<form action="/logout" method="POST">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>

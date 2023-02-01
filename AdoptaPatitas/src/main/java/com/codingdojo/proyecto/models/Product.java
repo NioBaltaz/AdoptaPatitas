@@ -35,7 +35,7 @@ public class Product {
     private String codigo;
     
     @NotNull(message = "Debes ir una descripción del producto")
-    @Size(min = 10, max = 100, message = "La descripción del producto debe tener entre 10 a 100 caracteres")
+    @Size(min = 10, max = 500, message = "La descripción del producto debe tener entre 10 a 100 caracteres")
     private String description;
 
     @NotNull(message = "Debes especificar el precio")

@@ -14,9 +14,9 @@
 			<h1>Agrega un Producto Nuevo</h1>
 			<form:form action="/admins/add/product" method="POST" modelAttribute="newProduct" enctype="multipart/form-data">
 				<div class="form-group">
-					<form:label path="name">Nombre:</form:label>
-					<form:input path="name" class="form-control"/>
-					<form:errors path="name" class="text-danger"/>
+					<form:label path="nombre">Nombre:</form:label>
+					<form:input path="nombre" class="form-control"/>
+					<form:errors path="nombre" class="text-danger"/>
 				</div>
 				
 				<div class="form-group">
@@ -35,6 +35,12 @@
 					<form:label path="existencia">Existencia:</form:label>
 					<form:input path="existencia" class="form-control"/>
 					<form:errors path="existencia" class="text-danger"/>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="description">Descripción:</form:label>
+					<form:input path="description" class="form-control"/>
+					<form:errors path="description" class="text-danger"/>
 				</div>
 				
 				<div class="form-group">

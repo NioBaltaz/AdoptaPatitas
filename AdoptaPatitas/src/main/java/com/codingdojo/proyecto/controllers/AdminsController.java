@@ -114,7 +114,6 @@ public class AdminsController {
 	public String addProduct(@ModelAttribute("newProduct")Product product){
 		return "newProduct.jsp";
 	}
-	
 	@PostMapping("/admins/add/product")
 	public String createProduct(@Valid @ModelAttribute("newProduct") Product product, BindingResult result, Principal principal, @RequestParam("imagen") MultipartFile imagen) {
 		if(result.hasErrors()) {
