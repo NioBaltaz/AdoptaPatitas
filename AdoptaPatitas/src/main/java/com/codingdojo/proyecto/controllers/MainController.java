@@ -92,5 +92,40 @@ public class MainController {
     @GetMapping("/post")
     public String post() {
     	return "post.jsp";
-    }    
+    }
+    
+    @GetMapping("/post_perro")
+    public String post_perro() {
+    	return "post_perro.jsp";
+    }
+    
+    @GetMapping("/post_gato")
+    public String post_gato() {
+    	return "post_gato.jsp";
+    }
+    
+    @GetMapping("/post_mascota")
+    public String post_mascota() {
+    	return "post_mascota.jsp";
+    }
+    
+    @GetMapping("/post_vacuna")
+    public String post_vacuna() {
+    	return "post_vacuna.jsp";
+    }
+    
+    @GetMapping("/post_social")
+    public String post_social() {
+    	return "post_social.jsp";
+    }
+    
+    @GetMapping("/post_conejo")
+    public String post_conejo() {
+    	return "post_conejo.jsp";
+    }
+    
+    @GetMapping("/post_juguete")
+    public String post_juguete() {
+    	return "post_juguete.jsp";
+    }
 }

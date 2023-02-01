@@ -45,15 +45,14 @@
 		<div class="row align-items-start">
 			<div class="post_box">
 				<div class="post_head">
-				aqui va la imagen del post
-					<div class="post_text">
-						<p class="post_categoria">Consejos</p>
-						<h2 class="post_tittle">Mi primer conejo</h2>
-					</div>
+					<img src="/img/conejo-pequeno.jpg" class="card-img-top" alt="conejo">
+				<div class="post_text-center">
+					<h2 class="text-center">Mi primer conejo</h2>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+	</div>
+	<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 				<div class="post_content">
 					<p>Sin duda el tener una mascota nos llena de emoción y alegría, pero ¿Como es cuando es la primera vez que adoptas a un conejito? por eso aqui te damos una guía práctica de que hacer cuando adoptas a tu primer conejo. La finalidad de poder entregar este bunny tip es lograr que tanto tu como tu conejito puedan tener una mejor experiencia en sus primeros dias de convivencia. Contando también con información directa de la fundación Bunny Lovers aseguramos que los consejos aquí presentes serán de total utilidad.</p>
