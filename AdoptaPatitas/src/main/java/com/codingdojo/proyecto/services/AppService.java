@@ -7,8 +7,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.User;
+import com.codingdojo.proyecto.repositories.FormRepository;
 import com.codingdojo.proyecto.repositories.PetsRepository;
 import com.codingdojo.proyecto.repositories.RoleRepository;
 import com.codingdojo.proyecto.repositories.UserRepository;
@@ -22,7 +24,10 @@ public class AppService {
     private RoleRepository roleRepository;
     
     @Autowired
-    private PetsRepository petRepository; 
+    private PetsRepository petRepository;
+    
+    @Autowired
+    private FormRepository formRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -72,11 +77,16 @@ public class AppService {
         return userRepository.findByUsername(username);
     }
     
+    //Encontrar usuario por id
+    public User findUserById(Long id) {
+    	return userRepository.findById(id).orElse(null);
+    }
+    
     		//Servicios Mascota
     
     //Crear nueva Mascota
     public Pet newPet(Pet newPet, User user) {
-    	newPet.setCreator(user);
+    	newPet.setCreator_pet(user);
     	return petRepository.save(newPet);
     }
     
@@ -85,5 +95,35 @@ public class AppService {
     	return petRepository.findAll();
     }
     
+    //Buscar Mascota por id
+    public Pet findPetById(Long pet_id) {
+    	return petRepository.findById(pet_id).orElse(null);
+    }
     
+    			//Form
+	public Form create_form(Form newForm, User user) {
+	newForm.setUser(user);
+	return formRepository.save(newForm);
+	}
+	
+	public List<Form> findAllForms(){
+	return formRepository.findAll();
+	}
+	
+	public Form findFormById(Long id) {
+	return formRepository.findById(id).orElse(null);
+	}
+	
+	//Aceptar solicitud de adopcion
+	public void acceptRequest(Long pet_id, Long user_id) {
+		User user = findUserById(user_id);
+		Pet pet =  findPetById(pet_id);		
+		pet.setUser_adopt(user);
+		petRepository.save(pet);
+	}
+	
+	//Buscar mascota por nombre
+	public Pet findPetByName(String name) {
+		return petRepository.findByName(name);
+	}
 }

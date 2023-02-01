@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,10 +16,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.User;
 import com.codingdojo.proyecto.services.AppService;
@@ -32,7 +35,11 @@ public class AdminsController {
 	ArrayList<String> options = new ArrayList<String>();
 	
 	 @GetMapping("/admins")
-    public String administradores() {
+    public String administradores(Model model) {
+		List<Form> forms = service.findAllForms();
+		List<Pet> pets = service.findAllPets();
+		model.addAttribute("pets", pets);
+	    model.addAttribute("forms", forms);
         return "administradores.jsp";
     }
 	
@@ -56,7 +63,7 @@ public class AdminsController {
             User currentUser = service.findUserByUsername(username);
             
             if(!imagen.isEmpty()) {
-            	//Ruta
+            	//Rut/aceptar/adopcion/a
             	Path directorioImagenes = Paths.get("src/main/resources/static/img");
             	//Ruta Absoluta
             	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
@@ -80,5 +87,23 @@ public class AdminsController {
             service.newPet(pet, currentUser);                     
             return "redirect:/adopta";
 		}
+	}
+
+	@GetMapping("/solicitud/{form_id}/{nombre_mascota}")
+	public String solicitud(@PathVariable("form_id") Long form_id, @PathVariable("nombre_mascota") String nombre_mascota, Model model) {		
+		Form form = service.findFormById(form_id);
+		Pet pet = service.findPetByName(nombre_mascota);
+		model.addAttribute("pet", pet);
+		model.addAttribute("form", form);
+		return "solicitud.jsp";
+	}
+	
+	@GetMapping("/aceptar/adopcion/{pet_id}/{user_id}")
+	public String aceptarAdopcion(@PathVariable("pet_id") Long pet_id, @PathVariable("user_id") Long user_id,Principal principal) {
+		if(principal == null) {
+    		return "adopta.jsp";
+    	}
+        service.acceptRequest(pet_id, user_id);
+        return "redirect:/adopta";
 	}
 }
