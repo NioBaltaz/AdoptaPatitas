@@ -24,13 +24,6 @@ public class AdoptaController {
 	@Autowired
 	private AppService service;
 	
-//	@GetMapping("/requisitos/adopcion/{pet_id}")
-//	public String requisitosAdopcion(@PathVariable("pet_id") Long pet_id, Model model) {
-//		Pet pet = service.findPetById(pet_id);
-//		model.addAttribute("pet", pet);
-//		return "requisitos.jsp";
-//	}
-	
 	@GetMapping("/requisitos/adopcion/{pet_id}")
 	public String requisitos(@PathVariable("pet_id") Long pet_id, @ModelAttribute("newForm") Form form, Principal principal, Model model) {
 		if(principal == null) {
@@ -66,7 +59,7 @@ public class AdoptaController {
             User currentUser = service.findUserByUsername(username);              
             //Mandamos el usuario a home.jsp
             service.create_form(form, currentUser);
-            return "redirect:/adopta";
+            return "info_form.jsp";
         }
-    }
+    }    
 }

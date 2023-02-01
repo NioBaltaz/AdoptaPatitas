@@ -91,8 +91,7 @@
 						<form:input path="paseo" class="form-control"/>
 						<form:errors path="paseo" class="text-danger"/>
 					</div>
-					<input type="submit" value="Enviar" class="btn btn-dark"/>
-					
+					<input type="submit" value="Enviar" class="btn btn-dark"/>					
 				</div>
 			</div>
 		</form:form>

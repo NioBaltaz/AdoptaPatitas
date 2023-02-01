@@ -26,12 +26,16 @@ import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
 import com.codingdojo.proyecto.services.AppService;
+import com.codingdojo.proyecto.services.SendMailService;
 
 @Controller
 public class AdminsController {
 
 	@Autowired
 	private AppService service;
+	
+	@Autowired
+	private SendMailService sendMailService;
 	
 	ArrayList<String> options = new ArrayList<String>();
 	
@@ -101,11 +105,15 @@ public class AdminsController {
 		return "solicitud.jsp";
 	}
 	
-	@GetMapping("/aceptar/adopcion/{pet_id}/{user_id}")
-	public String aceptarAdopcion(@PathVariable("pet_id") Long pet_id, @PathVariable("user_id") Long user_id,Principal principal) {
+	@PostMapping("/aceptar/adopcion/{pet_id}/{user_id}/{form_id}")
+	public String aceptarAdopcion(@PathVariable("pet_id") Long pet_id, @PathVariable("user_id") Long user_id, @PathVariable("form_id") Long form_id, Principal principal) {
 		if(principal == null) {
     		return "adopta.jsp";
     	}
+		Form form = service.findFormById(form_id);
+		String email_user = form.getEmail();
+		String name_user = form.getNombre_adoptante();
+		sendMailService.sendMail(email_user, "Solicitud Aceptada", "¡Hola " + name_user + "!, tu solicitud de adopción se ha aceptado, dentro de unos días estaremos contactandote por teléfono para agendar una cita y seguir con el proceso.");
         service.acceptRequest(pet_id, user_id);
         return "redirect:/adopta";
 	}

@@ -70,11 +70,15 @@
 						<td><h5>¿Pasear al adoptado frecuentemente (perro)?</h5></td>
 						<td><h5>${form.paseo }</h5></td>
 					</tr>
-				</tbody>
+				</tbody>			
 			</table>
+			
 			<div class="row">
 				<div class="col">
-					<a href="/aceptar/adopcion/${pet.getId()}/${form.user.getId()}" class="btn btn-primary">Aceptar Adopción</a>											
+					<form action="/aceptar/adopcion/${pet.getId()}/${form.user.getId()}/${form.getId()}" method="POST">
+						<input type="submit" class="btn btn-dark" value="Aceptar Solicitud"/>
+					</form>
+					<!-- <a href="/aceptar/adopcion/${pet.getId()}/${form.user.getId()}/${form.getId()}" class="btn btn-primary">Aceptar Adopción</a> -->											
 				</div>
 			</div>
 		</div>
