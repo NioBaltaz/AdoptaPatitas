@@ -41,7 +41,7 @@
 					<label>Agrega una imagen</label>
 					<input type="file" name="imagen" class="form-control"/>
 				</div>
-				<input/ type="submit" value="Añadir Imagen Producto" class="btn btn-info">
+				<input type="submit" value="Añadir Imagen Producto" class="btn btn-info">
 			</form:form>
 		</div>
 	</body>

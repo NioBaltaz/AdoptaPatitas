@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
+import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
 import com.codingdojo.proyecto.services.AppService;
 
@@ -38,8 +39,10 @@ public class AdminsController {
     public String administradores(Model model) {
 		List<Form> forms = service.findAllForms();
 		List<Pet> pets = service.findAllPets();
+		List<Product> products = service.findAllProducts();
 		model.addAttribute("pets", pets);
 	    model.addAttribute("forms", forms);
+	    model.addAttribute("products", products);
         return "administradores.jsp";
     }
 	
@@ -105,5 +108,43 @@ public class AdminsController {
     	}
         service.acceptRequest(pet_id, user_id);
         return "redirect:/adopta";
+	}
+	
+	@PostMapping("/admins/add/product")
+	public String createProduct(@Valid @ModelAttribute("newProduct") Product product, BindingResult result, Principal principal, @RequestParam("imagen") MultipartFile imagen) {
+		if(result.hasErrors()) {
+			return "newProduct.jsp";
+		}
+		else {
+			//Me regresa el username del usuario que inició sesión
+            String username = principal.getName();             
+            //Obtenemos el objeto de Usuario
+            User currentUser = service.findUserByUsername(username);
+            
+            if(!imagen.isEmpty()) {
+            	//Rut/aceptar/adopcion/a
+            	Path directorioImagenes = Paths.get("src/main/resources/static/img");
+            	//Ruta Absoluta
+            	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+            	
+            	try {
+            		//Imagen en Bytes
+            		byte[] bytesImg = imagen.getBytes();
+            		//Ruta completa, con todo y nombre de imagen
+            		Path rutaCompleta = Paths.get(rutaAbsoluta+"/"+imagen.getOriginalFilename());
+            		//Guardar mi imagen en la ruta
+            		Files.write(rutaCompleta, bytesImg);   
+            		
+            		//Nombre dentro del atributo image en Pet
+            		product.setImage(imagen.getOriginalFilename());
+           
+            	}catch(IOException e){
+            		e.printStackTrace();
+            	}
+            }
+            
+            service.newProduct(product, currentUser);                     
+            return "redirect:/tienda";
+		}
 	}
 }

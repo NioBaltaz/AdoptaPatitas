@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -30,6 +33,10 @@ public class Product {
     @NotNull(message = "Debes especificar el código")
     @Size(min = 1, max = 50, message = "El código debe medir entre 1 y 50")
     private String codigo;
+    
+    @NotNull(message = "Debes ir una descripción del producto")
+    @Size(min = 10, max = 100, message = "La descripción del producto debe tener entre 10 a 100 caracteres")
+    private String description;
 
     @NotNull(message = "Debes especificar el precio")
     @Min(value = 0, message = "El precio mínimo es 0")
@@ -48,14 +55,9 @@ public class Product {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updated_at;
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name= "creatorproduct_id")
+	private User creator_product;
 	
 public Product(Long id,
 			@NotNull(message = "Debes especificar el nombre") @Size(min = 1, max = 50, message = "El nombre debe medir entre 1 y 50") String nombre,
@@ -81,6 +83,15 @@ public Product(Long id,
 	public Product() {
 		super();
 	}
+	
+	
+	public User getCreator_product() {
+		return creator_product;
+	}
+
+	public void setCreator_product(User creator_product) {
+		this.creator_product = creator_product;
+	}
 
 	public Long getId() {
 		return id;
@@ -96,6 +107,15 @@ public Product(Long id,
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getCodigo() {

@@ -49,10 +49,38 @@ public class User {
  @OneToOne(mappedBy="user_adopt", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
  private Pet pet;
  
+ 	@OneToMany(mappedBy="creator_product",fetch = FetchType.LAZY)
+	private List<Product> products;
+ 	
+ 	@OneToMany(mappedBy="creator_orden",fetch = FetchType.LAZY)
+	private List<Orden> ordenes;
+	
+ 
  public User() {
  }
 
- public List<Pet> getPets() {
+ 
+ public List<Orden> getOrdenes() {
+	return ordenes;
+}
+
+
+public void setOrdenes(List<Orden> ordenes) {
+	this.ordenes = ordenes;
+}
+
+
+public List<Product> getProducts() {
+	return products;
+}
+
+
+public void setProducts(List<Product> products) {
+	this.products = products;
+}
+
+
+public List<Pet> getPets() {
 	return pets;
 }
 

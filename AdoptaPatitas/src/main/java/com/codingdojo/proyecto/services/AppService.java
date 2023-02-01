@@ -135,5 +135,15 @@ public class AppService {
 		return petRepository.findByName(name);
 	}
 	
-	
+    //Crear un nuevo producto
+    public Product newProduct(Product newProduct, User user) {
+    	newProduct.setCreator_product(user);
+    	return productRepository.save(newProduct);
+    }
+    
+    //Busca todos los productos
+    public List<Product> findAllProducts(){
+    	return productRepository.findAll();
+    }
+
 }

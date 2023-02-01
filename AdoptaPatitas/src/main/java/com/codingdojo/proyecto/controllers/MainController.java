@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.proyecto.models.Pet;
+import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
 import com.codingdojo.proyecto.services.AppService;
 
@@ -85,7 +86,9 @@ public class MainController {
     }
     
     @GetMapping("/tienda")
-    public String tienda() {    	
+    public String tienda(Model model) {  
+    	List<Product> products = service.findAllProducts();
+    	model.addAttribute("products", products);
     	return "tienda.jsp";
     }
     
