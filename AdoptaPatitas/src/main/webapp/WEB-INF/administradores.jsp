@@ -17,7 +17,7 @@
 				<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
 			</form>
 			<a href="/admins/new/pet" class="btn btn-dark">Añadir nueva mascota</a>
-			
+			<a href="/admins/add/product" class="btn btn-dark">Añadir nuevo producto</a>
 			<div class="row">
 				<div class="col-8">
 					<h1>Solicitudes de Adopción</h1>
