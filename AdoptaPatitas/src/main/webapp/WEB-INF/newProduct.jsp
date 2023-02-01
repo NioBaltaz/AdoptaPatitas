@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Agrega un Producto Nuevo</h1>
+			<h1>Agrega Producto Nuevo</h1>
 			<form:form action="/admins/add/product" method="POST" modelAttribute="newProduct" enctype="multipart/form-data">
 				<div class="form-group">
 					<form:label path="nombre">Nombre:</form:label>
