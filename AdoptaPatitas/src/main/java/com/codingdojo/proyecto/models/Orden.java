@@ -3,6 +3,7 @@ package com.codingdojo.proyecto.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ public class Orden {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String number;
+	@Column(updatable=false)
 	private Date fechaCreación;
 	private Date fechaRecibida;
 	private double total;
