@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Juguetes para perros</title>
+<title>Salud y mascotas</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -42,7 +42,7 @@
 		</nav>
 	</div>
 	<div class="container text-center">
-		<h1>Los mejores juguetes para tu perro</h1>
+		<h1>Beneficios para la salud:¿Cómo el tener una mascota ayuda a nuestra salud?</h1>
 	</div>
 </body>
 </html>
