@@ -40,29 +40,9 @@
 				</div>
 	  		</div>
 		</nav>
-		<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-		  <div class="carousel-inner">
-		    <div class="carousel-item active">
-		      <img src="blog-conejo.png" class="d-block w-100" alt="...">
-		    </div>
-		    <div class="carousel-item">
-		      <img src="blog-gato.png" class="d-block w-100" alt="...">
-		    </div>
-		    <div class="carousel-item">
-		      <img src="blog-perro" class="d-block w-100" alt="...">
-		    </div>
-		  </div>
-		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="visually-hidden">Previous</span>
-		  </button>
-		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="visually-hidden">Next</span>
-		  </button>
-		</div>
 		<div class= "header text-center">	
-			<h1>Blog Patitas</h1>	
+			<img src="/img/blog-conejo.png" alt="blog patitas">	
+			<h1>Blog Patitas</h1>
 		</div>
 	</div>
 	<div class="container-fluid d-flex justify-content-center item align-items-center">
@@ -163,19 +143,19 @@
 	<div class="container-fluid">
 		<div class="row p=5" style="background-color: #82B8A0";>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" class="card-img-top" alt="bunnylovers"></a>
+				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" alt="bunnylovers"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" class="card-img-top" alt="bunnycare"></a>
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunnycare"></a>
 			</div>
 			<div class="col-lg-3">
-			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta.jpg" class="card-img-top" alt="fundacion adopta"></a>
+			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta.jpg" alt="fundacion adopta"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpg" class="card-img-top" alt="fundacion animalia"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpg" alt="fundacion animalia"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" class="card-img-top" alt="fundacion jacinto"></a>
+				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto"></a>
 			</div>
 			<div class="col-lg-3">
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpg" class="card-img-top" alt="fundacion vyra"></a>
