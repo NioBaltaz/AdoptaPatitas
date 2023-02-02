@@ -1,8 +1,9 @@
 package com.codingdojo.proyecto.models;
 
 import java.util.Date;
-import java.util.List;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="ordenes")
@@ -21,16 +26,25 @@ public class Orden {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String number;
+	@Column(updatable=false)
 	private Date fechaCreación;
 	private Date fechaRecibida;
 	private double total;
 	
+	@Column(updatable=false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date created_at;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updated_at;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name= "ordencreator_id")
 	private User creator_orden;
 	
 	@OneToOne(mappedBy="orden")
 	private DetalleOrden detalle;
+	
+
 	
 	public Orden() {
 		super();
@@ -87,11 +101,14 @@ public class Orden {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	@Override
-	public String toString() {
-		return "Orden [id=" + id + ", number=" + number + ", fechaCreación=" + fechaCreación + ", fechaRecibida="
-				+ fechaRecibida + ", total=" + total + "]";
-	}
+	@PrePersist
+    protected void onCreate(){
+        this.created_at = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updated_at = new Date();
+    }
 	
 	
 	

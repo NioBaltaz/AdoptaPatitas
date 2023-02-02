@@ -35,7 +35,7 @@ public class Product {
     private String codigo;
     
     @NotNull(message = "Debes ir una descripción del producto")
-    @Size(min = 10, max = 100, message = "La descripción del producto debe tener entre 10 a 100 caracteres")
+    @Size(min = 10, max = 500, message = "La descripción del producto debe tener entre 10 a 100 caracteres")
     private String description;
 
     @NotNull(message = "Debes especificar el precio")
@@ -59,20 +59,26 @@ public class Product {
 	@JoinColumn(name= "creatorproduct_id")
 	private User creator_product;
 	
-public Product(Long id,
+
+
+	public Product(Long id,
 			@NotNull(message = "Debes especificar el nombre") @Size(min = 1, max = 50, message = "El nombre debe medir entre 1 y 50") String nombre,
 			@NotNull(message = "Debes especificar el código") @Size(min = 1, max = 50, message = "El código debe medir entre 1 y 50") String codigo,
+			@NotNull(message = "Debes ir una descripción del producto") @Size(min = 10, max = 500, message = "La descripción del producto debe tener entre 10 a 100 caracteres") String description,
 			@NotNull(message = "Debes especificar el precio") @Min(value = 0, message = "El precio mínimo es 0") Float precio,
 			@NotNull(message = "Debes especificar la existencia") @Min(value = 0, message = "La cantidad mínima es 0") Float existencia,
-			Date created_at, Date updated_at) {
+			String image, Date created_at, Date updated_at, User creator_product) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.codigo = codigo;
+		this.description = description;
 		this.precio = precio;
 		this.existencia = existencia;
+		this.image = image;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
+		this.creator_product = creator_product;
 	}
 
 	public Product(String image) {

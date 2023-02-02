@@ -11,7 +11,9 @@ import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
+import com.codingdojo.proyecto.repositories.DetalleOrdenRepository;
 import com.codingdojo.proyecto.repositories.FormRepository;
+import com.codingdojo.proyecto.repositories.OrdenRepository;
 import com.codingdojo.proyecto.repositories.PetsRepository;
 import com.codingdojo.proyecto.repositories.ProductRepository;
 import com.codingdojo.proyecto.repositories.RoleRepository;
@@ -146,4 +148,7 @@ public class AppService {
     	return productRepository.findAll();
     }
 
+    
+    
+ 
 }
