@@ -52,7 +52,7 @@ public class MainController {
 
     @PostMapping("/registration")
     public String registration(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-        service.saveWithUserRole(user, result);
+        service.saveWithAdminRole(user, result);
         if(result.hasErrors()) {
             return "register.jsp";
         }else {
