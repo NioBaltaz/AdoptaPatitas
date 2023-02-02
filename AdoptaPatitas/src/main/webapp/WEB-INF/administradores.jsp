@@ -50,21 +50,19 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>Nombre</th>
-								<th>Mascota</th>
-								<th>Acción</th>
+								<th>Nombre Mascota</th>
+								<th>Nombre Adoptante</th>
 							</tr>
 						</thead>
-						<tbody>			
-										
+						<tbody>													
 								<c:forEach items="${pets}" var = "pet">
 								<tr>
 									<c:if test="${pet.getUser_adopt().getId() != null}">
-										<td>${pet.name}</td>		
+										<td>${pet.name}</td>	
+										<td>${pet.getUser_adopt().getUsername()}</td>	
 									</c:if>
-								</tr>	
-								</c:forEach>													
-															
+								</tr>
+								</c:forEach>																												
 						</tbody>
 					</table>
 				</div>

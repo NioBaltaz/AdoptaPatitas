@@ -48,6 +48,7 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="post_content">
 				<p>Los felinos se han ido conviertiendo en una excelente compañia para el ser humano y se han ido ganando el corazón de sus tutores. Por eso, si eres uno de los afortunados en tener un gato como compañia te encantaran los datos que tenemos para ti.</p>
+				<h3></h3>
 			</div>
 		</div>
 	</div>

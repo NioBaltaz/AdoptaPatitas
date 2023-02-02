@@ -12,6 +12,9 @@
 	<body>
 
 		<div class="container">
+
+			
+
 			<form action="/logout" method="POST">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>

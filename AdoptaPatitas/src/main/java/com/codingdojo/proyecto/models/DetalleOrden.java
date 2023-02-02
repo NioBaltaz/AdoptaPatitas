@@ -1,11 +1,18 @@
 package com.codingdojo.proyecto.models;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="detalles")
@@ -17,6 +24,13 @@ public class DetalleOrden {
 	private double cantidad;
 	private double precio;
 	private double total;
+	
+	@Column(updatable=false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date created_at;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updated_at;
 	
 	@OneToOne
 	private Orden orden;
@@ -79,11 +93,13 @@ public class DetalleOrden {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	@Override
-	public String toString() {
-		return "DetalleOrden [id=" + id + ", name=" + name + ", cantidad=" + cantidad + ", precio=" + precio
-				+ ", total=" + total + "]";
-	}
-	
+	@PrePersist
+    protected void onCreate(){
+        this.created_at = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updated_at = new Date();
+    }
 	
 }

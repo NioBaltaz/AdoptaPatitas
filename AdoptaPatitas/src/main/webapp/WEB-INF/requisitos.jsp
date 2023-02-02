@@ -10,7 +10,6 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	</head>
 	<body>
-		<h1>Aqui ira el formulario y la información de los requisito</h1>
 		<form action="/logout" method="POST">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
@@ -91,8 +90,7 @@
 						<form:input path="paseo" class="form-control"/>
 						<form:errors path="paseo" class="text-danger"/>
 					</div>
-					<input type="submit" value="Enviar" class="btn btn-dark"/>
-					
+					<input type="submit" value="Enviar" class="btn btn-dark"/>					
 				</div>
 			</div>
 		</form:form>
