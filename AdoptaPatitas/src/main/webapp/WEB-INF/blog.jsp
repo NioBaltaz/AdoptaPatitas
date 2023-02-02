@@ -13,7 +13,7 @@
 	<div class="container-fluid ">
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
 	  			<div class="container-fluid">
-	    			<img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+	    			<a href="/index.jsp/"></a><img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      		<span class="navbar-toggler-icon"></span>
 	    		</button>
@@ -143,22 +143,22 @@
 	<div class="container-fluid">
 		<div class="row p=5" style="background-color: #82B8A0";>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" alt="bunnylovers"></a>
+				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" width="30" height="30" class="d-inline-block align-center" alt="bunnylovers"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunnycare"></a>
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" width="30" height="30" class="d-inline-block align-center" alt="bunnycare"></a>
 			</div>
 			<div class="col-lg-3">
-			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta.jpg" alt="fundacion adopta"></a>
+			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta.jpg" width="30" height="30" class="d-inline-block align-center" alt="fundacion adopta"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpg" alt="fundacion animalia"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpg" width="30" height="30" class="d-inline-block align-center" alt="fundacion animalia"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto"></a>
+				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" width="30" height="30" class="d-inline-block align-center" alt="fundacion jacinto"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpg" class="card-img-top" alt="fundacion vyra"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpg" width="30" height="30" class="d-inline-block align-center" alt="fundacion vyra"></a>
 			</div>
 		</div>
 	</div>
