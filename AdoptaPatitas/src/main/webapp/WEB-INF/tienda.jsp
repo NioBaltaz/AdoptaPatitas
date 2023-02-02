@@ -51,7 +51,7 @@
 					<h4>${product.nombre}</h4>
 					<h4>Precio: ${product.precio}</h4>
 					<h4>Descripción: ${product.description}</h4>
-					<a href="//${product.getId()}" class="btn btn-primary">Comprar</a>						
+					<a href="//${product.getId()}" class="btn btn-primary">Añadir al carrito</a>						
 				</div>			
 			</c:forEach>			
 		</div>
