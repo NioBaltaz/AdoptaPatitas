@@ -20,8 +20,8 @@
                 height:600px;
                 margin: 0 px;
             }
-            div.row nav a{
-            	margin-left: 30%;
+            	div.row nav a{
+            	margin-left: 10%;
             	font-size: 35px;
             
             }
@@ -48,7 +48,7 @@
         </style> 
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 	
 			<div class= "header">
 				<h1></h1>
@@ -83,13 +83,12 @@
 				 </div>
 	 
 			</div>
+		</div>
 	
 	 		<div class="footer">
 	 
 	 			<h3>Aqui ira los nombres de las fundaciones con sus iconos y el boton que de a sus redes sociales</h3>
 		 	
 		 	</div>
-		
-		</div>
 	</body>
 </html>
