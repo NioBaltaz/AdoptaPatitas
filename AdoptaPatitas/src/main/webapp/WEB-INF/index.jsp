@@ -20,11 +20,7 @@
                 height:600px;
                 margin: 0 px;
             }
-            div.row nav a{
-            	margin-left: 30%;
-            	font-size: 35px;
             
-            }
             div.row nav{
             background-color: transparent;
             }

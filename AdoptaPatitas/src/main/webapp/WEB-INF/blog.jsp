@@ -141,7 +141,7 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-		<div class="row p=5" style="background-color: #82B8A0";>
+		<div class="row p=5" style="background-color: #82B8A0">
 			<div class="col-lg-3">
 				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" width="30" height="30" class="d-inline-block align-center" alt="bunnylovers"></a>
 			</div>
