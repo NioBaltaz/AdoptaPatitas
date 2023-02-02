@@ -30,12 +30,16 @@ public class Pet {
 	private Long id;
 	
 	@NotEmpty(message="Nombre Obligatorio.")
-	@Size (min=2, max=20, message="El nombre tiene que tener entre 2 a 20 caracteres")
+	@Size (min=2, max=20, message="El nombre tiene que tener entre 2 a 20 caracteres.")
 	private String name;
 	
 	@NotEmpty(message="Edad Obligatorio.")
-	@Size( min=1, max=15, message="El nombre tiene que tener entre 2 a 15 caracteres")
+	@Size( min=1, max=15, message="El nombre tiene que tener entre 2 a 15 caracteres.")
 	private String age;
+	
+	@NotEmpty(message="Campo obligatorio.")
+	@Size(min=1, max=6, message="El campo tiene que tener entre 1 a 6 caracteres.")
+	private String sexo;
 	
 	@NotNull(message="Debe colocar que vacuna tiene la mascota, campo obligatorio.")
 	@Min(0)
@@ -156,6 +160,14 @@ public class Pet {
 		return updated_at;
 	}
 
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
 	public void setUpdated_at(Date updated_at) {
 		this.updated_at = updated_at;
 	}
@@ -167,8 +179,5 @@ public class Pet {
     @PreUpdate
     protected void onUpdate(){
         this.updated_at = new Date();
-    }
-	
-	
-	
+    }	
 }

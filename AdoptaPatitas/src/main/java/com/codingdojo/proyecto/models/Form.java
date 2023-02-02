@@ -73,6 +73,8 @@ public class Form {
 	@NotEmpty(message="El campo es obligatorio.")
 	private String paseo;
 	
+	private String aceptado;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date created_at;
@@ -224,6 +226,14 @@ public class Form {
 
 	public void setPet(Pet pet) {
 		this.pet = pet;
+	}
+
+	public String getAceptado() {
+		return aceptado;
+	}
+
+	public void setAceptado(String aceptado) {
+		this.aceptado = aceptado;
 	}
 
 	@PrePersist

@@ -26,6 +26,12 @@
 				</div>
 				
 				<div class="form-group">
+					<form:label path="sexo">Sexo (Macho / Hembra):</form:label>
+					<form:input path="sexo" class="form-control"/>
+					<form:errors path="sexo" class="text-danger"/>
+				</div>				
+				
+				<div class="form-group">
 					<form:label path="vaccine">Vacunas:</form:label>
 					<form:input path="vaccine" class="form-control"/>
 					<form:errors path="vaccine" class="text-danger"/>

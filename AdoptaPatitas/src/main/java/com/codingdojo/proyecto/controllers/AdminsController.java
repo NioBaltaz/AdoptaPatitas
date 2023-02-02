@@ -111,6 +111,7 @@ public class AdminsController {
     		return "adopta.jsp";
     	}
 		Form form = service.findFormById(form_id);
+		form.setAceptado("si");
 		String email_user = form.getEmail();
 		String name_user = form.getNombre_adoptante();
 		sendMailService.sendMail(email_user, "Solicitud Aceptada", "¡Hola " + name_user + "!, tu solicitud de adopción se ha aceptado, dentro de unos días estaremos contactandote por teléfono para agendar una cita y seguir con el proceso.");
