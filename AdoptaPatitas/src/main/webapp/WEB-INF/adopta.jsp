@@ -33,28 +33,37 @@
 	       	 		<li class="nav-item">
 	          		<a class="nav-link" href="/tienda">Articulos</a>
 	       	 		</li>
+	       	 		<li class="nav-item">
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li>	       	 		
 	      			</ul>
 	    		</div>
 	    		<div>
 					<form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					</form>
 				</div>
 	  		</div>
 		</nav>
 				<h1>Mascotas</h1>
 				<div class="row">
 					<c:forEach items="${pets}" var="pet">
-						<div class="col-4 border border-dark">				
-							<c:if test="${not empty pet.image}">
-								<img src="/img/${pet.image}" class="img-fluid"/>
+						<div class="col-4 mt-5 text-center">				
+							<c:if test="${not empty pet.image}">					
+								<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
 							</c:if>
-							<h4>${pet.name}</h4>
-							<h4>Edad: ${pet.age}</h4>
-							<h4>Vacunas: ${pet.vaccine}</h4>
-							<h4>Desparasitad@: ${pet.deworming}</h4>
-							<h4>Chip: ${pet.chip}</h4>
-							<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>					
+							<h4 class="text-center">${pet.name}</h4>
+							<h4 class="text-center">Edad: ${pet.age}</h4>
+							<h4 class="text-center">Sexo: ${pet.sexo}</h4>
+							<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
+							<h4 class="text-center">Desparasitad@: ${pet.deworming}</h4>
+							<h4 class="text-center">Chip: ${pet.chip}</h4>
+							<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>									
 						</div>			
 					</c:forEach>			
 				</div>
