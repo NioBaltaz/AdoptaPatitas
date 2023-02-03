@@ -40,7 +40,19 @@ public class AdminsController {
 	ArrayList<String> options = new ArrayList<String>();
 	
 	 @GetMapping("/admins")
-    public String administradores(Model model) {
+    public String administradores(Principal principal, Model model) {
+		if(principal == null) {
+	    		return "index.jsp";
+    	}
+    	
+        //Me regresa el username del usuario que inició sesión
+        String username = principal.getName();             
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
+		 
 		List<Form> forms = service.findAllForms();
 		List<Pet> pets = service.findAllPets();
 		List<Product> products = service.findAllProducts();

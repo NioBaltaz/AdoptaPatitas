@@ -86,10 +86,6 @@ public class Form {
 	@JoinColumn(name="user_form")
 	private User user;
 	
-	@OneToOne
-	@JoinColumn(name="pet_id")
-	private Pet pet;
-	
 	public Form() {}
 
 	public Long getId() {
@@ -218,14 +214,6 @@ public class Form {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public Pet getPet() {
-		return pet;
-	}
-
-	public void setPet(Pet pet) {
-		this.pet = pet;
 	}
 
 	public String getAceptado() {

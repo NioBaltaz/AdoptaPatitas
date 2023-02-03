@@ -11,8 +11,6 @@
 </head>
 <body>
 		<div class="container">
-
-
 				<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
 	  			<div class="container-fluid">
 	    			<img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
@@ -51,20 +49,22 @@
 	  		</div>
 		</nav>
 				<h1>Mascotas</h1>
-				<div class="row">
+				<div class="row">					
 					<c:forEach items="${pets}" var="pet">
-						<div class="col-4 mt-5 text-center">				
-							<c:if test="${not empty pet.image}">					
-								<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
-							</c:if>
-							<h4 class="text-center">${pet.name}</h4>
-							<h4 class="text-center">Edad: ${pet.age}</h4>
-							<h4 class="text-center">Sexo: ${pet.sexo}</h4>
-							<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
-							<h4 class="text-center">Desparasitad@: ${pet.deworming}</h4>
-							<h4 class="text-center">Chip: ${pet.chip}</h4>
-							<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>									
-						</div>			
+						<c:if test="${pet.getUser_adopt().getId() == null}">
+							<div class="col-4 mt-5 text-center">				
+								<c:if test="${not empty pet.image}">					
+									<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
+								</c:if>
+								<h4 class="text-center">${pet.name}</h4>
+								<h4 class="text-center">Edad: ${pet.age}</h4>
+								<h4 class="text-center">Sexo: ${pet.sexo}</h4>
+								<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
+								<h4 class="text-center">Desparasitad@: ${pet.deworming}</h4>
+								<h4 class="text-center">Chip: ${pet.chip}</h4>
+								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>									
+							</div>			
+						</c:if>						
 					</c:forEach>			
 				</div>
 				<div class="container-fluid">
