@@ -1,67 +1,40 @@
 package com.codingdojo.proyecto.models;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="detalles")
+@Table(name = "detalles")
 public class DetalleOrden {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String name;
+	private String nombre;
 	private double cantidad;
 	private double precio;
 	private double total;
 	
-	@Column(updatable=false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date created_at;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updated_at;
-	
-	@OneToOne
+	@ManyToOne
 	private Orden orden;
 	
-	@OneToOne
+	@ManyToOne
 	private Product product;
-
+	
 	public DetalleOrden() {
-		super();
+	
 	}
-	public DetalleOrden(Integer id, String name, double cantidad, double precio, double total) {
+	public DetalleOrden(Integer id, String nombre, double cantidad, double precio, double total) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.nombre = nombre;
 		this.cantidad = cantidad;
 		this.precio = precio;
 		this.total = total;
-	}
-	
-	
-	public Orden getOrden() {
-		return orden;
-	}
-	public void setOrden(Orden orden) {
-		this.orden = orden;
-	}
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 	public Integer getId() {
 		return id;
@@ -69,11 +42,11 @@ public class DetalleOrden {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public double getCantidad() {
 		return cantidad;
@@ -93,13 +66,25 @@ public class DetalleOrden {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	@PrePersist
-    protected void onCreate(){
-        this.created_at = new Date();
-    }
-    @PreUpdate
-    protected void onUpdate(){
-        this.updated_at = new Date();
-    }
 	
+	
+	public Orden getOrden() {
+		return orden;
+	}
+	public void setOrden(Orden orden) {
+		this.orden = orden;
+	}
+	public Product getProducto() {
+		return product;
+	}
+	public void setProducto(Product product) {
+		this.product = product;
+	}
+	@Override
+	public String toString() {
+		return "DetalleOrden [id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio
+				+ ", total=" + total + "]";
+	}
+
 }
+

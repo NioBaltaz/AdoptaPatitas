@@ -1,116 +1,112 @@
 package com.codingdojo.proyecto.models;
 
 import java.util.Date;
+import java.util.List;
 
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Table(name="ordenes")
-public class Orden {
+	@Entity
+	@Table(name = "ordenes")
+	public class Orden {
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Integer id;
+		private String numero;
+		private Date fechaCreacion;
+		private Date fechaRecibida;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private String number;
-	@Column(updatable=false)
-	private Date fechaCreación;
-	private Date fechaRecibida;
-	private double total;
-	
-	@Column(updatable=false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date created_at;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updated_at;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name= "ordencreator_id")
-	private User creator_orden;
-	
-	@OneToOne(mappedBy="orden")
-	private DetalleOrden detalle;
-	
+		private double total;
+		
+		@ManyToOne
+		private User user;
+		
+		@OneToMany(mappedBy = "orden")
+		private List<DetalleOrden> detalle;
+		
+		public Orden() {
+		
+		}
 
-	
-	public Orden() {
-		super();
+		public Orden(Integer id, String numero, Date fechaCreacion, Date fechaRecibida, double total) {
+			super();
+			this.id = id;
+			this.numero = numero;
+			this.fechaCreacion = fechaCreacion;
+			this.fechaRecibida = fechaRecibida;
+			this.total = total;
+		}
+
+		public Integer getId() {
+			return id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getNumero() {
+			return numero;
+		}
+
+		public void setNumero(String numero) {
+			this.numero = numero;
+		}
+
+		public Date getFechaCreacion() {
+			return fechaCreacion;
+		}
+
+		public void setFechaCreacion(Date fechaCreacion) {
+			this.fechaCreacion = fechaCreacion;
+		}
+
+		public Date getFechaRecibida() {
+			return fechaRecibida;
+		}
+
+		public void setFechaRecibida(Date fechaRecibida) {
+			this.fechaRecibida = fechaRecibida;
+		}
+
+		public double getTotal() {
+			return total;
+		}
+
+		public void setTotal(double total) {
+			this.total = total;
+		}
+		
+
+		public User getUsuario() {
+			return user;
+		}
+
+		public void setUsuario(User user) {
+			this.user = user;
+		}
+		
+
+		public List<DetalleOrden> getDetalle() {
+			return detalle;
+		}
+
+		public void setDetalle(List<DetalleOrden> detalle) {
+			this.detalle = detalle;
+		}
+
+		@Override
+		public String toString() {
+			return "Orden [id=" + id + ", numero=" + numero + ", fechaCreacion=" + fechaCreacion + ", fechaRecibida="
+					+ fechaRecibida + ", total=" + total + "]";
+		}
+		
+
 	}
-	public Orden(Integer id, String number, Date fechaCreación, Date fechaRecibida, double total) {
-		super();
-		this.id = id;
-		this.number = number;
-		this.fechaCreación = fechaCreación;
-		this.fechaRecibida = fechaRecibida;
-		this.total = total;
-	}
-	
-	
-	public DetalleOrden getDetalle() {
-		return detalle;
-	}
-	public void setDetalle(DetalleOrden detalle) {
-		this.detalle = detalle;
-	}
-	public User getCreator_orden() {
-		return creator_orden;
-	}
-	public void setCreator_orden(User creator_orden) {
-		this.creator_orden = creator_orden;
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
-	public Date getFechaCreación() {
-		return fechaCreación;
-	}
-	public void setFechaCreación(Date fechaCreación) {
-		this.fechaCreación = fechaCreación;
-	}
-	public Date getFechaRecibida() {
-		return fechaRecibida;
-	}
-	public void setFechaRecibida(Date fechaRecibida) {
-		this.fechaRecibida = fechaRecibida;
-	}
-	public double getTotal() {
-		return total;
-	}
-	public void setTotal(double total) {
-		this.total = total;
-	}
-	@PrePersist
-    protected void onCreate(){
-        this.created_at = new Date();
-    }
-    @PreUpdate
-    protected void onUpdate(){
-        this.updated_at = new Date();
-    }
-	
-	
-	
-	
-}
+

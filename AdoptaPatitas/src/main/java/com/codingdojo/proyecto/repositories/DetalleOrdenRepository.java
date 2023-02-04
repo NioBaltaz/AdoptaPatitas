@@ -1,11 +1,13 @@
-package com.codingdojo.proyecto.repositories;
+	package com.codingdojo.proyecto.repositories;
 
 
 
-import org.springframework.data.repository.CrudRepository;
+  	import java.util.List;
 
-import com.codingdojo.proyecto.models.DetalleOrden;
+    import org.springframework.data.repository.CrudRepository;
 
-public interface DetalleOrdenRepository extends CrudRepository<DetalleOrden, Integer> {
+	import com.codingdojo.proyecto.models.DetalleOrden;
+	public interface DetalleOrdenRepository extends CrudRepository<DetalleOrden, Integer> {
 
+	List<DetalleOrden> findAll();
 }

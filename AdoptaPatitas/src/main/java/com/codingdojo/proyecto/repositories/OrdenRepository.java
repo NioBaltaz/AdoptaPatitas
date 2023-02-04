@@ -9,5 +9,5 @@ import com.codingdojo.proyecto.models.User;
 
 public interface OrdenRepository extends  CrudRepository<Orden, Integer> {
 
-	List<Orden> findByUsuario (User user);
+List<Orden> findByUser (User user);
 }

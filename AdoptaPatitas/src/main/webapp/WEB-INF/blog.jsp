@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container-fluid ">
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
+			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 	  			<div class="container-fluid">
 	    			<a href="/index.jsp/"></a><img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,7 @@
 					<form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					</form>
 				</div>
 	  		</div>
 		</nav>

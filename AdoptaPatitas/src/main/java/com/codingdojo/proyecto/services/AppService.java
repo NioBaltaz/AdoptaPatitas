@@ -1,19 +1,15 @@
 package com.codingdojo.proyecto.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
-
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
-import com.codingdojo.proyecto.repositories.DetalleOrdenRepository;
 import com.codingdojo.proyecto.repositories.FormRepository;
-import com.codingdojo.proyecto.repositories.OrdenRepository;
 import com.codingdojo.proyecto.repositories.PetsRepository;
 import com.codingdojo.proyecto.repositories.ProductRepository;
 import com.codingdojo.proyecto.repositories.RoleRepository;
@@ -37,7 +33,8 @@ public class AppService {
     
     @Autowired
     private FormRepository formRepository;
-
+    
+    
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -147,8 +144,23 @@ public class AppService {
     public List<Product> findAllProducts(){
     	return productRepository.findAll();
     }
-
     
+	//actualiza product
+	public void updateProduct(Product newProduct) {
+		productRepository.save(newProduct);
+	}
+	
+//Elimina producto
+	public void deleteProduct(Product product) {
+		productRepository.delete(product);
+	}
+	    
+    //Busca producto by id
+    
+    public Product findProductById(Long id_product) {
+		 return productRepository.findById(id_product).orElse(null);
+    }
+
     
  
 }

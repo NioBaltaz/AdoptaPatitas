@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
@@ -157,7 +156,37 @@ public class AdminsController {
             }
             
             service.newProduct(product, currentUser);                     
-            return "redirect:/tienda";
+            return "redirect:/admins";
 		}
 	}
+	
+
+	@GetMapping("/admins/product/add/allproduct")
+    public String allProduct(Model model) {  
+    	List<Product> products = service.findAllProducts();
+    	model.addAttribute("products", products);
+    	return "allproduct.jsp";
+	}
+
+	// update Producto
+	@PostMapping("/admins/add/product/update")
+	public String updateProduct() {
+			return "edit.jsp";
+		}
+
+	// Delete Producto
+	@GetMapping("/product/delete/{id_producto}")
+	public String deleteProducto(@PathVariable("id_producto") Long id_producto) {
+		Product newProduct = service.findProductById(id_producto);
+		if (newProduct != null) {
+			service.deleteProduct(newProduct);
+			return "redirect:/newProduct";
+		} else {
+			System.out.println("Ese producto no existe");
+			return "redirect:/newProduct";
+		}
+
+	}
+
+	
 }

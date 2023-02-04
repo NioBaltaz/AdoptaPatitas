@@ -8,4 +8,6 @@ import com.codingdojo.proyecto.models.Product;
 
 public interface ProductRepository extends CrudRepository<Product, Long> {
 	List<Product> findAll();
+
+	List<Product> findProductById(Long id_product);
 }

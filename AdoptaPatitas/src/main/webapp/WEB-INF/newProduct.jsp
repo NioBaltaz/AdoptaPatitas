@@ -50,5 +50,6 @@
 				<input type="submit" value="Añadir Imagen Producto" class="btn btn-info">
 			</form:form>
 		</div>
+		<a href="/admins/add/product/allproduct" class="btn btn-dark">Ver Productos</a>
 	</body>
 </html>
