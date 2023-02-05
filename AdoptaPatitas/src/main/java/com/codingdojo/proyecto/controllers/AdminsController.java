@@ -68,7 +68,7 @@ public class AdminsController {
 	}
 	
 	@PostMapping("/admins/create/pet")
-	public String createPet(@Valid @ModelAttribute("newPet") Pet pet, BindingResult result, Principal principal, @RequestParam("imagen") MultipartFile imagen) {
+	public String createPet(@Valid @ModelAttribute("newPet") Pet pet, BindingResult result, Principal principal, @RequestParam("imagen") MultipartFile imagen, Model model) {
 		if(result.hasErrors()) {
 			return "newPet.jsp";
 		}
@@ -99,8 +99,8 @@ public class AdminsController {
             		e.printStackTrace();
             	}
             }
-            
-            service.newPet(pet, currentUser);                     
+            model.addAttribute("user", currentUser);
+            service.newPet(pet);                     
             return "redirect:/adopta";
 		}
 	}
@@ -170,35 +170,78 @@ public class AdminsController {
 		}
 	}
 	
-	@PostMapping("/search")
-	public String search(@RequestParam(value="pet") String pet) {
-		return "redirect:/search/"+pet;
+	@PostMapping("/admins")
+	public String search(@RequestParam(value="pet") String pet, Model model, Principal principal) {
+		Pet thisPet = service.findPetByName(pet);
+		if(thisPet != null) {			
+			return "redirect:/pet/"+pet;
+		}else {
+			if(principal == null) {
+	    		return "index.jsp";
+    	}
+    	
+        //Me regresa el username del usuario que inició sesión
+        String username = principal.getName();             
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
+		 
+		List<Form> forms = service.findAllForms();
+		List<Pet> pets = service.findAllPets();
+		List<Product> products = service.findAllProducts();
+		model.addAttribute("pets", pets);
+	    model.addAttribute("forms", forms);
+	    model.addAttribute("products", products);
+		model.addAttribute("errorMessage", "La mascota no se encuentra.");
+		return "administradores.jsp";
+		}
+		
 	}
 	
-	@GetMapping("/search/{pet}")
-	public String searchPet(@PathVariable("pet") String pet, Model model) {
-		Pet pet_name = service.findPetByName(pet);
-		model.addAttribute("petObj", pet_name);
-		return "administradores.jsp";
-	} 
-	
-	@GetMapping("/pet/{pet}")
-	public String pet(@PathVariable("pet") Long thispet, Model model, @ModelAttribute("ObjectPet") Pet pet) {
-		Pet thisPet = service.findPetById(thispet);
-		model.addAttribute("options", Option.Options);
+	@GetMapping("/pet/{pet_name}")
+	public String pet(@PathVariable("pet_name") String pet_name, Model model, @ModelAttribute("ObjectPet") Pet pet) {
+		Pet thisPet = service.findPetByName(pet_name);
+		User user = thisPet.getCreator_pet();
+		model.addAttribute("user", user);
 		model.addAttribute("pet", thisPet);
-		return "pet.jsp";		
+		model.addAttribute("options", Option.Options);
+		return "pet.jsp";
 	}
 	
 	@PutMapping("/update/pet")
-	public String updatePet(@Valid @ModelAttribute("ObjectPet") Pet pet, BindingResult result, Model model) {
+	public String updatePet(@Valid @ModelAttribute("ObjectPet") Pet pet, BindingResult result, Model model, Principal principal, @RequestParam("imagen") MultipartFile imagen) {
 		if(result.hasErrors()) {
 			model.addAttribute("options", Option.Options);
 			return "pet.jsp";
 		}else {
-			Pet thisPet = service.findPetById(pet.getId());
-			service.updatePet(thisPet);
-			return "redirect:/pet/"+pet.getId();
+			
+			if(!imagen.isEmpty()) {
+				//Rut/aceptar/adopcion/a
+            	Path directorioImagenes = Paths.get("src/main/resources/static/img");
+            	//Ruta Absoluta
+            	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+            	
+            	try {
+            		//Imagen en Bytes
+            		byte[] bytesImg = imagen.getBytes();
+            		//Ruta completa, con todo y nombre de imagen
+            		Path rutaCompleta = Paths.get(rutaAbsoluta+"/"+imagen.getOriginalFilename());
+            		//Guardar mi imagen en la ruta
+            		Files.write(rutaCompleta, bytesImg);   
+            		
+            		//Nombre dentro del atributo image en Pet
+            		pet.setImage(imagen.getOriginalFilename());
+            		
+            	}catch(IOException e){
+            		e.printStackTrace();
+            	}
+            }
+			Pet thisPet = service.findPetById(pet.getId());		
+			model.addAttribute("pet", thisPet);
+			service.newPet(pet);
+			return "redirect:/pet/"+thisPet.getName();
 		}
 	}
 }

@@ -93,14 +93,8 @@ public class AppService {
     		//Servicios Mascota
     
     //Crear nueva Mascota
-    public Pet newPet(Pet newPet, User user) {
-    	newPet.setCreator_pet(user);
+    public Pet newPet(Pet newPet) {	
     	return petRepository.save(newPet);
-    }
-    
-    //Actualizar Mascota
-    public Pet updatePet(Pet pet) {
-    	return petRepository.save(pet);
     }
     
     //Buscar todas las Mascotas
@@ -112,6 +106,11 @@ public class AppService {
     public Pet findPetById(Long pet_id) {
     	return petRepository.findById(pet_id).orElse(null);
     }
+    
+  	//Buscar mascota por nombre
+  	public Pet findPetByName(String name) {
+  		return petRepository.findByName(name);
+  	}
     
     			//Form
 	public Form create_form(Form newForm, User user) {
@@ -135,10 +134,7 @@ public class AppService {
 		petRepository.save(pet);
 	}
 	
-	//Buscar mascota por nombre
-	public Pet findPetByName(String name) {
-		return petRepository.findByName(name);
-	}
+	
 	
     //Crear un nuevo producto
     public Product newProduct(Product newProduct, User user) {

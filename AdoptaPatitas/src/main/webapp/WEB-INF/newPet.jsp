@@ -58,6 +58,7 @@
 					<label>Agrega una imagen</label>
 					<input type="file" name="imagen" class="form-control"/>
 				</div>
+				<form:hidden path="creator_pet" value="${user.id}"/>
 				<input/ type="submit" value="Añadir Mascota" class="btn btn-info">
 			</form:form>
 		</div>

@@ -107,12 +107,15 @@
 				</div>
 			</div>
 			
-			<div class="row">
-				<form action="/search" method="POST">
+			<div class="row">				
+				<form action="/admins" method="POST">					
 					<input type="search" name="pet" placeholder="Mascota">
-					<input type="submit" value="Buscar">						
+					<input type="submit" value="Buscar">										
 				</form>	
-				<div class="col-4">
+				<c:if test="${errorMessage != null}">
+					<p class="text-danger">${errorMessage}</p>
+				</c:if>	
+				<div class="col-6">
 					<h1>Mascotas</h1>
 					<table class="table table-bordered">
 						<thead>
@@ -128,14 +131,14 @@
 						<tbody>						
 							<c:forEach items="${pets}" var="p">
 								<tr>
-									<td><a href="/pet/${p.getId()}">${p.name}</a></td>
+									<td><a href="/pet/${p.name}">${p.name}</a></td>
 									<td>${p.age}</td>
 									<td>${p.sexo}</td>
 									<td>${p.vaccine}</td>
 									<td>${p.deworming}</td>
 									<td>${p.chip}</td>
 								</tr>
-							</c:forEach>							
+							</c:forEach>											
 						</tbody>
 					</table>
 				</div>
