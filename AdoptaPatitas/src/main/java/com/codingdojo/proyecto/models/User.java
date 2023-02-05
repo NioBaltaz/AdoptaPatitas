@@ -52,22 +52,18 @@ public class User {
  	@OneToMany(mappedBy="creator_product",fetch = FetchType.LAZY)
 	private List<Product> products;
  	
- 	@OneToMany(mappedBy="creator_orden",fetch = FetchType.LAZY)
-	private List<Orden> ordenes;
-	
- 
  public User() {
  }
 
  
- public List<Orden> getOrdenes() {
-	return ordenes;
-}
+ //public List<Orden> getOrdenes() {
+//	return ordenes;
+//}
 
 
-public void setOrdenes(List<Orden> ordenes) {
-	this.ordenes = ordenes;
-}
+//public void setOrdenes(List<Orden> ordenes) {
+//	this.ordenes = ordenes;
+//}
 
 
 public List<Product> getProducts() {

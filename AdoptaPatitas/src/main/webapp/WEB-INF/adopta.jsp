@@ -11,9 +11,13 @@
 </head>
 <body>
 		<div class="container">
+<<<<<<< HEAD
 
 
 				<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+=======
+				<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
+>>>>>>> branch 'master' of https://github.com/NioBaltaz/AdoptaPatitas.git
 	  			<div class="container-fluid">
 	    			<img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +37,13 @@
 	       	 		<li class="nav-item">
 	          		<a class="nav-link" href="/tienda">Articulos</a>
 	       	 		</li>
+	       	 		<li class="nav-item">
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li>	       	 		
 	      			</ul>
 	    		</div>
 	    		<div>
@@ -43,24 +54,46 @@
 				</div>
 	  		</div>
 		</nav>
-			
 				<h1>Mascotas</h1>
-			
-				<div class="row">
-		
+				<div class="row">					
 					<c:forEach items="${pets}" var="pet">
-						<div class="col-4 border border-dark">				
-							<c:if test="${not empty pet.image}">
-								<img src="/img/${pet.image}" class="img-fluid"/>
-							</c:if>
-							<h4>${pet.name}</h4>
-							<h4>Edad: ${pet.age}</h4>
-							<h4>Vacunas: ${pet.vaccine}</h4>
-							<h4>Desparasitad@: ${pet.deworming}</h4>
-							<h4>Chip: ${pet.chip}</h4>
-							<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>					
-						</div>			
+						<c:if test="${pet.getUser_adopt().getId() == null}">
+							<div class="col-4 mt-5 text-center">				
+								<c:if test="${not empty pet.image}">					
+									<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
+								</c:if>
+								<h4 class="text-center">${pet.name}</h4>
+								<h4 class="text-center">Edad: ${pet.age}</h4>
+								<h4 class="text-center">Sexo: ${pet.sexo}</h4>
+								<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
+								<h4 class="text-center">Desparasitad@: ${pet.deworming}</h4>
+								<h4 class="text-center">Chip: ${pet.chip}</h4>
+								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>									
+							</div>			
+						</c:if>						
 					</c:forEach>			
+				</div>
+				<div class="container-fluid">
+					<div class="row p=5" style="background-color: #82B8A0">
+						<div class="col-lg-3">
+							<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" width="50" height="50" class="d-inline-block align-center" alt="bunnylovers"></a>
+						</div>
+						<div class="col-lg-3">
+							<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" width="50" height="50" class="d-inline-block align-center" alt="bunnycare"></a>
+						</div>
+						<div class="col-lg-3">
+						 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" width="50" height="50" class="d-inline-block align-center" alt="fundacion adopta"></a>
+						</div>
+						<div class="col-lg-3">
+							<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" width="50" height="50" class="d-inline-block align-center" alt="fundacion animalia"></a>
+						</div>
+						<div class="col-lg-3">
+							<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" width="50" height="50" class="d-inline-block align-center" alt="fundacion jacinto"></a>
+						</div>
+						<div class="col-lg-3">
+							<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" width="50" height="50" class="d-inline-block align-center" alt="fundacion vyra"></a>
+						</div>
+					</div>
 				</div>
 		</div>
 </body>

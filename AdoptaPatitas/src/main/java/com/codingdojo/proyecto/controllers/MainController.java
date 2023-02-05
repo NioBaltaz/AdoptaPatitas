@@ -86,7 +86,18 @@ public class MainController {
     }
     
     @GetMapping("/adopta")
-    public String adopta(Model model) {
+    public String adopta(Principal principal, Model model) {
+    	if(principal == null) {
+    		return "adopta.jsp";
+    	}
+    	
+        //Me regresa el username del usuario que inició sesión
+        String username = principal.getName();             
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a adopta.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
     	List<Pet> pets = service.findAllPets();
     	model.addAttribute("pets", pets);
     	return "adopta.jsp";

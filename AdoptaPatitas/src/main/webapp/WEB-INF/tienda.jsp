@@ -104,22 +104,22 @@
 	<div class="container-fluid">
 		<div class="row p=5" style="background-color: #82B8A0">
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" class="card-img-top" alt="bunnylovers"></a>
+				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" width="50" height="50" class="d-inline-block align-center" alt="bunnylovers"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" class="card-img-top" alt="bunnycare"></a>
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" width="50" height="50" class="d-inline-block align-center" alt="bunnycare"></a>
 			</div>
 			<div class="col-lg-3">
-			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta.jpg" class="card-img-top" alt="fundacion adopta"></a>
+			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" width="50" height="50" class="d-inline-block align-center" alt="fundacion adopta"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpg" class="card-img-top" alt="fundacion animalia"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" width="50" height="50" class="d-inline-block align-center" alt="fundacion animalia"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" class="card-img-top" alt="fundacion jacinto"></a>
+				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" width="50" height="50" class="d-inline-block align-center" alt="fundacion jacinto"></a>
 			</div>
 			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpg" class="card-img-top" alt="fundacion vyra"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" width="50" height="50" class="d-inline-block align-center" alt="fundacion vyra"></a>
 			</div>
 		</div>
 	</div>

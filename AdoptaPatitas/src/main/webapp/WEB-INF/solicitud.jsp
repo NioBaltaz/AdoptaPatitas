@@ -14,6 +14,38 @@
 		<div class="container">		
 			<h2>Solicitud</h2>
 			<br/>
+			
+			<div class="row justify-content-center">
+				<div class="col-6 mb-4">
+					<c:if test="${not empty pet.image}">									
+						<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 450px; width: 380px"/>								
+					</c:if>
+				</div>
+				<div class="col-3 mt-5">
+					<h4 class="text-center mb-5">Información de ${pet.name}</h4>
+					<table class="table table-bordered text-center">						
+							<tr>
+								<td>${pet.name}</td>									
+							</tr>
+							<tr>
+								<td>${pet.age}</td>
+							</tr>
+							<tr>
+								<td>${pet.sexo}</td>
+							</tr>
+							<tr>
+								<td>${pet.vaccine}</td>
+							</tr>
+							<tr>
+								<td>${pet.deworming}</td>
+							</tr>
+							<tr>
+								<td>${pet.chip}</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			
 			<table class="table table-bordered">	
 				<thead>
 					<tr>
@@ -28,7 +60,7 @@
 					</tr>
 					<tr>
 						<td><h5>Nombre del Adoptante</h5></td>
-						<td><h4>${form.nombre_adoptante }</h4></td>
+						<td><h5>${form.nombre_adoptante }</h5></td>
 					</tr>
 					<tr>
 						<td><h5>Comuna</h5></td>
