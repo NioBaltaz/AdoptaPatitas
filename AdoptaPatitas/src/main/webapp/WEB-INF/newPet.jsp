@@ -8,26 +8,21 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<style>
-	
-	body{
-	backgroung-color:linear-gradient(to bottom right, #99ff99 0%, #00ffcc 100%);
-	}
-	
-	</style>
+
 	</head>
 	<body>
-		<div class="container-fluid ">
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		<div class="container-fluid">
+			
+			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
 	  			<div class="container-fluid">
-	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
+	    			<a href="http://localhost:8080/%22%3E"></a><img src="images/adopta_patitas.png" width="60" height="60" class="d-inline-block align-top" alt="Logo">
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      		<span class="navbar-toggler-icon"></span>
 	    		</button>
 	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	        		<li class="nav-item">
-	          		<a class="nav-link" href="/blog">blog</a>
+	          		<a class="nav-link active" aria-current="page" href="/blog">Blog</a>
 	        		</li>
 	        		<li class="nav-item">
 	          		<a class="nav-link" href="/apadrina">Apadrina</a>
@@ -38,6 +33,13 @@
 	       	 		<li class="nav-item">
 	          		<a class="nav-link" href="/tienda">Articulos</a>
 	       	 		</li>
+	       	 		<li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li>
 	      			</ul>
 	    		</div>
 	    		<div>
@@ -47,9 +49,9 @@
 					</form>
 				</div>
 	  		</div>
-			</nav>
-			<div class= "header text-center">	
-				<img src="/img/zona_de_adminstradores_2.png" alt="ingresar mascota 2">
+		</nav>
+			<div class= "header d-flex">	
+				<img src="/img/ingresar_mascota_.png" class="img-thumbnail float-right" alt="ingresar mascota" width="600" height="600">
 			</div>
 		</div>
 		<div class="container">

@@ -7,7 +7,7 @@
 <head>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Finalizar compra</title>
 </head>
 <body>
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
@@ -53,7 +53,7 @@
 		</nav>
 
 		
-		<form:form action="/finalizar_compra" method="POST" modelAttribute="newForm">
+		<form:form action="/finalizar_compra" method="POST" modelAttribute="newBoleta">
 			<div class="row">
 				<div class="col-6">
 				
@@ -136,17 +136,18 @@
 		</form:form>
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<div class="card-body">
+		<h4>Detalle Compra</h4>
+							<label>SubTotal:</label>
+							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
+						
+							<label>Descuento:</label>
+							<input type="text" value="$.0.0" readonly class="form-control"/>
+						
+							<label>Total a Pagar:</label>
+							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
+							<a href="/orden/${orden.getId()}" class="btn btn-primary">Comprar</a>
+						</div>				
 		
 		
 		

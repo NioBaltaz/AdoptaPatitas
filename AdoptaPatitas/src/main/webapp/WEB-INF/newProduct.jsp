@@ -17,17 +17,18 @@
 	</style>
 	</head>
 	<body>
-		<div class="container-fluid ">
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		<div class="container-fluid">
+			
+			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
 	  			<div class="container-fluid">
-	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
+	    			<a href="http://localhost:8080/%22%3E"></a><img src="images/adopta_patitas.png" width="60" height="60" class="d-inline-block align-top" alt="Logo">
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      		<span class="navbar-toggler-icon"></span>
 	    		</button>
 	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	        		<li class="nav-item">
-	          		<a class="nav-link" href="/blog">blog</a>
+	          		<a class="nav-link active" aria-current="page" href="/blog">Blog</a>
 	        		</li>
 	        		<li class="nav-item">
 	          		<a class="nav-link" href="/apadrina">Apadrina</a>
@@ -38,6 +39,13 @@
 	       	 		<li class="nav-item">
 	          		<a class="nav-link" href="/tienda">Articulos</a>
 	       	 		</li>
+	       	 		<li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li>
 	      			</ul>
 	    		</div>
 	    		<div>
@@ -47,9 +55,9 @@
 					</form>
 				</div>
 	  		</div>
-			</nav>
+		</nav>
 			<div class= "header text-center">	
-				<img src="/img/zona_de_administradores_3.png" alt="ingresar mascota 3">
+				<img src="/img/ingresa_producto.png" alt="ingresar producto">
 			</div>
 		</div>
 		<div class="container">
@@ -93,6 +101,7 @@
 			</form:form>
 		</div>
 		<a href="/admins/add/product/allproduct" class="btn btn-dark">Ver Productos</a>
+		
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
 			<footer class="d-flex justify-content-between">

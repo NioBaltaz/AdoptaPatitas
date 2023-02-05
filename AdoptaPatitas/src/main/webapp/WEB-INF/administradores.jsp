@@ -17,7 +17,7 @@
 			
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
 	  			<div class="container-fluid">
-	    			<a href="/index.jsp/"></a><img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+	    			<a href="http://localhost:8080/%22%3E"></a><img src="images/adopta_patitas.png" width="60" height="60" class="d-inline-block align-top" alt="Logo">
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      		<span class="navbar-toggler-icon"></span>
 	    		</button>
