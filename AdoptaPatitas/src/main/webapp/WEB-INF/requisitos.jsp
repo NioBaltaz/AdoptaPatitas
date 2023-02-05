@@ -50,7 +50,7 @@
 	<form:form action="/requisitos/form" method="POST" modelAttribute="newForm">
 			<div class="row ml-10">
 				<div class="col-6">
-					<h1>Requisitos de Adopción</h1>
+					<h1>Requisitos de Adopción Obligatorio</h1>
 					<div class="form-group">
 						<form:label path="nombre_mascota">Mascota a la cual estás postulando</form:label>
 						<form:input path="nombre_mascota" class="form-control" value="${pet.getName()}" readonly="true"/>
