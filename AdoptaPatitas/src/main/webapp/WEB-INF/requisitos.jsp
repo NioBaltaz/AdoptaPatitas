@@ -15,7 +15,7 @@
 			<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
 		</form>
 		
-		<form:form action="/requisitos/form" method="POST" modelAttribute="newForm">
+	<form:form action="/finalizar_compra" method="POST" modelAttribute="newBoleta">
 			<div class="row">
 				<div class="col-6">
 				

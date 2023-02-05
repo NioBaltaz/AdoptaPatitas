@@ -52,8 +52,9 @@
 				</div>
 	  		</div>
 		</nav>
-		
-			<h1>Zona Administración</h1>
+		<div class= "header text-center">	
+				<img src="/img/zona_de_administradores_1.png" alt="zona de administradores_1">
+			</div>
 			<a href="/admins/new/pet" class="btn btn-dark">Añadir nueva mascota</a>
 			<a href="/admins/add/product" class="btn btn-dark">Añadir nuevo producto</a>
 			<div class="row">
@@ -107,12 +108,15 @@
 				</div>
 			</div>
 			
-			<div class="row">
-				<form action="/search" method="POST">
+			<div class="row">				
+				<form action="/admins" method="POST">					
 					<input type="search" name="pet" placeholder="Mascota">
-					<input type="submit" value="Buscar">						
+					<input type="submit" value="Buscar">										
 				</form>	
-				<div class="col-4">
+				<c:if test="${errorMessage != null}">
+					<p class="text-danger">${errorMessage}</p>
+				</c:if>	
+				<div class="col-6">
 					<h1>Mascotas</h1>
 					<table class="table table-bordered">
 						<thead>
@@ -128,18 +132,30 @@
 						<tbody>						
 							<c:forEach items="${pets}" var="p">
 								<tr>
-									<td><a href="/pet/${p.getId()}">${p.name}</a></td>
+									<td><a href="/pet/${p.name}">${p.name}</a></td>
 									<td>${p.age}</td>
 									<td>${p.sexo}</td>
 									<td>${p.vaccine}</td>
 									<td>${p.deworming}</td>
 									<td>${p.chip}</td>
 								</tr>
-							</c:forEach>							
+							</c:forEach>											
 						</tbody>
 					</table>
 				</div>
 			</div>
+		</div>
+		<div class="container-fluid py-4" style="background-color: #82B8A0">
+			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<footer class="d-flex justify-content-between">
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+			
+			</footer>
+		
 		</div>
 	</body>
 </html>

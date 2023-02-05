@@ -13,14 +13,14 @@
 	<div class="container-fluid ">
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 	  			<div class="container-fluid">
-	    			<a href="/index.jsp/"></a><img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
 	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      		<span class="navbar-toggler-icon"></span>
 	    		</button>
 	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	        		<li class="nav-item">
-	          		<a class="nav-link active" aria-current="page" href="/blog">Blog</a>
+	          		<a class="nav-link" href="/blog">blog</a>
 	        		</li>
 	        		<li class="nav-item">
 	          		<a class="nav-link" href="/apadrina">Apadrina</a>
@@ -40,128 +40,113 @@
 					</form>
 				</div>
 	  		</div>
-		</nav>
-		<div class= "header text-center">	
-			<img src="/img/blog-conejo.png" alt="blog patitas">	
-			<h1>Blog Patitas</h1>
-		</div>
-	</div>
-	<div class="container-fluid d-flex justify-content-center item align-items-center">
-		<div class="text-center">
-			<p>¿Estás a punto de adoptar a tu primer perro?, ¿Tu conejo sufre con los calores?, ¿No sabes cual juguete es mejor para tu gato? Pues quedate aqui, en esta sección descubriras un monton de datos, tips e información util para poder mejorar tu vida junto a la de tu mascota.</p>	
-		</div>
-		<div class="row justify-content-center">
-			<div class="post"> 
+			</nav>
+			<div class= "header text-center">	
+				<img src="/img/blog-conejo.png" alt="blog patitas">
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="row row-cols-1 row-cols-md-2 g-4">
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/conejo-pequeno.jpg" class="card-img-top" alt="conejo">
-		      <div class="card-body">
-		        <h5 class="card-title">Mi primer conejo</h5>
-		        <p class="card-text">La llegada de un nuevo integrante a la familia nos llena de emoción, pero, ¿sabes que hacer cuando ese integrante es un conejo?.</p>
-		        <a href="post" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/perro-verano.jpg" class="card-img-top" alt="perro">
-		      <div class="card-body">
-		        <h5 class="card-title">Consejos para cuidar de tu perro en verano</h5>
-		        <p class="card-text">Las altas temperaturas en la epoca de verano es algo que nos preocupa cuando de nuestros perrihijos se trata.</p>
-		        <a href="post_perro" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/gato-negro.jpg" class="card-img-top" alt="gato">
-		      <div class="card-body">
-		        <h5 class="card-title">¿Conocias estas curiosidades de los gatos?</h5>
-		        <p class="card-text">Los gatos son animales fantasticos, pero también muy incomprendidos, por eso te ayudaremos con algunas curiosidades sobre ellos para que te sorprendas.</p>
-		        <a href="post_gato" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/mascota.jpg" class="card-img-top" alt="mascota">
-		      <div class="card-body">
-		        <h5 class="card-title">Beneficios para la salud:¿Cómo el tener una mascota ayuda a nuestra salud?</h5>
-		        <p class="card-text">Según múltiples estudios realizados a lo largo del tiempo se ha llegado a descubrir como los animales nos ayudan no solo a nuestra salud física, sino que también mental.</p>
-		        <a href="post_mascota" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		<div class="row row-cols-1 row-cols-md-2 g-4">
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/vacunas.jpg" class="card-img-top" alt="vacunacion">
-		      <div class="card-body">
-		        <h5 class="card-title">Vacunas en perros y gatos</h5>
-		        <p class="card-text">Una parte primordial en el cuidado de nuestros peluditos son las vacunas, pero ¿sabes cuáles son?, ¿cuál le corresponde?, ¿Para que es cada vacuna? Quedate que aquí te lo contamos todo para que estes totalmente informado.</p>
-		        <a href="post_vacuna" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/sociabilizacion.jpg" class="card-img-top" alt="sociabilizacion">
-		      <div class="card-body">
-		        <h5 class="card-title">Sociabilización entre conejos</h5>
-		        <p class="card-text">Los conejos son animales sociables por lo que se sienten mejor compartiendo con otros conejos.Sin embargo, se tiene que hacer todo un proceso de sociabilización para que tu nuevo bunny pueda integrarse de la mejor manera al hogar.</p>
-		        <a href="post_social" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/discapacitado.jpg" class="card-img-top" alt="conejo discapacitado">
-		      <div class="card-body">
-		        <h5 class="card-title">Tengo un conejo discapacitado, ¿Qué cuidados debe de tener?</h5>
-		        <p class="card-text">Los conejos discapacitados necesitan de cuidados muy especificos para poder mejorar su calidad de vida, aquí te daremos toda la información que necesitan para cuidar de tu bunny.</p>
-		        <a href="post_conejo" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card">
-		      <img src="/img/perro jugando.jpg" class="card-img-top" alt="jugando">
-		      <div class="card-body">
-		        <h5 class="card-title">Los mejores juguetes para tu perro</h5>
-		        <p class="card-text">Existen multiples opciones a la hora de escoger un jueguete para tu perro, desde tipo, forma, necesidad que tenga tu perro, etc. Sabemos que el juego es fundamental para el desarrollo de tu perro, te ayudaremos a eligir el mejor jueguete para él.</p>
-		        <a href="post_juguete" class="btn btn-primary">Ver post</a>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row p=5" style="background-color: #82B8A0">
-			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnyloverscl/"><img src="/img/bunnylovers.jpg" width="50" height="50" class="d-inline-block align-center" alt="bunnylovers"></a>
-			</div>
-			<div class="col-lg-3">
-				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" width="50" height="50" class="d-inline-block align-center" alt="bunnycare"></a>
-			</div>
-			<div class="col-lg-3">
-			 	<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" width="50" height="50" class="d-inline-block align-center" alt="fundacion adopta"></a>
-			</div>
-			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" width="50" height="50" class="d-inline-block align-center" alt="fundacion animalia"></a>
-			</div>
-			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionjacinto/"><img src="/img/fundacion jacinto.jpg" width="50" height="50" class="d-inline-block align-center" alt="fundacion jacinto"></a>
-			</div>
-			<div class="col-lg-3">
-				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" width="50" height="50" class="d-inline-block align-center" alt="fundacion vyra"></a>
+		<div class="container-fluid d-flex justify-content-center item align-items-center">
+			<div class="text-center">
+				<p>¿Estás a punto de adoptar a tu primer perro?, ¿Tu conejo sufre con los calores?, ¿No sabes cual juguete es mejor para tu gato? Pues quedate aqui, en esta sección descubriras un monton de datos, tips e información util para poder mejorar tu vida junto a la de tu mascota.</p>	
 			</div>
 		</div>
-	</div>
-</body>
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+		  		<div class="col">
+		    		<div class="card">
+		      			<img src="/img/conejo-pequeno.jpg" class="card-img-top" alt="conejo">
+		      		<div class="card-body">
+		        		<h5 class="card-title">Mi primer conejo</h5>
+		        		<p class="card-text">La llegada de un nuevo integrante a la familia nos llena de emoción, pero, ¿sabes que hacer cuando ese integrante es un conejo?.</p>
+		        		<a href="post" class="btn btn-primary">Ver post</a>
+		      		</div>
+		    		</div>
+		  		</div>
+		  		<div class="col">
+		    		<div class="card">
+		      			<img src="/img/perro-verano.jpg" class="card-img-top" alt="perro">
+		      		<div class="card-body">
+		        			<h5 class="card-title">Consejos para cuidar de tu perro en verano</h5>
+		        			<p class="card-text">Las altas temperaturas en la epoca de verano es algo que nos preocupa cuando de nuestros perrihijos se trata.</p>
+		        			<a href="post_perro" class="btn btn-primary">Ver post</a>
+		      		</div>
+		    		</div>
+		  		</div>
+		  		<div class="col">
+		    		<div class="card">
+		      			<img src="/img/gato-negro.jpg" class="card-img-top" alt="gato">
+		      		<div class="card-body">
+		        		<h5 class="card-title">¿Conocias estas curiosidades de los gatos?</h5>
+		        		<p class="card-text">Los gatos son animales fantasticos, pero también muy incomprendidos, por eso te ayudaremos con algunas curiosidades sobre ellos para que te sorprendas.</p>
+		        		<a href="post_gato" class="btn btn-primary">Ver post</a>
+		      		</div>
+		    		</div>
+		  		</div>
+		  		<div class="col">
+		    		<div class="card">
+		      			<img src="/img/mascota.jpg" class="card-img-top" alt="mascota">
+		      		<div class="card-body">
+		        		<h5 class="card-title">Beneficios para la salud:¿Cómo el tener una mascota ayuda a nuestra salud?</h5>
+		        		<p class="card-text">Según múltiples estudios realizados a lo largo del tiempo se ha llegado a descubrir como los animales nos ayudan no solo a nuestra salud física, sino que también mental.</p>
+		        		<a href="post_mascota" class="btn btn-primary">Ver post</a>
+		      		</div>
+		    		</div>
+		  		</div>
+				</div>
+					<div class="row row-cols-1 row-cols-md-2 g-4">
+		  				<div class="col">
+		    				<div class="card">
+		      					<img src="/img/vacunas.jpg" class="card-img-top" alt="vacunacion">
+		      				<div class="card-body">
+		        				<h5 class="card-title">Vacunas en perros y gatos</h5>
+		        				<p class="card-text">Una parte primordial en el cuidado de nuestros peluditos son las vacunas, pero ¿sabes cuáles son?, ¿cuál le corresponde?, ¿Para que es cada vacuna? Quedate que aquí te lo contamos todo para que estes totalmente informado.</p>
+		        				<a href="post_vacuna" class="btn btn-primary">Ver post</a>
+		      				</div>
+		    				</div>
+		  				</div>
+		  				<div class="col">
+		    				<div class="card">
+		      					<img src="/img/sociabilizacion.jpg" class="card-img-top" alt="sociabilizacion">
+		      				<div class="card-body">
+		        				<h5 class="card-title">Sociabilización entre conejos</h5>
+		        				<p class="card-text">Los conejos son animales sociables por lo que se sienten mejor compartiendo con otros conejos.Sin embargo, se tiene que hacer todo un proceso de sociabilización para que tu nuevo bunny pueda integrarse de la mejor manera al hogar.</p>
+		        				<a href="post_social" class="btn btn-primary">Ver post</a>
+		      				</div>
+		    				</div>
+		  				</div>
+		  				<div class="col">
+		    				<div class="card">
+		      					<img src="/img/discapacitado.jpg" class="card-img-top" alt="conejo discapacitado">
+		      				<div class="card-body">
+		        				<h5 class="card-title">Tengo un conejo discapacitado, ¿Qué cuidados debe de tener?</h5>
+		        				<p class="card-text">Los conejos discapacitados necesitan de cuidados muy especificos para poder mejorar su calidad de vida, aquí te daremos toda la información que necesitan para cuidar de tu bunny.</p>
+		        				<a href="post_conejo" class="btn btn-primary">Ver post</a>
+		      				</div>
+		    				</div>
+		  				</div>
+		  				<div class="col">
+		    				<div class="card">
+		      					<img src="/img/perro jugando.jpg" class="card-img-top" alt="jugando">
+		      				<div class="card-body">
+		        				<h5 class="card-title">Los mejores juguetes para tu perro</h5>
+		        				<p class="card-text">Existen multiples opciones a la hora de escoger un jueguete para tu perro, desde tipo, forma, necesidad que tenga tu perro, etc. Sabemos que el juego es fundamental para el desarrollo de tu perro, te ayudaremos a eligir el mejor jueguete para él.</p>
+		        				<a href="post_juguete" class="btn btn-primary">Ver post</a>
+		      				</div>
+		    				</div>
+		  				</div>
+				</div>
+		</div>
+		<div class="container-fluid py-4" style="background-color: #82B8A0">
+			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<footer class="d-flex justify-content-between">
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+			
+			</footer>
+		
+		</div>
+	</body>
 </html>

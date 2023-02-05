@@ -12,7 +12,8 @@
 	</head>
 	<body>
 	
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="#">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -20,12 +21,21 @@
 		
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+		      		      <li class="nav-item active">
+		        <a class="nav-link" href="/index">Home<span class="sr-only"></span></a>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Ofertas</a>
-		      </li>		      
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+		      </li>	  
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+		      </li>	
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+		      </li>			      
 		      <li class="nav-item">
 		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
 		      </li>
@@ -37,9 +47,6 @@
 		    
 		    <ul class="navbar-nav">
 		    	<li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Iniciar Sesión
-		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		          <a class="dropdown-item" href="#">Action</a>
 		          <a class="dropdown-item" href="#">Another action</a>
@@ -101,10 +108,23 @@
 						
 							<label>Total a Pagar:</label>
 							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
+							<a href="/orden/${orden.getId()}" class="btn btn-primary">Comprar</a>
 						</div>						
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container-fluid py-4" style="background-color: #82B8A0">
+			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<footer class="d-flex justify-content-between">
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+			
+			</footer>
+		
 		</div>
 	</body>
 </html>

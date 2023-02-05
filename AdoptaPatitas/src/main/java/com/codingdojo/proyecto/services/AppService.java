@@ -1,14 +1,18 @@
 package com.codingdojo.proyecto.services;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
+
+import com.codingdojo.proyecto.models.Boleta;
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
+import com.codingdojo.proyecto.repositories.BoletaRepository;
 import com.codingdojo.proyecto.repositories.FormRepository;
 import com.codingdojo.proyecto.repositories.PetsRepository;
 import com.codingdojo.proyecto.repositories.ProductRepository;
@@ -34,7 +38,8 @@ public class AppService {
     @Autowired
     private FormRepository formRepository;
     
-    
+    @Autowired
+    private BoletaRepository boletaRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -92,14 +97,8 @@ public class AppService {
     		//Servicios Mascota
     
     //Crear nueva Mascota
-    public Pet newPet(Pet newPet, User user) {
-    	newPet.setCreator_pet(user);
+    public Pet newPet(Pet newPet) {	
     	return petRepository.save(newPet);
-    }
-    
-    //Actualizar Mascota
-    public Pet updatePet(Pet pet) {
-    	return petRepository.save(pet);
     }
     
     //Buscar todas las Mascotas
@@ -111,6 +110,11 @@ public class AppService {
     public Pet findPetById(Long pet_id) {
     	return petRepository.findById(pet_id).orElse(null);
     }
+    
+  	//Buscar mascota por nombre
+  	public Pet findPetByName(String name) {
+  		return petRepository.findByName(name);
+  	}
     
     			//Form
 	public Form create_form(Form newForm, User user) {
@@ -134,10 +138,7 @@ public class AppService {
 		petRepository.save(pet);
 	}
 	
-	//Buscar mascota por nombre
-	public Pet findPetByName(String name) {
-		return petRepository.findByName(name);
-	}
+	
 	
     //Crear un nuevo producto
     public Product newProduct(Product newProduct, User user) {
@@ -165,7 +166,18 @@ public class AppService {
     public Product findProductById(Long id_product) {
 		 return productRepository.findById(id_product).orElse(null);
     }
-
-    
+//Boleta
+	public Boleta create_boleta(Boleta newBoleta, User user) {
+	newBoleta.setUser(user);
+	return boletaRepository.save(newBoleta);
+	}
+	
+	public List<Boleta> findAllBoletas(){
+	return boletaRepository.findAll();
+	}
+	
+	public Boleta findBoletaById(Long id) {
+	return boletaRepository.findById(id).orElse(null);
+	}
  
 }

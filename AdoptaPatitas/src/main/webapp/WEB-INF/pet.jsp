@@ -11,9 +11,10 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row">
-				<div class="col-6">
-					<table class="table table-bordered">
+			<div class="row mt-4">
+				<div class="col-8">
+					<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
+					<table class="table table-bordered mt-5">
 						<thead>
 							<tr>
 								<th>Nombre</th>
@@ -35,32 +36,32 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-4">
+				<div class="col-4 mt-2">
 					<h1>Editar Mascota</h1>
-					<form:form action="/update/pet" method="POST" modelAttribute="ObjectPet">
+					<form:form action="/update/pet" method="POST" modelAttribute="ObjectPet" enctype="multipart/form-data">
 						<input type="hidden" name="_method" value="PUT">
 						<form:hidden path="id" value="${pet.getId()}" />
-								<div class="form-group">
+						<div class="form-group">
 							<form:label path="name">Nombre:</form:label>
-							<form:input path="name" class="form-control"/>
+							<form:input path="name" class="form-control" value="${pet.getName()}" readonly="true"/>
 							<form:errors path="name" class="text-danger"/>
 						</div>
 						
 						<div class="form-group">
 							<form:label path="age">Edad:</form:label>
-							<form:input path="age" class="form-control"/>
+							<form:input path="age" class="form-control" value="${pet.getAge()}"/>
 							<form:errors path="age" class="text-danger"/>
 						</div>
 						
 						<div class="form-group">
 							<form:label path="sexo">Sexo (Macho / Hembra):</form:label>
-							<form:input path="sexo" class="form-control"/>
+							<form:input path="sexo" class="form-control" value="${pet.getSexo()}" readonly="true"/>
 							<form:errors path="sexo" class="text-danger"/>
 						</div>				
 						
 						<div class="form-group">
 							<form:label path="vaccine">Vacunas:</form:label>
-							<form:input path="vaccine" class="form-control"/>
+							<form:input path="vaccine" class="form-control" value="${pet.getVaccine()}"/>
 							<form:errors path="vaccine" class="text-danger"/>
 						</div>
 						
@@ -95,13 +96,18 @@
 								</c:forEach>
 							</form:select>	
 						</div>
+						<div class="form-group">
+							<label>Agrega una imagen</label>
+							<input type="file" name="imagen" class="form-control" value="${pet.image}"/>
+						</div>
 						
 						<!--  <div class="form-group">
 							<label>Agrega una imagen</label>
 							<input type="file" name="imagen" class="form-control"/>
 						</div>
-						-->
-						<input/ type="submit" value="Añadir Mascota" class="btn btn-info">
+						-->		
+						<form:hidden path="creator_pet" value="${user.id}"/>
+						<input type="submit" value="Actualizar Información" class="btn btn-info mt-4"/>												
 					</form:form>
 				</div>
 			</div>

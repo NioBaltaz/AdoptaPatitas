@@ -49,8 +49,12 @@ public class User {
  @OneToOne(mappedBy="user_adopt", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
  private Pet pet;
  
- 	@OneToMany(mappedBy="creator_product",fetch = FetchType.LAZY)
-	private List<Product> products;
+ @OneToMany(mappedBy="creator_product",fetch = FetchType.LAZY)
+private List<Product> products;
+ 	
+@OneToOne
+@JoinColumn(name="user_boleta")
+private Boleta boleta;
  	
  public User() {
  }
@@ -65,9 +69,21 @@ public class User {
 //	this.ordenes = ordenes;
 //}
 
+ 
+ 
 
 public List<Product> getProducts() {
 	return products;
+}
+
+
+public Boleta getBoleta() {
+	return boleta;
+}
+
+
+public void setBoleta(Boleta boleta) {
+	this.boleta = boleta;
 }
 
 
