@@ -36,6 +36,8 @@
 	       	 		</li>
 	      			</ul>
 	    		</div>
+	    		
+	    		
 	    		<div>
 					<form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -48,7 +50,6 @@
 				<img src="/img/zona_de_administradores_5.png.png" alt="zona de administradores 5">
 			</div>
 		</div>
-<h1>HOla</h1>
 <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
 			<footer class="d-flex justify-content-between">

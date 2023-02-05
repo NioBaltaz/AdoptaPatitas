@@ -53,7 +53,7 @@
 		</nav>
 
 		
-		<form:form action="/finalizar_compra" method="POST" modelAttribute="newForm">
+		<form:form action="/finalizar_compra" method="POST" modelAttribute="newBoleta">
 			<div class="row">
 				<div class="col-6">
 				

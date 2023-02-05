@@ -58,7 +58,9 @@
 		    </ul>
 		  </div>
 		</nav>
-	
+		<div class= "header text-center">	
+				<img src="/img/finaliza_tu_compra.png" alt="finaliza tu compras">
+		</div>
 		<div class="container mt-4">
 			<h3>Carrito</h3>
 			<br>

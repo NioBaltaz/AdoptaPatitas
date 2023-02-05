@@ -8,6 +8,9 @@
 		<meta charset="ISO-8859-1">
 	<title>Adopta</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -53,7 +56,7 @@
 			<img src="/img/Adopta.png" alt="Adopta">
 		</div>
 			<div class=" row text-center">
-				<h1>Mascotas</h1>
+				<h1 class="font-weight-lighter text-primary">Mascotitas listas para ser un nuevo Integrante de tu Familia</h1>
 			</div>
 				<div class="row">					
 					<c:forEach items="${pets}" var="pet">
