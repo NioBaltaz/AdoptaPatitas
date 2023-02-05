@@ -13,8 +13,8 @@
 	<body>
 	
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
-		  <a class="navbar-brand" href="#">AdoptaPatitas</a>
+		 <img src="images/adopta_patitas.png" width="80" height="100" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="http:/localhost:8080">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -40,9 +40,10 @@
 		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
 		      </li>
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
+		    <form class="form-inline my-2 my-lg-0 ml">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		      <button class="btn btn-outline-success my-2 my-sm-0 ml-auto" type="submit">Search</button>
+		      
 		    </form>
 		    
 		    <ul class="navbar-nav">
@@ -113,8 +114,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="container-fluid py-4" style="background-color: #82B8A0">
+		</div>	
+		
+			<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
@@ -124,7 +126,6 @@
 				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
-		
-		</div>
+			</div>
 	</body>
 </html>
