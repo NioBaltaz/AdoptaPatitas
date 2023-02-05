@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -18,9 +17,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import com.codingdojo.proyecto.models.Form;
+import com.codingdojo.proyecto.models.Option;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
@@ -35,8 +36,6 @@ public class AdminsController {
 	
 	@Autowired
 	private SendMailService sendMailService;
-	
-	ArrayList<String> options = new ArrayList<String>();
 	
 	 @GetMapping("/admins")
     public String administradores(Principal principal, Model model) {
@@ -63,9 +62,7 @@ public class AdminsController {
 	
 	@GetMapping("/admins/new/pet")
 	public String newPet(@ModelAttribute("newPet") Pet pet, Model model) {
-		options.add("Si");
-		options.add("No");
-		model.addAttribute("options", options);
+		model.addAttribute("options", Option.Options);
 		return "newPet.jsp";
 	}
 	
@@ -180,12 +177,6 @@ public class AdminsController {
     	return "allproduct.jsp";
 	}
 
-	// update Producto
-	@PostMapping("/admins/add/product/update")
-	public String updateProduct() {
-			return "edit.jsp";
-		}
-
 	// Delete Producto
 	@GetMapping("/product/delete/{id_producto}")
 	public String deleteProducto(@PathVariable("id_producto") Long id_producto) {
@@ -200,5 +191,36 @@ public class AdminsController {
 
 	}
 
+
+	@PostMapping("/search")
+	public String search(@RequestParam(value="pet") String pet) {
+		return "redirect:/search/"+pet;
+	}
 	
+	@GetMapping("/search/{pet}")
+	public String searchPet(@PathVariable("pet") String pet, Model model) {
+		Pet pet_name = service.findPetByName(pet);
+		model.addAttribute("petObj", pet_name);
+		return "administradores.jsp";
+	} 
+	
+	@GetMapping("/pet/{pet}")
+	public String pet(@PathVariable("pet") Long thispet, Model model, @ModelAttribute("ObjectPet") Pet pet) {
+		Pet thisPet = service.findPetById(thispet);
+		model.addAttribute("options", Option.Options);
+		model.addAttribute("pet", thisPet);
+		return "pet.jsp";		
+	}
+	
+	@PutMapping("/update/pet")
+	public String updatePet(@Valid @ModelAttribute("ObjectPet") Pet pet, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			model.addAttribute("options", Option.Options);
+			return "pet.jsp";
+		}else {
+			Pet thisPet = service.findPetById(pet.getId());
+			service.updatePet(thisPet);
+			return "redirect:/pet/"+pet.getId();
+		}
+	}
 }

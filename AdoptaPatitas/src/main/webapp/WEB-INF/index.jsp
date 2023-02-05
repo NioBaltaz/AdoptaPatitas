@@ -61,10 +61,10 @@
   					</button>
   					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     					<div class="navbar-nav">
-      						<a class="nav-item nav-link btn btn-outline-info " href="/blog">Blog</a>
-      						<a class="nav-item nav-link btn btn-outline-info " href="/apadrina">Apadrina</a>
-      						<a class="nav-item nav-link btn btn-outline-info " href="/adopta">Adopta</a>
-      						<a class="nav-item nav-link btn btn-outline-info " href="/tienda">Articulos</a>
+      						<a class="nav-item nav-link btn btn-outline-primary" href="/blog">Blog</a>
+      						<a class="nav-item nav-link btn btn-outline-primary" href="/apadrina">Apadrina</a>
+      						<a class="nav-item nav-link btn btn-outline-primary " href="/adopta">Adopta</a>
+      						<a class="nav-item nav-link btn btn-outline-primary " href="/tienda">Articulos</a>
 	      					<c:forEach items="${roles}" var="role">
 								<c:if test="${role.name.equals('ROLE_ADMIN')}">
 									<a class="nav-item nav-link btn btn-info" href="/admins">Zona de Administradores</a>

@@ -97,6 +97,11 @@ public class AppService {
     	return petRepository.save(newPet);
     }
     
+    //Actualizar Mascota
+    public Pet updatePet(Pet pet) {
+    	return petRepository.save(pet);
+    }
+    
     //Buscar todas las Mascotas
     public List<Pet> findAllPets(){
     	return petRepository.findAll();

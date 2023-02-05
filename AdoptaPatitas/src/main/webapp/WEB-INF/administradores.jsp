@@ -106,6 +106,40 @@
 					</table>
 				</div>
 			</div>
+			
+			<div class="row">
+				<form action="/search" method="POST">
+					<input type="search" name="pet" placeholder="Mascota">
+					<input type="submit" value="Buscar">						
+				</form>	
+				<div class="col-4">
+					<h1>Mascotas</h1>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Edad</th>
+								<th>Sexo</th>
+								<th>N° Vacunas</th>
+								<th>Desparasitad@</th>
+								<th>Microchip</th>							
+							</tr>
+						</thead>
+						<tbody>						
+							<c:forEach items="${pets}" var="p">
+								<tr>
+									<td><a href="/pet/${p.getId()}">${p.name}</a></td>
+									<td>${p.age}</td>
+									<td>${p.sexo}</td>
+									<td>${p.vaccine}</td>
+									<td>${p.deworming}</td>
+									<td>${p.chip}</td>
+								</tr>
+							</c:forEach>							
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
