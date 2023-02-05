@@ -136,17 +136,18 @@
 		</form:form>
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<div class="card-body">
+		<h4>Detalle Compra</h4>
+							<label>SubTotal:</label>
+							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
+						
+							<label>Descuento:</label>
+							<input type="text" value="$.0.0" readonly class="form-control"/>
+						
+							<label>Total a Pagar:</label>
+							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
+							<a href="/orden/${orden.getId()}" class="btn btn-primary">Comprar</a>
+						</div>				
 		
 		
 		
