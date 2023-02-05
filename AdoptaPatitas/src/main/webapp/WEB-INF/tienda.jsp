@@ -94,7 +94,7 @@
 				<a href="/comprar/${product.getId()}" class="btn btn-danger">Comprar</a>
 				</div>			
 			</c:forEach>
-			<a href="/cart" class="btn btn-primary">Ir a Carrito</a>			
+			<a href="/cart" class="btn btn-primary">Ver Carrito</a>			
 		</div>
 		</div>
 		<form action="/logout" method="POST">
