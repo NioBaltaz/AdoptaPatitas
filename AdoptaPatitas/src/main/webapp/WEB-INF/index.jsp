@@ -11,7 +11,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 <img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo">
+		 <img src="images/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
 		<div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-		      <img src="/img/Salva una vida.png" class="d-block w-100" alt="salva">
+		      <img src="/img/Salva.png" class="d-block w-100" alt="salva">
 		    </div>
 		    <div class="carousel-item">
 		      <img src="/img/Apadrina un compañero.png" class="d-block w-100" alt="apadrina">
@@ -79,7 +79,7 @@
 		</div>
 	
 	 <div class="container-fluid py-4" style="background-color: #82B8A0";>
-		<<h2 class="text-center">Fundaciones</h2>
+		<h2 class="text-center">Fundaciones</h2>
 		<br>
 		<footer class="d-flex justify-content-between">
 			<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
