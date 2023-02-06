@@ -6,9 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Option;
 import com.codingdojo.proyecto.models.Pet;
@@ -63,7 +60,17 @@ public class AdminsController {
     }
 	
 	@GetMapping("/admins/new/pet")
-	public String newPet(@ModelAttribute("newPet") Pet pet, Model model) {
+	public String newPet(@ModelAttribute("newPet") Pet pet, Model model, Principal principal) {
+		if(principal == null) {
+    		return "index.jsp";
+			}
+	
+		//Me regresa el username del usuario que inició sesión
+		String username = principal.getName();             
+		//Obtenemos el objeto de Usuario
+		User currentUser = service.findUserByUsername(username);              
+		//Mandamos el usuario a home.jsp
+		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("options", Option.Options);
 		return "newPet.jsp";
 	}
@@ -99,7 +106,7 @@ public class AdminsController {
             	}catch(IOException e){
             		e.printStackTrace();
             	}
-            }
+            }           
             model.addAttribute("user", currentUser);
             service.newPet(pet);                     
             return "redirect:/adopta";
