@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 	  		<div class="container-fluid">
 	    		<a href="http://localhost:8080"><img src="img/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top" alt="Logo"></a>
@@ -55,6 +55,7 @@
 		<div class="header text-center">
 			<img src="/img/Adopta.png" alt="Adopta">
 		</div>
+		<br>
 			<div class=" row text-center">
 				<h1 class="font-weight-lighter text-primary">Mascotitas listas para ser un nuevo Integrante de tu Familia</h1>
 			</div>
@@ -76,14 +77,15 @@
 						</c:if>						
 					</c:forEach>			
 				</div>
+				<br>
 				<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Fundaciones</h2>
-			<footer class="d-flex justify-content-between">
+			<footer class="d-flex justify-content-between fluid">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
-				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			</footer>
 		</div>
 	</div>

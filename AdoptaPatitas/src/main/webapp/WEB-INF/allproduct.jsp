@@ -61,7 +61,6 @@
 				</tr>
 			</thead>
 			<tbody>
-
 				<c:forEach items="${products}" var="product">
 				<tr>
 					<td><a href="//${product.id}">${product.name}</a></td>

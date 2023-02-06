@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style> 
-        
-        	body{
-        		background-image: linear-gradient(160deg, #ffd976 0, #f6de76 7.14%, #e9e278 14.29%, #dbe67c 21.43%, #ccea82 28.57%, #bded89 35.71%, #aef092 42.86%, #9df29d 50%, #8bf4a9 57.14%, #78f6b5 64.29%, #62f7c2 71.43%, #48f8d0 78.57%, #1ef9de 85.71%, #00f9ec 92.86%, #00f9fa 100%);
-        	}
         	p{
         	text-align: center;
            font-size:30px;
@@ -57,14 +53,14 @@
 		</div>
 		<div class="row">
 			<div class ="col">
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Roy.png" alt="Roy" class="img-thumbnail"></a><p>Roy</p>
+				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Roy.png" alt="Roy" class="img-thumbnail"width="400" height="400"></a><p>Roy</p>
 				
 			</div>
 			<div class ="col">
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Kafka.jpg" alt="Kafka" class="img-thumbnail" width="400" height="400"></a><p>Kafka</p>
+				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Kafka.jpg" alt="Kafka" class="img-thumbnail" width="600" height="600"></a><p>Kafka</p>
 			</div>
 			<div class ="col">
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Sacha.jpg" alt="Maico y Sacha" class="img-thumbnail"><p>Maico y Sasha</p>
+				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Sacha.jpg" alt="Maico y Sacha" class="img-thumbnail" width="400" height="400"><p>Maico y Sasha</p>
 			</div>
 		</div>
 		<div class="row">
@@ -72,15 +68,15 @@
 				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Ramona.jpg" alt="Ramona" class="img-thumbnail" width="400" height="400"></a><p>Ramona</p>
 			</div>
 			<div class ="col">
-				<img src="https://pumakawa.org/wp-content/uploads/2019/12/Estanislao-Monte.jpg" alt="Estanislao" class="img-thumbnail"><p>Estanislao</p>
+				<img src="https://pumakawa.org/wp-content/uploads/2019/12/Estanislao-Monte.jpg" alt="Estanislao" class="img-thumbnail" width="400" height="400"><p>Estanislao</p>
 			</div>
 			<div class ="col">
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Firpa-y-Unhito.jpg" alt="Firpa y Unhito" class="img-thumbnail"><p>Firpa y Unhito</p>
+				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Firpa-y-Unhito.jpg" alt="Firpa y Unhito" class="img-thumbnail" width="400" height="400"><p>Firpa y Unhito</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class ="col">
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Linda.jpg" alt="Linda" class="img-thumbnail"><p>Linda</p>
+				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Linda.jpg" alt="Linda" class="img-thumbnail" width="400" height="400"><p>Linda</p>
 			</div>
 			<div class ="col">
 				

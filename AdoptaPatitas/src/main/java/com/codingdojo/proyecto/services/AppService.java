@@ -172,10 +172,6 @@ public class AppService {
 	return boletaRepository.save(newBoleta);
 	}
 	
-	public List<Boleta> findAllBoletas(){
-	return boletaRepository.findAll();
-	}
-	
 	public Boleta findBoletaById(Long id) {
 	return boletaRepository.findById(id).orElse(null);
 	}
