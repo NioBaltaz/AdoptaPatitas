@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
@@ -70,14 +70,16 @@
 			<tbody>
 				<c:forEach items="${products}" var="product">
 				<tr>
-					<td><a href="//${product.id}">${product.nombre}</a></td>
+					<td>${product.nombre}</td>
 					<td>${product.codigo}</td>
 					<td>${product.precio}</td>
 					<td>${product.existencia}</td>
 					<td>
 					</td>
+					<td>
+					<a href="/product/delete/{id_producto}${product.id}" class="button is-dark">Delete</a>
+					</td>
 				</tr>
-				<a href="/product/delete/{id_producto}${product.id}" class="button is-dark">Delete</a>
 				</c:forEach>
 			</tbody>
 		</table>

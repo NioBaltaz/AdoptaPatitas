@@ -8,6 +8,10 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <meta charset="ISO-8859-1">
 <title>Finalizar compra</title>
+
+<style>
+
+</style>
 </head>
 <body>
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
@@ -138,9 +142,9 @@
 			</div>
 		</form:form>
 	</div>
-		<div class="row">
+		<div class="row-flex">
 			<div class="float-md-right">
-				<div class="card-body">
+				<div class="card-body md-right">
 							<h4>Detalle Compra</h4>
 							<label>SubTotal:</label>
 							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
