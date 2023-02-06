@@ -167,14 +167,11 @@ public class AppService {
 		 return productRepository.findById(id_product).orElse(null);
     }
 //Boleta
-	public Boleta create_boleta(Boleta newBoleta, User user) {
-	newBoleta.setUser(user);
-	return boletaRepository.save(newBoleta);
-	}
-	
-	public List<Boleta> findAllBoletas(){
-	return boletaRepository.findAll();
-	}
+    public Boleta newBoleta(Boleta newBoleta, User user) {
+    	newBoleta.setUser(user);
+    	return boletaRepository.save(newBoleta);
+    }
+    
 	
 	public Boleta findBoletaById(Long id) {
 	return boletaRepository.findById(id).orElse(null);

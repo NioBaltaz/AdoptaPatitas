@@ -13,16 +13,16 @@
 	<body>
 	
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 <img src="images/adopta_patitas.png" width="80" height="100" class="d-inline-block align-top" alt="Logo">
-		  <a class="navbar-brand" href="http:/localhost:8080">AdoptaPatitas</a>
+		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
-		      		      <li class="nav-item active">
-		        <a class="nav-link" href="/index">Home<span class="sr-only"></span></a>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
 		      </li>
 		      <li class="nav-item active">
 		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
@@ -37,28 +37,26 @@
 		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
 		      </li>			      
 		      <li class="nav-item">
-		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
 		      </li>
-		    </ul>
-		    <form class="form-inline my-2 my-lg-0 ml">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-success my-2 my-sm-0 ml-auto" type="submit">Search</button>
-		      
-		    </form>
-		    
-		    <ul class="navbar-nav">
-		    	<li class="nav-item dropdown">
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="#">Action</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <div class="dropdown-divider"></div>
-		          <a class="dropdown-item" href="#">Something else here</a>
-		        </div>
-		      </li>
-		    </ul>
+		      		 <li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li> 
+		    </ul> 
+		    <form action="/logout" method="POST">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					</form>
 		  </div>
 		</nav>
-	
+		<br>
+		<div class= "header text-center">	
+				<img src="/img/finaliza_tu_compra.png" alt="finaliza tu compras">
+		</div>
 		<div class="container mt-4">
 			<h3>Carrito</h3>
 			<br>
@@ -93,7 +91,6 @@
 						</tbody>
 					</table>
 				</div>
-				
 				<div class="col-sm-4">
 					<div class="card">
 						<div class="card-header">
@@ -109,21 +106,24 @@
 						
 							<label>Total a Pagar:</label>
 							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
-							<a href="/orden/${orden.getId()}" class="btn btn-primary">Comprar</a>
+							<br>
+							<a href="/carrito/orden${orden.getId()}" class="btn btn-primary">Comprar</a>
+							
 						</div>						
 					</div>
 				</div>
 			</div>
 		</div>	
-		
+		<br>
 			<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<br>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
-				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
 			</div>

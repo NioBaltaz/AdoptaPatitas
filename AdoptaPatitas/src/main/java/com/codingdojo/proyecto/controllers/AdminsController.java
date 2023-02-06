@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Option;
 import com.codingdojo.proyecto.models.Pet;
@@ -143,7 +145,6 @@ public class AdminsController {
             User currentUser = service.findUserByUsername(username);
             
             if(!imagen.isEmpty()) {
-            	//Rut/aceptar/adopcion/a
             	Path directorioImagenes = Paths.get("src/main/resources/static/img");
             	//Ruta Absoluta
             	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
@@ -156,7 +157,7 @@ public class AdminsController {
             		//Guardar mi imagen en la ruta
             		Files.write(rutaCompleta, bytesImg);   
             		
-            		//Nombre dentro del atributo image en Pet
+            		//Nombre dentro del atributo image en product
             		product.setImage(imagen.getOriginalFilename());
            
             	}catch(IOException e){
@@ -171,7 +172,7 @@ public class AdminsController {
 	
 
 
-	@GetMapping("/admins/product/add/allproduct")
+	@GetMapping("/admins/add/product/allproduct")
     public String allProduct(Model model) {  
     	List<Product> products = service.findAllProducts();
     	model.addAttribute("products", products);
@@ -179,7 +180,7 @@ public class AdminsController {
 	}
 
 	// Delete Producto
-	@GetMapping("/product/delete/{id_producto}")
+	@DeleteMapping("/product/delete/{id_producto}")
 	public String deleteProducto(@PathVariable("id_producto") Long id_producto) {
 		Product newProduct = service.findProductById(id_producto);
 		if (newProduct != null) {

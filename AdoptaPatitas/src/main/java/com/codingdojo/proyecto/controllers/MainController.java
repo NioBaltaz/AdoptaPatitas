@@ -1,5 +1,9 @@
 package com.codingdojo.proyecto.controllers;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +20,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.codingdojo.proyecto.models.Boleta;
 import com.codingdojo.proyecto.models.Carrito;
+import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
@@ -172,7 +179,25 @@ public class MainController {
 		model.addAttribute("totalPagar", totalPagar);
 		return "carrito.jsp";
 	}
-	
+    
+    @GetMapping("/carrito/orden")
+    public String boleta(@ModelAttribute("newBoleta") Boleta boleta) {
+    		return "boleta.jsp";
+    	}
+	@PostMapping("/carrito/add/orden")
+	public String createBoleta(@Valid @ModelAttribute("boleta") Boleta boleta, BindingResult result) {
+		if (result.hasErrors()) {
+
+			System.out.println("Error creando la boleta");
+			return "carrito.jsp";
+		} else {
+			System.out.println("------- Se creo la boleta ------");
+			service.newBoleta(boleta,null);
+			return "redirect:/boleta";
+		}
+	}
+
+    	
 	@GetMapping("/comprar/{id_producto}")
 	public String comprar(@PathVariable("id_producto") Long id_producto, HttpSession session, Model model) {
 		totalPagar = 0.0;
@@ -216,4 +241,5 @@ public class MainController {
     	return "post_perro.jsp";
     }
 
+    
 }

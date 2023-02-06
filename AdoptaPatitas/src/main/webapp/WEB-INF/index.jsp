@@ -4,90 +4,91 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>AdoptaPatitas</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <style> 
-        
-        	body{
-        		background-image: linear-gradient(160deg, #ffd976 0, #f6de76 7.14%, #e9e278 14.29%, #dbe67c 21.43%, #ccea82 28.57%, #bded89 35.71%, #aef092 42.86%, #9df29d 50%, #8bf4a9 57.14%, #78f6b5 64.29%, #62f7c2 71.43%, #48f8d0 78.57%, #1ef9de 85.71%, #00f9ec 92.86%, #00f9fa 100%);
-        	}
-            h1 { 
-                background-image: url("https://th.bing.com/th/id/R.f347bce976a4afa8cd2e7b33a10ce632?rik=troTyo5aiCVSEg&pid=ImgRaw&r=0"); 
-                background-position: center 25%; 
-                background-size: cover; 
-                height:600px;
-                margin: 0 px;
-            }
-            	div.row nav a{
-            	margin-left: 10%;
-            	font-size: 35px;
-            }
-            div.row nav{
-            background-color: transparent;
-            }
-            
-            h2{
-            text-align:center;
-            font-size:70px;
-			padding-top:150px;
-            }
-            
-           .nosotros{
-           text-align:center;
-           font-size:30px;
-           margin:40px;
-           line-height: 50px;
-           }
-			h4{
-			background-image: url(LogoAdoptaPatita2.0.jpeg);
-    		background-size: cover;
-			}
-        </style> 
-	</head>
-	<body>
-		<div class="container">
-	
-			<div class= "header">
-				<h1></h1>
-				<h4></h4> 
-			</div>
+<head>
+<meta charset="UTF-8">
+<title>Adopta Patitas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		 <img src="images/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
 		
-			<div class="row">
-				<nav class="navbar navbar-expand-lg navbar-light">
-  					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    					<span class="navbar-toggler-icon"></span>
-  					</button>
-  					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    					<div class="navbar-nav">
-      						<a class="nav-item nav-link btn btn-outline-primary" href="/blog">Blog</a>
-      						<a class="nav-item nav-link btn btn-outline-primary" href="/apadrina">Apadrina</a>
-      						<a class="nav-item nav-link btn btn-outline-primary " href="/adopta">Adopta</a>
-      						<a class="nav-item nav-link btn btn-outline-primary " href="/tienda">Articulos</a>
-	      					<c:forEach items="${roles}" var="role">
-								<c:if test="${role.name.equals('ROLE_ADMIN')}">
-									<a class="nav-item nav-link btn btn-info" href="/admins">Zona de Administradores</a>
-								</c:if>
-							</c:forEach>
-    					</div>
-  					</div>
-				</nav>	
-			</div>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+		      </li>	  
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+		      </li>	
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+		      </li>			      
+		      <li class="nav-item">
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
+		      </li>
+		      		 <li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li> 
+		    </ul> 
+		    <form action="/logout" method="POST">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					</form>
+		  </div>
+		</nav>
+		<div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+		    <div class="carousel-item active">
+		      <img src="/img/Salva.png" class="d-block w-100" alt="salva">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="/img/Apadrina un compañero.png" class="d-block w-100" alt="apadrina">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="/img/No compres.png" class="d-block w-100" alt="no compres">
+		    </div>
+		  </div>
+		</div>
 	 
-	 		<div class="row">
+	 		<div class="row text-center">
 	 			<h2> Nosotros</h2>
 	 			<div>
-	 				<p class= "nosotros"> Nos une el amor por los animales y luchamos por justicia y respeto para ellos. Tenemos a cargo animales rescatados del maltrato, la explotaciÃ³n y el abandono en nuestro refugio y hogares temporales,donde podrÃ¡s apadrinar tambiÃ©n. El objetivo de esta pÃ¡gina es otorgarles un canal entre varias fundaciones de distintas regiones de Chile. Â¡Somos felices haciendo lo que amamos!</p>
+	 				<p>Nos une el amor por los animales y luchamos por justicia y respeto para ellos. Tenemos a cargo animales rescatados del maltrato, la explotación y el abandono junto con fundaciones en refugios y hogares temporales, donde no solo podrás adoptar un compañero, sino que también apadrinar una vida que necesita de ayuda.
+	 				<br>
+	 				Nuestro objetivo es poder otorgar un canal entre varias fundaciones de distintas regiones de Chile para así poder tener un mayor alcance y salvar más animalitos. No solo ayudamos a perros y gatos, sino que también a conejos con ayuda con fundaciones como Bunny C.A.R.E y fundación Jacinto.
+	 				<br>
+	 				<Strong>¡Somos felices haciendo lo que amamos!</Strong></p>
 				 </div>
 	 
 			</div>
 		</div>
 	
-	 		<div class="footer">
-	 
-	 			<h3>Aqui ira los nombres de las fundaciones con sus iconos y el boton que de a sus redes sociales</h3>
-		 	
-		 	</div>
-	</body>
+	 <div class="container-fluid py-4" style="background-color: #82B8A0";>
+		<h2 class="text-center">Fundaciones</h2>
+		<br>
+		<footer class="d-flex justify-content-between">
+			<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
+			<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
+			<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
+			<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
+			<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+			
+		</footer>
+	</div>
+</body>
 </html>
