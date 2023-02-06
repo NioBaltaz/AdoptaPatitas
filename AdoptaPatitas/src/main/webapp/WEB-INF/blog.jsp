@@ -17,7 +17,7 @@
   </style>
 </head>
 <body>
-		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
