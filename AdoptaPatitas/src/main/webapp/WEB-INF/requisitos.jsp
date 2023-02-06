@@ -41,6 +41,7 @@
 				</div>
 	  		</div>
 			</nav>
+			<br>
 			<div class= "header text-center">	
 
 				<img src="/img/requisitos_de_adopcion.png" alt="requisitos de adopcion">
@@ -133,9 +134,11 @@
 				</div>
 			</div>
 		</form:form>
+		<br>
 		</div>		
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<br>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>

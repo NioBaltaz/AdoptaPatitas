@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.proyecto.models.Carrito;
+import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
@@ -170,7 +171,25 @@ public class MainController {
 		model.addAttribute("totalPagar", totalPagar);
 		return "carrito.jsp";
 	}
-	
+    
+    @PostMapping("/carrito/orden")
+    public String boleta(@Valid @ModelAttribute("newForm") Form form, BindingResult result, Principal principal) {
+    	if(principal == null) {
+    		return "boleta.jsp";
+    	}
+    	
+        if(result.hasErrors()) {
+        	return "carrito.jsp";
+        }else {
+        	//Me regresa el username del usuario que inició sesión
+            String username = principal.getName();             
+            //Obtenemos el objeto de Usuario
+            User currentUser = service.findUserByUsername(username);              
+            //Mandamos el usuario a home.jsp
+            service.create_form(form, currentUser);
+            return "info_form.jsp";
+        }
+    }    
 	@GetMapping("/comprar/{id_producto}")
 	public String comprar(@PathVariable("id_producto") Long id_producto, HttpSession session, Model model) {
 		totalPagar = 0.0;
@@ -214,4 +233,5 @@ public class MainController {
     	return "post_perro.jsp";
     }
 
+    
 }

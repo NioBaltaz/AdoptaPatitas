@@ -42,7 +42,7 @@
 	  		</div>
 			</nav>
 		</div>
-	
+	<br>
 		<div class="container">
 			<div class="row mt-4">
 				<div class="col-8">
@@ -144,6 +144,20 @@
 					</form:form>
 				</div>
 			</div>
+		</div>
+		<br>
+		<div class="container-fluid py-4" style="background-color: #82B8A0">
+			<h2 class="text-center">Fundaciones</h2>
+			<br>
+			<footer class="d-flex justify-content-between">
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+			
+			</footer>
+		
 		</div>
 	</body>
 </html>

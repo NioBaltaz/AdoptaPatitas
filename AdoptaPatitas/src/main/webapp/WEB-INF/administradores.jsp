@@ -52,6 +52,7 @@
 				</div>
 	  		</div>
 		</nav>
+		<br>
 		<div class= "header text-center">	
 				<img src="/img/zona_de_administradores_1.png" alt="zona de administradores_1">
 			</div>
@@ -145,17 +146,17 @@
 				</div>
 			</div>
 		</div>
+		<br>
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<br>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
-				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
-			
-			</footer>
-		
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>			
+			</footer>		
 		</div>
 	</body>
 </html>

@@ -10,6 +10,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	</head>
 	<body>
+	
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="#">AdoptaPatitas</a>
@@ -35,7 +36,7 @@
 		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
 		      </li>			      
 		      <li class="nav-item">
-		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
 		      </li>
 		    </ul> 
 		    <form action="/logout" method="POST">
@@ -44,8 +45,9 @@
 					</form>
 		  </div>
 		</nav>
-		<div class= "header text-center">	
-				<img src="/img/tienda.png" alt="tienda">
+		
+		<div class= "header text-center container-fluid">	
+				<img src="/img/tienda.png" alt="tienda" class="img-fluid">
 			</div>
 		<div class="container">
 		<div class="row">
@@ -57,7 +59,7 @@
 					</c:if>
 					<h4 class="h1">${product.nombre}</h4>
 					<h4 class=text-danger>Precio: ${product.precio}</h4>
-					<small><h4>Descripción: ${product.description}</h4></small>
+					<h4><small>Descripción: ${product.description}</small></h4>
 					<a href="/agregarCarrito/${product.getId()}" class="btn btn-outline-info">Agregar a Carrito</a>					
 				<a href="/comprar/${product.getId()}" class="btn btn-primary">Comprar</a>
 				</div>			
@@ -65,21 +67,20 @@
 			<a href="/cart" class="btn btn-primary">Ver Carrito</a>			
 		</div>
 		</div>
-		<form action="/logout" method="POST">
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-		</form>
+
 	<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<br>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
-			
+		
 			</footer>
 		
 		</div>
+	
 	</body>
 </html>

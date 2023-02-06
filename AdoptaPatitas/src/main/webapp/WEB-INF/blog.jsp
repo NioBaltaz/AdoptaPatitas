@@ -17,7 +17,7 @@
   </style>
 </head>
 <body>
-	<div class="container-fluid ">
+
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 	  			<div class="container-fluid">
 	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
@@ -48,7 +48,11 @@
 				</div>
 	  		</div>
 			</nav>
+
 			<br>
+
+				<div class="container-fluid ">
+
 			<div class="header text-center">	
 				<img src="/img/blog-conejo.png" alt="blog patitas">
 			</div>
