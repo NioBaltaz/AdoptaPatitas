@@ -17,7 +17,7 @@
   </style>
 </head>
 <body>
-	<div class="container-fluid ">
+
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 	  			<div class="container-fluid">
 	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
@@ -48,6 +48,7 @@
 				</div>
 	  		</div>
 			</nav>
+				<div class="container-fluid ">
 			<div class="header text-center">	
 				<img src="/img/blog-conejo.png" alt="blog patitas">
 			</div>
@@ -150,7 +151,7 @@
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
-				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
 		
