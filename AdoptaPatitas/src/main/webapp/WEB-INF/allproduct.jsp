@@ -84,7 +84,6 @@
 			</tbody>
 		</table>
 	</div>
-<a href="/admins/add/product/update" class="btn btn-dark">Editar</a>
 <br>
 <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>

@@ -51,10 +51,16 @@
 						</c:forEach>
 	       	 		</li> 
 		    </ul> 
-		    <form action="/logout" method="POST">
+		    <c:if test="${currentUser == null}">
+		   		<a href="/login" class="btn btn-dark">Login/Register</a>
+		   	</c:if>
+		   
+		   	<c:if test="${currentUser != null}">
+				<form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
+			        <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+			    </form>
+		    </c:if> 
 		  </div>
 		</nav>
 		</div>

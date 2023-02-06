@@ -54,18 +54,22 @@
 						</c:forEach>
 	       	 </li>  		      
 		    </ul> 
-		    <form action="/logout" method="POST">
+			<c:if test="${currentUser == null}">
+		   		<a href="/login" class="btn btn-dark">Login/Register</a>
+		   	</c:if>
+		   
+		   	<c:if test="${currentUser != null}">
+			    <form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
+			        <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+			    </form>
+		    </c:if> 
 		  </div>
 		</nav>
 		<br>
 		<div class= "header text-center">	
 				<img src="/img/zona_de_administradores_1.png" alt="zona de administradores_1">
 			</div>
-			<a href="/admins/new/pet" class="btn btn-dark">Añadir nueva mascota</a>
-			<a href="/admins/add/product" class="btn btn-dark">Añadir nuevo producto</a>
 			<div class="row">
 				<div class="col-8">
 					<h1>Solicitudes de Adopción</h1>

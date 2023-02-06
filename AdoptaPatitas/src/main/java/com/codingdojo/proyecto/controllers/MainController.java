@@ -1,16 +1,10 @@
 package com.codingdojo.proyecto.controllers;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.codingdojo.proyecto.models.Boleta;
 import com.codingdojo.proyecto.models.Carrito;
-import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
 import com.codingdojo.proyecto.models.Product;
 import com.codingdojo.proyecto.models.User;
@@ -42,31 +33,22 @@ public class MainController {
 	
 
     @GetMapping("/")
-    public String home(Principal principal, Model model) {
-    	
+    public String home(Principal principal, Model model) {    	
     	if(principal == null) {
     		return "index.jsp";
-    	}
-    	
-        //Me regresa el username del usuario que inició sesión
-        String username = principal.getName();             
+    	}            
+    	String username = principal.getName();
         //Obtenemos el objeto de Usuario
         User currentUser = service.findUserByUsername(username);              
         //Mandamos el usuario a home.jsp
         model.addAttribute("currentUser", currentUser);
-
         model.addAttribute("roles", currentUser.getRoles());
         return "index.jsp";
     }
 
-    @GetMapping("/registration")
-    public String register(@ModelAttribute("user") User user) {
-        return "register.jsp";
-    }
-
     @PostMapping("/registration")
     public String registration(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-        service.saveWithAdminRole(user, result);
+        service.saveWithUserRole(user, result);
         if(result.hasErrors()) {
             return "register.jsp";
         }else {
@@ -75,7 +57,7 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String login(@RequestParam(value="error", required=false) String error, Model model) {
+    public String login(@RequestParam(value="error", required=false) String error, Model model, @ModelAttribute("user") User user) {
         if(error != null) {
             model.addAttribute("errorMessage", "Credenciales inválidas, intentar nuevamente.");
         }
@@ -83,18 +65,35 @@ public class MainController {
     }
     
     @GetMapping("/blog")
-    public String blog() {    	
+    public String blog(Principal principal, Model model) { 
+    	if(principal == null) {
+    		return "blog.jsp";
+    	}            
+    	String username = principal.getName();
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
     	return "blog.jsp";
     }
     
     @GetMapping("/apadrina")
-    public String apadrina() {    	
+    public String apadrina(Principal principal, Model model) { 
+    	if(principal == null) {
+    		return "apadrina.jsp";
+    	}            
+    	String username = principal.getName();
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
     	return "apadrina.jsp";
     }
     
     @GetMapping("/adopta")
-    public String adopta(Principal principal, Model model) {
-    	            
+    public String adopta(Principal principal, Model model) {    	            
     	if(principal == null) {
     		List<Pet> pets = service.findAllPets();
         	model.addAttribute("pets", pets);            
@@ -238,7 +237,5 @@ public class MainController {
     @GetMapping("/post_perro")
     public String post_perro() {
     	return "post_perro.jsp";
-    }
-
-    
+    }    
 }
