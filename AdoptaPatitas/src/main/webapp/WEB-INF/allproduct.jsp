@@ -1,12 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<<<<<<< HEAD
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"pageEncoding="ISO-8859-1"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
-=======
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
->>>>>>> branch 'master' of https://github.com/NioBaltaz/AdoptaPatitas.git
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,87 +15,51 @@
 	</style>
 </head>
 <body>
-
-		<div class="container-fluid">
-			
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-	  			<div class="container-fluid">
-	    			<a href="http://localhost:8080/%22%3E"></a><img src="images/adopta_patitas.png" width="60" height="60" class="d-inline-block align-top" alt="Logo">
-	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      		<span class="navbar-toggler-icon"></span>
-	    		</button>
-	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	        		<li class="nav-item">
-	          		<a class="nav-link active" aria-current="page" href="/blog">Blog</a>
-	        		</li>
-	        		<li class="nav-item">
-	          		<a class="nav-link" href="/apadrina">Apadrina</a>
-	        		</li>
-	        		<li class="nav-item dropdown">
-	          		<a class="nav-link" href="/adopta">Adopta</a>
-	        		</li>
-	       	 		<li class="nav-item">
-	          		<a class="nav-link" href="/tienda">Articulos</a>
-	       	 		</li>
-	       	 		<li>
-	       	 			<c:forEach items="${roles}" var="role">
-							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-link" href="/admins">Zona de Administradores</a>
-							</c:if>
-						</c:forEach>
-	       	 		</li>
-	      			</ul>
-	    		</div>
-	    		<div>
-					<form action="/logout" method="POST">
+	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+		      </li>	  
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+		      </li>	
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+		      </li>			       
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/admins/new/pet">Agrega Mascota<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/admins/add/product">Agrega Producto<span class="sr-only"></span></a>
+		      </li>			      
+		    </ul> 
+		    <form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
 					</form>
-				</div>
-	  		</div>
+		  </div>
 		</nav>
-		</div>
-<h1>Tabla productos</h1>
-<div class="container">
-	<div class="container-fluid ">
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-	  			<div class="container-fluid">
-	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
-	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      		<span class="navbar-toggler-icon"></span>
-	    		</button>
-	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	        		<li class="nav-item">
-	          		<a class="nav-link" href="/blog">blog</a>
-	        		</li>
-	        		<li class="nav-item">
-	          		<a class="nav-link" href="/apadrina">Apadrina</a>
-	        		</li>
-	        		<li class="nav-item dropdown">
-	          		<a class="nav-link" href="/adopta">Adopta</a>
-	        		</li>
-	       	 		<li class="nav-item">
-	          		<a class="nav-link" href="/tienda">Articulos</a>
-	       	 		</li>
-	      			</ul>
-	    		</div>
-	    		<div>
-					<form action="/logout" method="POST">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
-				</div>
-	  		</div>
-			</nav>
 			<div class= "header text-center">	
 				<img src="/img/zona_de_administradores_4.png" alt="ingresar mascota 4">
 			</div>
-		</div>
 
-	<table class="table is-fullwidth is-bordered">
-			<thead class="dashtable">
+	<h1>Tabla productos</h1>
+
+	<div class="container-fluid">
+		<table class="table is-fullwidth is-bordered">
+				<thead class="dashtable">
 				<tr>
 					<td>Producto</td>
 					<td>Codigo</td>
@@ -117,14 +75,15 @@
 					<td>${product.precio}</td>
 					<td>${product.existencia}</td>
 					<td>
-	
 					</td>
 				</tr>
+				<a href="/product/delete/{id_producto}${product.id}" class="button is-dark">Delete</a>
 				</c:forEach>
 			</tbody>
 		</table>
-</div>
+	</div>
 <a href="/admins/add/product/update" class="btn btn-dark">Editar</a>
+<br>
 <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
 			<br>

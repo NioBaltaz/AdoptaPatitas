@@ -17,38 +17,47 @@
   </style>
 </head>
 <body>
-
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-	  			<div class="container-fluid">
-	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="80" height="80" class="d-inline-block align-top" alt="Logo"></a>
-	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      		<span class="navbar-toggler-icon"></span>
-	    		</button>
-	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	        		<li class="nav-item">
-	          		<a class="nav-link" href="/blog">blog</a>
-	        		</li>
-	        		<li class="nav-item">
-	          		<a class="nav-link" href="/apadrina">Apadrina</a>
-	        		</li>
-	        		<li class="nav-item dropdown">
-	          		<a class="nav-link" href="/adopta">Adopta</a>
-	        		</li>
-	       	 		<li class="nav-item">
-	          		<a class="nav-link" href="/tienda">Articulos</a>
-	       	 		</li>
-	      			</ul>
-	    		</div>
-	    		<div>
-					<form action="/logout" method="POST">
+		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+		      </li>	  
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+		      </li>	
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+		      </li>			      
+		      <li class="nav-item">
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
+		      </li>
+		      		 <li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li> 
+		    </ul> 
+		    <form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
 					</form>
-				</div>
-	  		</div>
-			</nav>
-
+		  </div>
+		</nav>
 			<br>
 
 				<div class="container-fluid ">

@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,43 +19,52 @@
 </style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE";>
-
-	    			<a href="http://localhost:8080"><img src="images/adopta_patitas.png" width="30" height="30" class="d-inline-block align-top ml-2" alt="Logo"></a>
-	    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      		<span class="navbar-toggler-icon"></span>
-	    		</button>
-	    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	        		<li class="nav-item">
-	          		<a class="nav-link active" aria-current="page" href="/blog">Blog</a>
-	        		</li>
-	        		<li class="nav-item">
-	          		<a class="nav-link" href="/apadrina">Apadrina</a>
-	        		</li>
-	        		<li class="nav-item dropdown">
-	          		<a class="nav-link" href="/adopta">Adopta</a>
-	        		</li>
-	       	 		<li class="nav-item">
-	          		<a class="nav-link" href="/tienda">Articulos</a>
-	       	 		</li>
-	      			</ul>
-	    		</div>
-	    	
-	    		<div>
-					<form action="/logout" method="POST">
+		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+		      </li>	  
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+		      </li>	
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+		      </li>			      
+		      <li class="nav-item">
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
+		      </li>
+		      		 <li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li> 
+		    </ul> 
+		    <form action="/logout" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					<input type="submit" value="Cerrar SesiÃ³n" class="btn btn-dark"/>
 					</form>
-				</div>
+		  </div>
 		</nav>
+		<br>
 		<div class="container-fluid">
 		<div>
-			<h2 class= text-center>¿Que es Apadrinar?</h2>
+			<h2 class= text-center>Â¿Que es Apadrinar?</h2>
 			<p class=text-center>Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
-			<br>
-			<h2 style="text-align:center">¿Que es Apadrinar?</h2>
-			<p>Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
 			<br>
 		</div>
 		<div class="row">
@@ -108,7 +119,7 @@
 			<br>
 			<p style="color: #0000FF">Paginas de apadrinamiento</p>
 			<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img alt="Fundacion Huella Animal" src="/img/FHA-Blanco.png"  width="150" height="100"></a>
-			<a href="https://m.facebook.com/Fundación-Jacinto-106297028748431/"><img alt="SI" src="/img/FundacionJacinto.jpg"  width="100" height="100"></a>
+			<a href="https://m.facebook.com/FundaciÃ³n-Jacinto-106297028748431/"><img alt="SI" src="/img/FundacionJacinto.jpg"  width="100" height="100"></a>
 		</div>
 		<br>
 		<div class="container-fluid py-4" style="background-color: #82B8A0">

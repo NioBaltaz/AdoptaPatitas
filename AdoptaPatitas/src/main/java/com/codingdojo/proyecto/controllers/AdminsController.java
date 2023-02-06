@@ -145,7 +145,6 @@ public class AdminsController {
             User currentUser = service.findUserByUsername(username);
             
             if(!imagen.isEmpty()) {
-            	//Rut/aceptar/adopcion/a
             	Path directorioImagenes = Paths.get("src/main/resources/static/img");
             	//Ruta Absoluta
             	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
@@ -158,7 +157,7 @@ public class AdminsController {
             		//Guardar mi imagen en la ruta
             		Files.write(rutaCompleta, bytesImg);   
             		
-            		//Nombre dentro del atributo image en Pet
+            		//Nombre dentro del atributo image en product
             		product.setImage(imagen.getOriginalFilename());
            
             	}catch(IOException e){

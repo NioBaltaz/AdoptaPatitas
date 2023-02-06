@@ -1,5 +1,9 @@
 package com.codingdojo.proyecto.controllers;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +20,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.codingdojo.proyecto.models.Boleta;
 import com.codingdojo.proyecto.models.Carrito;
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
@@ -172,24 +178,24 @@ public class MainController {
 		return "carrito.jsp";
 	}
     
-    @PostMapping("/carrito/orden")
-    public String boleta(@Valid @ModelAttribute("newForm") Form form, BindingResult result, Principal principal) {
-    	if(principal == null) {
+    @GetMapping("/carrito/orden")
+    public String boleta(@ModelAttribute("newBoleta") Boleta boleta) {
     		return "boleta.jsp";
     	}
+	@PostMapping("/carrito/add/orden")
+	public String createBoleta(@Valid @ModelAttribute("boleta") Boleta boleta, BindingResult result) {
+		if (result.hasErrors()) {
+
+			System.out.println("Error creando la boleta");
+			return "carrito.jsp";
+		} else {
+			System.out.println("------- Se creo la boleta ------");
+			service.newBoleta(boleta,null);
+			return "redirect:/boleta";
+		}
+	}
+
     	
-        if(result.hasErrors()) {
-        	return "carrito.jsp";
-        }else {
-        	//Me regresa el username del usuario que inició sesión
-            String username = principal.getName();             
-            //Obtenemos el objeto de Usuario
-            User currentUser = service.findUserByUsername(username);              
-            //Mandamos el usuario a home.jsp
-            service.create_form(form, currentUser);
-            return "info_form.jsp";
-        }
-    }    
 	@GetMapping("/comprar/{id_producto}")
 	public String comprar(@PathVariable("id_producto") Long id_producto, HttpSession session, Model model) {
 		totalPagar = 0.0;

@@ -12,15 +12,15 @@
 <body>
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
-		  <a class="navbar-brand" href="#">AdoptaPatitas</a>
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
-		      		      <li class="nav-item active">
-		        <a class="nav-link" href="/index">Home<span class="sr-only"></span></a>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
 		      </li>
 		      <li class="nav-item active">
 		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
@@ -35,32 +35,35 @@
 		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
 		      </li>			      
 		      <li class="nav-item">
-		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
 		      </li>
-		    </ul>
-		    
-		    <ul class="navbar-nav">
-		    	<li class="nav-item dropdown">
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="#">Action</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <div class="dropdown-divider"></div>
-		          <a class="dropdown-item" href="#">Something else here</a>
-		        </div>
-		      </li>
-		    </ul>
+		      		 <li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li> 
+		    </ul> 
+		    <form action="/logout" method="POST">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					</form>
 		  </div>
 		</nav>
-
-		
+		<br>
+			<div class="header text-center">	
+				<img src="/img/Ingresa_Datos.png" alt="Ingresa Datos">
+			</div>
+	<div class="container mt-4">
 		<form:form action="/finalizar_compra" method="POST" modelAttribute="newBoleta">
 			<div class="row">
 				<div class="col-6">
 				
 					<div class="form-group">
 						<form:label path="nombre">Nombre</form:label>
-						<form:input path="nombre_adoptante" class="form-control"/>
-						<form:errors path="nombre_adoptante" class="text-danger"/>
+						<form:input path="nombre" class="form-control"/>
+						<form:errors path="nombre" class="text-danger"/>
 					</div>
 					
 					<div class="form-group">
@@ -134,10 +137,11 @@
 				</div>
 			</div>
 		</form:form>
-		
-		
-		<div class="card-body">
-		<h4>Detalle Compra</h4>
+	</div>
+		<div class="row">
+			<div class="float-md-right">
+				<div class="card-body">
+							<h4>Detalle Compra</h4>
 							<label>SubTotal:</label>
 							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
 						
@@ -147,9 +151,12 @@
 							<label>Total a Pagar:</label>
 							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
 							<a href="/orden/${orden.getId()}" class="btn btn-primary">Comprar</a>
-						</div>				
+				</div>	
+			</div>
+		</div>
+	
 		
-		
+		<br>
 		
 		
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
