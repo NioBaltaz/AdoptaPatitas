@@ -51,6 +51,10 @@
 		<div>
 			<h2 class= text-center>¿Que es Apadrinar?</h2>
 			<p class=text-center>Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
+			<br>
+			<h2 style="text-align:center">¿Que es Apadrinar?</h2>
+			<p>Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
+			<br>
 		</div>
 		<div class="row">
 			<div class ="col">
@@ -101,6 +105,7 @@
 			</div>
 		</div>
 		<div style="background-color: #87CEFA">
+			<br>
 			<p style="color: #0000FF">Paginas de apadrinamiento</p>
 			<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img alt="Fundacion Huella Animal" src="/img/FHA-Blanco.png"  width="150" height="100"></a>
 			<a href="https://m.facebook.com/Fundación-Jacinto-106297028748431/"><img alt="SI" src="/img/FundacionJacinto.jpg"  width="100" height="100"></a>

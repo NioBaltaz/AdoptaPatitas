@@ -54,6 +54,7 @@
 				</div>
 	  		</div>
 		</nav>
+		</div>
 		<div class="container-fluid">
 		<div class="header text-center">
 			<img src="/img/Adopta.png" alt="Adopta">

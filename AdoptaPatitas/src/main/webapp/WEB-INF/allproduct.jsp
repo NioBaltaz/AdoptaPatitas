@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<<<<<<< HEAD
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
+=======
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+>>>>>>> branch 'master' of https://github.com/NioBaltaz/AdoptaPatitas.git
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>AllProducts</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>	
 	body{
 	backgroung-color:linear-gradient(to bottom right, #99ff99 0%, #99ffcc 100%);
@@ -106,7 +112,7 @@
 			<tbody>
 				<c:forEach items="${products}" var="product">
 				<tr>
-					<td><a href="//${product.id}">${product.name}</a></td>
+					<td><a href="//${product.id}">${product.nombre}</a></td>
 					<td>${product.codigo}</td>
 					<td>${product.precio}</td>
 					<td>${product.existencia}</td>
