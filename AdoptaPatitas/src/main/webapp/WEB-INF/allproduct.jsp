@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
@@ -70,19 +70,20 @@
 			<tbody>
 				<c:forEach items="${products}" var="product">
 				<tr>
-					<td><a href="//${product.id}">${product.nombre}</a></td>
+					<td>${product.nombre}</td>
 					<td>${product.codigo}</td>
 					<td>${product.precio}</td>
 					<td>${product.existencia}</td>
 					<td>
 					</td>
+					<td>
+					<a href="/product/delete/{id_producto}${product.id}" class="button is-dark">Delete</a>
+					</td>
 				</tr>
-				<a href="/product/delete/{id_producto}${product.id}" class="button is-dark">Delete</a>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-<a href="/admins/add/product/update" class="btn btn-dark">Editar</a>
 <br>
 <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>

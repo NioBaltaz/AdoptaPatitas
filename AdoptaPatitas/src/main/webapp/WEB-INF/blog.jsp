@@ -65,7 +65,7 @@
 		  </div>
 		</nav>
 			<br>
-			<div class="header">	
+			<div class="header text-center">	
 				<img src="/img/blog-conejo.png" alt="blog patitas">
 			</div>
 		<br>

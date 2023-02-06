@@ -177,8 +177,6 @@ public class AdminsController {
 		}
 	}
 	
-
-
 	@GetMapping("/admins/add/product/allproduct")
     public String allProduct(Model model) {  
     	List<Product> products = service.findAllProducts();
