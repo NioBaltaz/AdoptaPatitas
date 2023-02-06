@@ -10,7 +10,11 @@
 <title>Finalizar compra</title>
 
 <style>
-
+div.container.md-4 {
+display:inline-block;
+position:relative;
+width:50%;
+}  
 </style>
 </head>
 <body>
@@ -137,12 +141,11 @@
 					</div>
       					
    					 </div>
-   					 <input type="submit" value="Enviar" class="btn btn-dark"/>					
+   					 
+   					<input type="submit" value="Enviar" class="btn btn-dark"/>					
 				</div>
-			</div>
-		</form:form>
-	</div>
-		<div class="row-flex">
+				<div class="col">
+				<div class="card">
 			<div class="float-md-right">
 				<div class="card-body md-right">
 							<h4>Detalle Compra</h4>
@@ -158,6 +161,11 @@
 				</div>	
 			</div>
 		</div>
+				</div>
+			</div>
+		</form:form>
+	</div>
+		
 	
 		
 		<br>
