@@ -8,15 +8,11 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<style> 
-             	p{
-        	text-align: center;
-           font-size:30px;
-           margin:20px;
-           line-height: 5px;
-           img{
-           }
-</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
@@ -63,10 +59,13 @@
 		<br>
 		<div class="container-fluid">
 		<div>
-			<h2 class= text-center>¿Que es Apadrinar?</h2>
-			<p class=text-center>Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
+			<h4 class= "text-center font-italic text-info">¿Qué es Apadrinar?</h4>
 			<br>
 		</div>
+		<p class="text-center text-info  text-info " >Primero te queremos contar que somos una comunidad que busca la inclusión de varias Fundaciones y Organizaciones.
+			 Algunos de los animales de unas fundaciones están en recuperación y tienen una historia. Generalmente, son historias en las que los humanos los hemos descuidado, extrayéndolos de su hábitat y convertidos en mascotas.
+			 Entonces pata nosotros Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
+			<br>
 		<div class="row">
 			<div class ="col">
 
@@ -75,7 +74,7 @@
 			</div>
 			<div class ="col">
 
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Kafka.jpg" alt="Kafka" class="img-thumbnail" width="600" height="600"></a><p>Kafka</p>
+				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Kafka.jpg" alt="Kafka" class="img-thumbnail" width="400" height="400"></a><p>Kafka</p>
 
 
 			</div>
@@ -115,14 +114,21 @@
 			</div>
 			</div>
 		</div>
-		<div style="background-color: #87CEFA">
-			<br>
-			<p style="color: #0000FF">Paginas de apadrinamiento</p>
-			<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img alt="Fundacion Huella Animal" src="/img/FHA-Blanco.png"  width="150" height="100"></a>
-			<a href="https://m.facebook.com/Fundación-Jacinto-106297028748431/"><img alt="SI" src="/img/FundacionJacinto.jpg"  width="100" height="100"></a>
-		</div>
 		<br>
-		<div class="container-fluid py-4" style="background-color: #82B8A0">
+		 <p>Cuentas Bancarias para Aportes.<br>BANCO ESTADO <br> Cuenta RUT <br> Chris Quelle <br>19.207.372-3 <br>proyectoarcacoquimbo@gmail.com</p>
+			        <div class="cuentas">
+				     <a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img alt="Fundacion Huella Animal" src="/img/FHA-Blanco.png"  width="300" height="300"></a>	
+			         </div>
+			   <br>
+		             
+		          
+			<br>
+			          <p>Puedes buscar Apadrinaje en este sitio también.</p>		
+			          <a href="https://m.facebook.com/Fundación-Jacinto-106297028748431/"><img alt="SI" src="/img/FundacionJacinto.jpg"  width="300" height="300"></a>
+		           
+		<br>
+		
+		  <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Fundaciones</h2>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
@@ -131,6 +137,6 @@
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			</footer>
-		</div>
+		 </div>
 </body>
 </html>
