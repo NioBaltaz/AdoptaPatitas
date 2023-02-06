@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Apadrina</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -66,70 +66,115 @@
 			 Algunos de los animales de unas fundaciones están en recuperación y tienen una historia. Generalmente, son historias en las que los humanos los hemos descuidado, extrayéndolos de su hábitat y convertidos en mascotas.
 			 Entonces pata nosotros Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
 			<br>
-		<div class="row">
-			<div class ="col">
-
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Roy.png" alt="Roy" class="img-thumbnail"width="400" height="400"></a><p>Roy</p>
-				
-			</div>
-			<div class ="col">
-
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Kafka.jpg" alt="Kafka" class="img-thumbnail" width="400" height="400"></a><p>Kafka</p>
-
-
-			</div>
-			<div class ="col">
-
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Sacha.jpg" alt="Maico y Sacha" class="img-thumbnail" width="400" height="400"><p>Maico y Sasha</p>
-
-			</div>
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+		  <div class="col">
+		    <div class="card">
+		      <img src="/img/Oliver.png" class="card-img-top" alt="Oliver">
+		      <div class="card-body">
+		        <h5 class="card-title"><strong>Nombre:</strong>Oliver</h5>
+		        <a href="https://www.instagram.com/p/CjjSLM4pqWU/" class="btn btn-primary">¡Apadriname!</a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col">
+		    <div class="card">
+		      <img src="/img/Suni.png" class="card-img-top" alt="Suni">
+		      <div class="card-body">
+		        <h5 class="card-title"><strong>Nombre:</strong>Suni</h5>
+		        <a href="https://www.instagram.com/p/ClhRlQoO98P/" class="btn btn-primary">¡Apadriname!</a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col">
+		    <div class="card">
+		      <img src="/img/Chayanne.png" class="card-img-top" alt="Chayanne">
+		      <div class="card-body">
+		        <h5 class="card-title"><strong>Nombre:</strong>Chayanne</h5>
+		       <a href="https://www.instagram.com/p/CkLyhgWJJyL/" class="btn btn-primary">¡Apadriname!</a>
+		      </div>
+		    </div>
+		  </div>
 		</div>
-		<div class="row">
-			<div class ="col">
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Ramona.jpg" alt="Ramona" class="img-fluid" width="400" height="400"></a><p>Ramona</p>
-			</div>
-			<div class ="col">
-
-				<img src="https://pumakawa.org/wp-content/uploads/2019/12/Estanislao-Monte.jpg" alt="Estanislao" class="img-thumbnail" width="400" height="400"><p>Estanislao</p>
-
-			</div>
-			<div class ="col">
-
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Firpa-y-Unhito.jpg" alt="Firpa y Unhito" class="img-thumbnail" width="400" height="400"><p>Firpa y Unhito</p>
-
-			</div>
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+		  <div class="col">
+		    <div class="card">
+		      <img src="/img/Lucy.png" class="card-img-top" alt="Lucy">
+		      <div class="card-body">
+		        <h5 class="card-title"><strong>Nombre:</strong> Lucy</h5>
+		        <a href="https://www.instagram.com/p/CjjSLM4pqWU/" class="btn btn-primary">¡Apadriname!</a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col">
+		    <div class="card">
+		      <img src="/img/Miranda.png" class="card-img-top" alt="Miranda">
+		      <div class="card-body">
+		        <h5 class="card-title"><strong>Nombre:</strong>Suni</h5>
+		        <a href="https://www.instagram.com/p/ClhRlQoO98P/" class="btn btn-primary">¡Apadriname!</a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col">
+		    <div class="card">
+		      <img src="/img/Yiya.png" class="card-img-top" alt="Yiya">
+		      <div class="card-body">
+		        <h5 class="card-title"><strong>Nombre:</strong> Yiya</h5>
+		       <a href="https://www.instagram.com/p/CkLyhgWJJyL/" class="btn btn-primary">¡Apadriname!</a>
+		      </div>
+		    </div>
+		  </div>
 		</div>
-		<div class="row">
-			<div class ="col">
-
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/Linda.jpg" alt="Linda" class="img-thumbnail" width="400" height="400"><p>Linda</p>
-
-			</div>
-			<div class ="col">
-				
-				<a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img src="/img/Zeta.png" alt="Zeta" class="img-fluid" width="400" height="400"></a><p>Zeta</p>
-			</div>
-			<div class ="col">
-				<img src="https://pumakawa.org/wp-content/uploads/2020/02/DSC5611-PS-495x400.jpg" alt="Megan" class="img-fluid"><p>Megan</p>
-			</div>
-			</div>
 		</div>
 		<br>
-		 <p>Cuentas Bancarias para Aportes.<br>BANCO ESTADO <br> Cuenta RUT <br> Chris Quelle <br>19.207.372-3 <br>proyectoarcacoquimbo@gmail.com</p>
-			        <div class="cuentas">
-				     <a href="https://fundacionhuellaanimal.cl/apadrina-un-animal-rescatado/"><img alt="Fundacion Huella Animal" src="/img/FHA-Blanco.png"  width="300" height="300"></a>	
-			         </div>
-			   <br>
-		             
-		          
-			<br>
-			          <p>Puedes buscar Apadrinaje en este sitio también.</p>		
-			          <a href="https://m.facebook.com/Fundación-Jacinto-106297028748431/"><img alt="SI" src="/img/FundacionJacinto.jpg"  width="300" height="300"></a>
-		           
-		<br>
+		 <div class="card mb-3 ml-4" style="max-width: 540px;">
+		  <div class="row g-0">
+		    <div class="col-md-4">
+		      <img src="/img/bunnycare.jpg" class="img-fluid rounded-start" alt="bunnycare">
+		    </div>
+		    <div class="col-md-8">
+		      <div class="card-body">
+		        <h5 class="card-title">Cuenta para donaciones</h5>
+		        <p class="card-text"><strong>Nombre:</strong> Bunny CARE
+		        					 <br>
+		        					 <strong>Banco:</strong> Santander
+		        					 <br>
+		        					 <strong>Tipo Cuenta:</strong>Vista
+		        					 <br>
+		        					 <strong>Número cuenta</strong>71001552389
+		        					 <br>
+		        					 <strong>RUT:</strong>19.772.862-0
+		        					 <br>
+		        					 <strong>Email:</strong> donaciones@bunnylovers.cl</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="card mb-3 ml-4" style="max-width: 540px;">
+		  <div class="row g-0">
+		    <div class="col-md-4">
+		      <img src="/img/arca.png" class="img-fluid rounded-start" alt="arca">
+		    </div>
+		    <div class="col-md-8">
+		      <div class="card-body">
+		        <h5 class="card-title">Cuenta para donaciones</h5>
+		        <p class="card-text"><strong>Nombre:</strong> Chris Quelle
+		        					 <br>
+		        					 <strong>Banco:</strong> Estado
+		        					 <br>
+		        					 <strong>Tipo Cuenta:</strong> Cuenta Rut
+		        					 <br>
+		        					 <strong>Número cuenta</strong>19.207.372-3
+		        					 <br>
+		        					 <br>
+		        					 <strong>Email:</strong> donaciones@bunnylovers.cl</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		
 		  <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Fundaciones</h2>
+			<br>
 			<footer class="d-flex justify-content-between">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>

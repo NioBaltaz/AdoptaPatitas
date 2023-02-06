@@ -54,13 +54,13 @@
 		<div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-		      <img src="/img/Salva.png" class="d-block w-100" alt="salva">
+		      <img src="/img/Salva.png" class="d-block w-100" alt="png">
 		    </div>
 		    <div class="carousel-item">
-		      <img src="/img/Apadrina un compañero.png" class="d-block w-100" alt="apadrina">
+		      <img src="/img/Apadrina un compañero.png" class="d-block w-100" alt="Apadrina">
 		    </div>
 		    <div class="carousel-item">
-		      <img src="/img/No compres.png" class="d-block w-100" alt="no compres">
+		      <img src="/img/Conejo adopta.png" class="d-block w-100" alt="adopta">
 		    </div>
 		  </div>
 		</div>

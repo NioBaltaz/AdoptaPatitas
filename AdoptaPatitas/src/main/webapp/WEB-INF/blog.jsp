@@ -59,13 +59,9 @@
 		  </div>
 		</nav>
 			<br>
-
-				<div class="container-fluid ">
-
-			<div class="header text-center">	
+			<div class="header">	
 				<img src="/img/blog-conejo.png" alt="blog patitas">
 			</div>
-		</div>
 		<br>
 		<div class="container-fluid d-flex justify-content-center item align-items-center">
 			<div class="text-center">
