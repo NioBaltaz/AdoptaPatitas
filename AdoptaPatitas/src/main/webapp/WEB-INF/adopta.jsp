@@ -67,7 +67,7 @@
 				<h1 class="font-weight-lighter text-primary">Mascotitas listas para ser un nuevo Integrante de tu Familia</h1>
 			</div>
 				<div class="row">					
-					<c:forEach items="${pets}" var="pet">
+					<c:forEach items="${pets}" var="pet">				
 						<c:if test="${pet.getUser_adopt().getId() == null}">
 							<div class="col-4 mt-5 text-center">				
 								<c:if test="${not empty pet.image}">					
