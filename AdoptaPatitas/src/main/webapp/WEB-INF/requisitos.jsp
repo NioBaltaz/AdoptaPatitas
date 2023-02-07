@@ -9,11 +9,15 @@
 		<title>Requisitos de Adopción</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    	<link rel="stylesheet" href="/css/stylelogin.css">
+		<style>
+			#centro{
+				height:65vh;
+			}
+		</style>
 	</head>
 	<body>
-			<div class="container-fluid ">
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+	<c:if test="${currentUser == null}">
+		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,78 +59,76 @@
 		  </div>
 		</nav>
 			<br>
-			<div class= "header text-center">	
-
-				<img src="/img/requisitos_de_adopcion.png" alt="requisitos de adopcion">
-
+			
+		 <div class="row m-0 row justify-content-center align-items-center" id="centro">
+		 	<div class="col text-center align-items-center">
+		 		<h3>Necesitas iniciar sesión o registrarte para poder postular</h3>
+		 		<a href="/login" class="btn btn-dark mt-4">Iniciar Sesión - Registrar</a>
+		 	</div>
+		 </div>
+		 
+		 <br>	
+		<div class="container-fluid py-4" style="background-color: #82B8A0">
+			<h2 class="text-center">Nuestras Fundaciones</h2>
+			<br>
+			<footer class="d-flex justify-content-between">
+				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+			
+			</footer>
 		</div>
-	</div>
-	
-	<c:if test="${currentUser == null}">
-		 <main>
-            <div class="contenedor__todo">
-                <div class="caja__trasera">
-                    <div class="caja__trasera-login">
-                        <h3>¿Ya tienes cuenta?</h3>
-                        <p>Inicia sesión para entrar en la página.</p>
-                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
-                    </div>
-                    <div class="caja__trasera-register">
-                        <h3>¿Aún no tienes cuenta?</h3>
-                        <p>Regístrate para que puedas iniciar sesión.</p>
-                        <button id="btn__registrarse">Regístrarse</button>
-                    </div>
-                </div>
-
-                <!--Formulario de Login y registro-->
-                <div class="contenedor__login-register">
-                    <!--Login-->
-                    <c:if test="${errorMessage != null}">
-                        <p class="text-danger">${errorMessage}</p>
-                    </c:if>
-                    <form action="/login" method="POST" class="formulario__login">
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" name="username"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" name="password"/>
-                        </div>
-
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                        <input type="submit" class="btn btn-dark" value="Iniciar Sesión"/>
-                    </form>
-
-                    <!--Register-->
-                    <form:form action="/registration" method="POST" modelAttribute="user" class="formulario__register">
-						<div class="form-group">
-							<form:label path="username">Username</form:label>
-							<form:input path="username" class="form-control"/>
-							<form:errors path="username" class="text-danger"/>
-						</div>
-						
-						<div class="form-group">
-							<form:label path="password">Password</form:label>
-							<form:password path="password" class="form-control"/>
-							<form:errors path="password" class="text-danger"/>
-						</div>
-						
-						<div class="form-group">
-							<form:label path="passwordConfirmation">Confirmación</form:label>
-							<form:password path="passwordConfirmation" class="form-control"/>
-							<form:errors path="passwordConfirmation" class="text-danger"/>
-						</div>
-						
-						<input type="submit" value="Registrarme" class="btn btn-dark"/>
-					</form:form>
-                </div>
-            </div>  
-        </main>
 	</c:if>
 
 	<c:if test="${currentUser != null}">
-		<div class="container">	
+		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+		      </li>	  
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+		      </li>	
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+		      </li>			      
+		      <li class="nav-item">
+		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
+		      </li>
+		      		 <li>
+	       	 			<c:forEach items="${roles}" var="role">
+							<c:if test="${role.name.equals('ROLE_ADMIN')}">
+								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+							</c:if>
+						</c:forEach>
+	       	 		</li> 
+		    </ul> 
+		    <form action="/logout" method="POST">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					</form>
+		  </div>
+		</nav>
+			<br>
+	<div class= "header text-center">	
+		<img src="/img/requisitos_de_adopcion.png" alt="requisitos de adopcion">
+	</div>
+	<div class="container">	
 	<form:form action="/requisitos/form" method="POST" modelAttribute="newForm">
 			<div class="row mt-5 ml-10 d-flex justify-content-center">
 				<div class="col-6">

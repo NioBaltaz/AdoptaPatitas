@@ -13,9 +13,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
-	<div class="container-fluid">
-
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
@@ -46,7 +43,7 @@
 		      		 <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 
@@ -63,13 +60,12 @@
 		    </c:if> 
 		  </div>
 		</nav>
-		</div>
-		<div class="container-fluid">
+		<div class="container-fluid mt-4">
 		<div class="header text-center">
 			<img src="/img/Adopta.png" alt="Adopta">
 		</div>
 		<br>
-			<div class=" row text-center">
+			<div class=" row text-center mt-4 mb-4 p-3">
 				<h1 class="font-weight-lighter text-primary">Mascotitas listas para ser un nuevo Integrante de tu Familia</h1>
 			</div>
 				<div class="row">
@@ -83,7 +79,12 @@
 								<h4 class="text-center">Edad: ${pet.age}</h4>
 								<h4 class="text-center">Sexo: ${pet.sexo}</h4>
 								<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
-								<h4 class="text-center">Desparasitad@: ${pet.deworming}</h4>
+								<c:if test="${pet.sexo == 'Hembra'}">
+									<h4 class="text-center">Desparasitada: ${pet.deworming}</h4>
+								</c:if>
+								<c:if test="${pet.sexo == 'Macho'}">
+									<h4 class="text-center">Desparasitado: ${pet.deworming}</h4>
+								</c:if>
 								<h4 class="text-center">Chip: ${pet.chip}</h4>
 								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>									
 							</div>			
@@ -95,7 +96,7 @@
 
 			</div>
 
-				<div class="container-fluid py-4" style="background-color: #82B8A0">
+			<div class="container-fluid py-4 mt-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Fundaciones</h2>
 			<footer class="d-flex justify-content-between fluid">
 				<a href="https://www.instagram.com/bunnycarecl/"><img src="/img/bunnycare.jpg" alt="bunny care" width="80" height="80" class="ml-2"></a>
