@@ -65,35 +65,18 @@ public class MainController {
     }
     
     @GetMapping("/blog")
-    public String blog(Principal principal, Model model) { 
-    	if(principal == null) {
-    		return "blog.jsp";
-    	}            
-    	String username = principal.getName();
-        //Obtenemos el objeto de Usuario
-        User currentUser = service.findUserByUsername(username);              
-        //Mandamos el usuario a home.jsp
-        model.addAttribute("currentUser", currentUser);
-        model.addAttribute("roles", currentUser.getRoles());
+    public String blog() {    	
     	return "blog.jsp";
     }
     
     @GetMapping("/apadrina")
-    public String apadrina(Principal principal, Model model) { 
-    	if(principal == null) {
-    		return "apadrina.jsp";
-    	}            
-    	String username = principal.getName();
-        //Obtenemos el objeto de Usuario
-        User currentUser = service.findUserByUsername(username);              
-        //Mandamos el usuario a home.jsp
-        model.addAttribute("currentUser", currentUser);
-        model.addAttribute("roles", currentUser.getRoles());
+    public String apadrina() {    	
     	return "apadrina.jsp";
     }
     
     @GetMapping("/adopta")
-    public String adopta(Principal principal, Model model) {    	            
+    public String adopta(Principal principal, Model model) {
+    	            
     	if(principal == null) {
     		List<Pet> pets = service.findAllPets();
         	model.addAttribute("pets", pets);            
@@ -237,5 +220,5 @@ public class MainController {
     @GetMapping("/post_perro")
     public String post_perro() {
     	return "post_perro.jsp";
-    }    
+    }
 }

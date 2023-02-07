@@ -25,9 +25,9 @@ public class AdoptaController {
 	private AppService service;
 	
 	@GetMapping("/requisitos/adopcion/{pet_id}")
-	public String requisitos(@PathVariable("pet_id") Long pet_id, @ModelAttribute("newForm") Form form, Principal principal, Model model) {
+	public String requisitos(@PathVariable("pet_id") Long pet_id, @ModelAttribute("newForm") Form form, Principal principal, Model model, @ModelAttribute("user") User user) {
 		if(principal == null) {
-    		return "index.jsp";
+    		return "requisitos.jsp";
     	}
     	
         //Me regresa el username del usuario que inició sesión

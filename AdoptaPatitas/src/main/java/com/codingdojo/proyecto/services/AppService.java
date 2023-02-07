@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
-
 import com.codingdojo.proyecto.models.Boleta;
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Pet;
@@ -40,9 +39,10 @@ public class AppService {
     
     @Autowired
     private BoletaRepository boletaRepository;
+    
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;    
 
     //Guardar un Usuario tipo ROLE_USER
     public User saveWithUserRole(User user, BindingResult result) {
@@ -176,5 +176,4 @@ public class AppService {
 	public Boleta findBoletaById(Long id) {
 	return boletaRepository.findById(id).orElse(null);
 	}
- 
 }

@@ -8,6 +8,8 @@
 		<meta charset="ISO-8859-1">
 		<title>Requisitos de Adopción</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    	<link rel="stylesheet" href="/css/stylelogin.css">
 	</head>
 	<body>
 			<div class="container-fluid ">
@@ -59,9 +61,74 @@
 
 		</div>
 	</div>
-	<div class="container">	
+	
+	<c:if test="${currentUser == null}">
+		 <main>
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página.</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión.</p>
+                        <button id="btn__registrarse">Regístrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <c:if test="${errorMessage != null}">
+                        <p class="text-danger">${errorMessage}</p>
+                    </c:if>
+                    <form action="/login" method="POST" class="formulario__login">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password"/>
+                        </div>
+
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <input type="submit" class="btn btn-dark" value="Iniciar Sesión"/>
+                    </form>
+
+                    <!--Register-->
+                    <form:form action="/registration" method="POST" modelAttribute="user" class="formulario__register">
+						<div class="form-group">
+							<form:label path="username">Username</form:label>
+							<form:input path="username" class="form-control"/>
+							<form:errors path="username" class="text-danger"/>
+						</div>
+						
+						<div class="form-group">
+							<form:label path="password">Password</form:label>
+							<form:password path="password" class="form-control"/>
+							<form:errors path="password" class="text-danger"/>
+						</div>
+						
+						<div class="form-group">
+							<form:label path="passwordConfirmation">Confirmación</form:label>
+							<form:password path="passwordConfirmation" class="form-control"/>
+							<form:errors path="passwordConfirmation" class="text-danger"/>
+						</div>
+						
+						<input type="submit" value="Registrarme" class="btn btn-dark"/>
+					</form:form>
+                </div>
+            </div>  
+        </main>
+	</c:if>
+
+	<c:if test="${currentUser != null}">
+		<div class="container">	
 	<form:form action="/requisitos/form" method="POST" modelAttribute="newForm">
-			<div class="row ml-10">
+			<div class="row mt-5 ml-10 d-flex justify-content-center">
 				<div class="col-6">
 
 					<h1>Requisitos de Adopción </h1>
@@ -154,7 +221,75 @@
 				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
-		
 		</div>
+	</c:if>
+	<!--  -->
+		<script type="text/javascript">
+		
+		//Ejecutando funciones
+		document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
+		document.getElementById("btn__registrarse").addEventListener("click", register);
+		window.addEventListener("resize", anchoPage);
+
+		//Declarando variables
+		var formulario_login = document.querySelector(".formulario__login");
+		var formulario_register = document.querySelector(".formulario__register");
+		var contenedor_login_register = document.querySelector(".contenedor__login-register");
+		var caja_trasera_login = document.querySelector(".caja__trasera-login");
+		var caja_trasera_register = document.querySelector(".caja__trasera-register");
+
+		    //FUNCIONES
+
+		function anchoPage(){
+
+		    if (window.innerWidth > 850){
+		        caja_trasera_register.style.display = "block";
+		        caja_trasera_login.style.display = "block";
+		    }else{
+		        caja_trasera_register.style.display = "block";
+		        caja_trasera_register.style.opacity = "1";
+		        caja_trasera_login.style.display = "none";
+		        formulario_login.style.display = "block";
+		        contenedor_login_register.style.left = "0px";
+		        formulario_register.style.display = "none";   
+		    }
+		}
+
+		anchoPage();
+
+
+		    function iniciarSesion(){
+		        if (window.innerWidth > 850){
+		            formulario_login.style.display = "block";
+		            contenedor_login_register.style.left = "10px";
+		            formulario_register.style.display = "none";
+		            caja_trasera_register.style.opacity = "1";
+		            caja_trasera_login.style.opacity = "0";
+		        }else{
+		            formulario_login.style.display = "block";
+		            contenedor_login_register.style.left = "0px";
+		            formulario_register.style.display = "none";
+		            caja_trasera_register.style.display = "block";
+		            caja_trasera_login.style.display = "none";
+		        }
+		    }
+
+		    function register(){
+		        if (window.innerWidth > 850){
+		            formulario_register.style.display = "block";
+		            contenedor_login_register.style.left = "410px";
+		            formulario_login.style.display = "none";
+		            caja_trasera_register.style.opacity = "0";
+		            caja_trasera_login.style.opacity = "1";
+		        }else{
+		            formulario_register.style.display = "block";
+		            contenedor_login_register.style.left = "0px";
+		            formulario_login.style.display = "none";
+		            caja_trasera_register.style.display = "none";
+		            caja_trasera_login.style.display = "block";
+		            caja_trasera_login.style.opacity = "1";
+		        }
+		}
+		</script>
 	</body>
 </html>
