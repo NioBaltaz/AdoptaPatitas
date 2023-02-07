@@ -47,15 +47,21 @@
 		      		 <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 
 		    </ul> 
-		    <form action="/logout" method="POST">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
+		    <c:if test="${currentUser == null}">
+		   		<a href="/login" class="btn btn-dark">Login/Register</a>
+		   </c:if>
+		   
+		   <c:if test="${currentUser != null}">
+			   <form action="/logout" method="POST">
+			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			       <input type="submit" value="Cerrar Sesiï¿½n" class="btn btn-dark"/>
+			   </form>
+		   </c:if> 
 		  </div>
 		</nav>
 			<br>
@@ -113,15 +119,21 @@
 		      		 <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 
 		    </ul> 
-		    <form action="/logout" method="POST">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
+		    <c:if test="${currentUser == null}">
+		   		<a href="/login" class="btn btn-dark">Login/Register</a>
+		   </c:if>
+		   
+		   <c:if test="${currentUser != null}">
+			   <form action="/logout" method="POST">
+			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			       <input type="submit" value="Cerrar Sesiï¿½n" class="btn btn-dark"/>
+			   </form>
+		   </c:if> 
 		  </div>
 		</nav>
 			<br>
@@ -133,7 +145,7 @@
 			<div class="row mt-5 ml-10 d-flex justify-content-center">
 				<div class="col-6">
 
-					<h1>Requisitos de Adopción </h1>
+					<h1 class="mb-4">Requisitos de Adopción </h1>
 
 					<div class="form-group">
 						<form:label path="nombre_mascota">Mascota a la cual estás postulando</form:label>
@@ -184,29 +196,29 @@
 					</div>
 					
 					<div class="form-group">
-						<form:label path="localidad">Usted vive en</form:label>
+						<form:label path="localidad">Usted vive en (Casa/Departamento/Otro)</form:label>
 						<form:input path="localidad" class="form-control"/>
 						<form:errors path="localidad" class="text-danger"/>
 					</div>
 					
 					<div class="form-group">
-						<form:label path="costear">¿Está dispuesto a costear la atención veterinaria, medicamentos y etólogo si fuese necesario?</form:label>
+						<form:label path="costear">¿Está dispuesto a costear la atención veterinaria, medicamentos y etólogo si fuese necesario? (Si/No)</form:label>
 						<form:input path="costear" class="form-control"/>
 						<form:errors path="costear" class="text-danger"/>
 					</div>
 					
 					<div class="form-group">
-						<form:label path="visitas">Está dispuesto a que se realicen las visitas de seguimiento NO programadas?</form:label>
+						<form:label path="visitas">Está dispuesto a que se realicen las visitas de seguimiento NO programadas? (Si/No)</form:label>
 						<form:input path="visitas" class="form-control"/>
 						<form:errors path="visitas" class="text-danger"/>
 					</div>
 					
 					<div class="form-group">
-						<form:label path="paseo">¿Pasear al adoptado frecuentemente (perro)?</form:label>
+						<form:label path="paseo">¿Pasear al adoptado frecuentemente (perro)? (Si/No)</form:label>
 						<form:input path="paseo" class="form-control"/>
 						<form:errors path="paseo" class="text-danger"/>
 					</div>
-					<input type="submit" value="Enviar" class="btn btn-dark"/>					
+					<input type="submit" value="Enviar" class="btn btn-dark mt-4 w-25"/>					
 				</div>
 			</div>
 		</form:form>

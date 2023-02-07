@@ -68,14 +68,14 @@
 			<div class=" row text-center mt-4 mb-4 p-3">
 				<h1 class="font-weight-lighter text-primary">Mascotitas listas para ser un nuevo Integrante de tu Familia</h1>
 			</div>
-				<div class="row">
+				<div class="row ">
 					<c:forEach items="${pets}" var="pet">				
 						<c:if test="${pet.getUser_adopt().getId() == null}">
 							<div class="col-4 mt-5 text-center">				
 								<c:if test="${not empty pet.image}">					
 									<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
-								</c:if>
-								<h4 class="text-center">${pet.name}</h4>
+								</c:if>								
+								<h3 class="text-center mt-4 mb-3">${pet.name}</h3>
 								<h4 class="text-center">Edad: ${pet.age}</h4>
 								<h4 class="text-center">Sexo: ${pet.sexo}</h4>
 								<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
@@ -86,7 +86,7 @@
 									<h4 class="text-center">Desparasitado: ${pet.deworming}</h4>
 								</c:if>
 								<h4 class="text-center">Chip: ${pet.chip}</h4>
-								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary">Postular</a>									
+								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary mt-3 w-25">Postular</a>	
 							</div>			
 						</c:if>						
 					</c:forEach>			
