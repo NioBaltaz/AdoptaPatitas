@@ -12,7 +12,7 @@
 	</head>
 	<body>
 	
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+					<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,15 +42,21 @@
 		      		 <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 
 		    </ul> 
-		    <form action="/logout" method="POST">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
+			<c:if test="${currentUser == null}">
+		   		<a href="/login" class="btn btn-dark">Login/Register</a>
+		   </c:if>
+		   
+		   <c:if test="${currentUser != null}">
+			   <form action="/logout" method="POST">
+			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			       <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+			   </form>
+		   </c:if> 
 		  </div>
 		</nav>
 			<br>

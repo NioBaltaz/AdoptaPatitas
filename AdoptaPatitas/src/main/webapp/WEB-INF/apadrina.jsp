@@ -45,7 +45,7 @@
 		      		 <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 
@@ -132,6 +132,7 @@
 		</div>
 		</div>
 		<br>
+		<div class=row>
 		 <div class="card mb-3 ml-4" style="max-width: 540px;">
 		  <div class="row g-0">
 		    <div class="col-md-4">
@@ -177,7 +178,7 @@
 		    </div>
 		  </div>
 		</div>
-		
+		</div>
 		  <div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Fundaciones</h2>
 			<br>
