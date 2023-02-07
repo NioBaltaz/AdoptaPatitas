@@ -72,59 +72,59 @@
 			 Algunos de los animales de unas fundaciones están en recuperación y tienen una historia. Generalmente, son historias en las que los humanos los hemos descuidado, extrayéndolos de su hábitat y convertidos en mascotas.
 			 Entonces pata nosotros Apadrinar un animal es ayudar monetariamente al animal para que pueda tener una mejor vida</p>
 			<br>
-		<div class="row row-cols-1 row-cols-md-3 g-4">
-		  <div class="col">
+		<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center text-center">
+		  <div class="col mb-5">
 		    <div class="card">
-		      <img src="/img/Oliver.png" class="card-img-top" alt="Oliver">
+		      <img src="/img/Oliver.png" class="card-img-top" alt="Oliver" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre:</strong>Oliver</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Oliver</h5>
 		        <a href="https://www.instagram.com/p/CjjSLM4pqWU/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="col">
+		  <div class="col mb-5">
 		    <div class="card">
-		      <img src="/img/Suni.png" class="card-img-top" alt="Suni">
+		      <img src="/img/Suni.png" class="card-img-top" alt="Suni" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre:</strong>Suni</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Suni</h5>
 		        <a href="https://www.instagram.com/p/ClhRlQoO98P/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="col">
+		  <div class="col mb-5">
 		    <div class="card">
-		      <img src="/img/Chayanne.png" class="card-img-top" alt="Chayanne">
+		      <img src="/img/Chayanne.png" class="card-img-top" alt="Chayanne" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre:</strong>Chayanne</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Chayanne</h5>
 		       <a href="https://www.instagram.com/p/CkLyhgWJJyL/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
 		  </div>
 		</div>
-		<div class="row row-cols-1 row-cols-md-3 g-4">
-		  <div class="col">
+		<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center text-center">
+		  <div class="col mb-5">
 		    <div class="card">
-		      <img src="/img/Lucy.png" class="card-img-top" alt="Lucy">
+		      <img src="/img/Lucy.png" class="card-img-top" alt="Lucy" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre:</strong> Lucy</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Lucy</h5>
 		        <a href="https://www.instagram.com/p/CjjSLM4pqWU/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="col">
+		  <div class="col mb-5">
 		    <div class="card">
-		      <img src="/img/Miranda.png" class="card-img-top" alt="Miranda">
+		      <img src="/img/Miranda.png" class="card-img-top" alt="Miranda" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre:</strong>Suni</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Suni</h5>
 		        <a href="https://www.instagram.com/p/ClhRlQoO98P/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="col">
+		  <div class="col mb-5">
 		    <div class="card">
-		      <img src="/img/Yiya.png" class="card-img-top" alt="Yiya">
+		      <img src="/img/Yiya.png" class="card-img-top" alt="Yiya" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre:</strong> Yiya</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Yiya</h5>
 		       <a href="https://www.instagram.com/p/CkLyhgWJJyL/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
@@ -157,7 +157,7 @@
 		  </div>
 		</div>
 		<div class="card mb-3 ml-4" style="max-width: 540px;">
-		  <div class="row g-0">
+		  <div class="row g-0 ">
 		    <div class="col-md-4">
 		      <img src="/img/arca.png" class="img-fluid rounded-start" alt="arca">
 		    </div>
