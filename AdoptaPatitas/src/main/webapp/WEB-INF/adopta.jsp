@@ -48,16 +48,16 @@
 						</c:forEach>
 	       	 		</li> 
 		    </ul> 
-		    <c:if test="${currentUser == null}">
+			<c:if test="${currentUser == null}">
 		   		<a href="/login" class="btn btn-dark">Login/Register</a>
-		   	</c:if>
+		   </c:if>
 		   
-		   	<c:if test="${currentUser != null}">
-				<form action="/logout" method="POST">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			        <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-			    </form>
-		    </c:if> 
+		   <c:if test="${currentUser != null}">
+			   <form action="/logout" method="POST">
+			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			       <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+			   </form>
+		   </c:if> 
 		  </div>
 		</nav>
 		<div class="container-fluid mt-4">
@@ -75,7 +75,7 @@
 								<c:if test="${not empty pet.image}">					
 									<img src="/img/${pet.image}" class="img-fluid mx-auto d-block" style="height: 400px; width: 380px"/>								
 								</c:if>								
-								<h3 class="text-center mt-4 mb-3">${pet.name}</h3>
+								<h3 class="text-center mt-4">${pet.name}</h3>
 								<h4 class="text-center">Edad: ${pet.age}</h4>
 								<h4 class="text-center">Sexo: ${pet.sexo}</h4>
 								<h4 class="text-center">Vacunas: ${pet.vaccine}</h4>
@@ -86,7 +86,7 @@
 									<h4 class="text-center">Desparasitado: ${pet.deworming}</h4>
 								</c:if>
 								<h4 class="text-center">Chip: ${pet.chip}</h4>
-								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary mt-3 w-25">Postular</a>	
+								<a href="/requisitos/adopcion/${pet.getId()}" class="btn btn-primary mt-4 w-25">Postular</a>	
 							</div>			
 						</c:if>						
 					</c:forEach>			
