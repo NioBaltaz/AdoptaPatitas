@@ -49,7 +49,7 @@
 		      <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 </li>  		      
@@ -70,9 +70,9 @@
 		<div class= "header text-center">	
 				<img src="/img/zona_de_administradores_1.png" alt="zona de administradores_1">
 			</div>
-			<div class="row text-center">
-				<div class="col-8">
-					<h1>Solicitudes de Adopción</h1>
+			<div class="row text-center d-flex justify-content-center mt-4">
+				<div class="col-8 mt-5 mb-5">
+					<h1 class="mb-4">Solicitudes de Adopción</h1>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -97,9 +97,9 @@
 				</div>
 			</div>		
 			
-			<div class="row text-center">
+			<div class="row text-center d-flex justify-content-center mt-4">
 				<div class="col-8">
-					<h1>Mascotas Adoptadas</h1>
+					<h1 class="mb-4">Mascotas Adoptadas</h1>
 					<table class="table table-bordered">
 						<thead>
 							<tr>							
@@ -121,16 +121,16 @@
 				</div>
 			</div>
 			
-			<div class="row text-center">				
-				<form action="/admins" method="POST">					
-					<input type="search" name="pet" placeholder="Mascota">
-					<input type="submit" value="Buscar">										
-				</form>	
-				<c:if test="${errorMessage != null}">
-					<p class="text-danger">${errorMessage}</p>
-				</c:if>	
-				<div class="col-6">
-					<h1>Mascotas</h1>
+			<div class="row text-center d-flex justify-content-center mt-4">				
+				<div class="col-8">
+					<h1>Todas las mascotas</h1>
+					<form action="/admins" method="POST" class="d-flex justify-content-end mb-4 mt-4">					
+						<input type="search" name="pet" placeholder="Nombre mascota">
+						<input type="submit" value="Buscar" style="margin-left:2%">										
+					</form>	
+					<c:if test="${errorMessage != null}">
+						<p class="text-danger">${errorMessage}</p>
+					</c:if>	
 					<table class="table table-bordered">
 						<thead>
 							<tr>

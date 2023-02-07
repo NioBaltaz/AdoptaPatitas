@@ -132,7 +132,7 @@ public class AdminsController {
 		form.setAceptado("si");
 		String email_user = form.getEmail();
 		String name_user = form.getNombre_adoptante();
-		sendMailService.sendMail(email_user, "Solicitud Aceptada", "¡Hola " + name_user + "!, tu solicitud de adopción se ha aceptado, dentro de unos días estaremos contactandote por teléfono para agendar una cita y seguir con el proceso.");
+		sendMailService.sendMail(email_user, "Solicitud de adopción aceptada", "¡Hola " + name_user + "!, tu solicitud de adopción ha sido aceptada, dentro de unos días te estaremos contactando a tu número de teléfono para agendar una cita y seguir con el proceso.");
         service.acceptRequest(pet_id, user_id);
         return "redirect:/adopta";
 	}
@@ -282,7 +282,18 @@ public class AdminsController {
 	}
 	
 	@GetMapping("/pet/{pet_name}")
-	public String pet(@PathVariable("pet_name") String pet_name, Model model, @ModelAttribute("ObjectPet") Pet pet) {
+	public String pet(@PathVariable("pet_name") String pet_name, Model model, @ModelAttribute("ObjectPet") Pet pet, Principal principal) {
+		if(principal == null) {
+    		return "index.jsp";
+		}
+		
+	    //Me regresa el username del usuario que inició sesión
+	    String username = principal.getName();             
+	    //Obtenemos el objeto de Usuario
+	    User currentUser = service.findUserByUsername(username);              
+	    //Mandamos el usuario a home.jsp
+	    model.addAttribute("currentUser", currentUser);
+	    model.addAttribute("roles", currentUser.getRoles());
 		Pet thisPet = service.findPetByName(pet_name);
 		User user = thisPet.getCreator_pet();
 		model.addAttribute("user", user);

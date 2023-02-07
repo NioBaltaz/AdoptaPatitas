@@ -161,8 +161,7 @@
 				<div class="col">
 					<form action="/aceptar/adopcion/${pet.getId()}/${form.user.getId()}/${form.getId()}" method="POST">
 						<input type="submit" class="btn btn-dark" value="Aceptar Solicitud"/>
-					</form>
-					<!-- <a href="/aceptar/adopcion/${pet.getId()}/${form.user.getId()}/${form.getId()}" class="btn btn-primary">Aceptar Adopción</a> -->											
+					</form>										
 				</div>
 			</div>
 			<br>

@@ -40,6 +40,7 @@ public class AdoptaController {
         model.addAttribute("pet", pet);
         //Mandamos el usuario a requisitos.jsp
         model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
         
         return "requisitos.jsp";
 	}
