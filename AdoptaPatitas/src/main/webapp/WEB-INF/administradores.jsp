@@ -70,7 +70,7 @@
 		<div class= "header text-center">	
 				<img src="/img/zona_de_administradores_1.png" alt="zona de administradores_1">
 			</div>
-			<div class="row">
+			<div class="row text-center">
 				<div class="col-8">
 					<h1>Solicitudes de Adopción</h1>
 					<table class="table table-bordered">
@@ -97,7 +97,7 @@
 				</div>
 			</div>		
 			
-			<div class="row">
+			<div class="row text-center">
 				<div class="col-8">
 					<h1>Mascotas Adoptadas</h1>
 					<table class="table table-bordered">
@@ -121,7 +121,7 @@
 				</div>
 			</div>
 			
-			<div class="row">				
+			<div class="row text-center">				
 				<form action="/admins" method="POST">					
 					<input type="search" name="pet" placeholder="Mascota">
 					<input type="submit" value="Buscar">										
@@ -157,7 +157,6 @@
 					</table>
 				</div>
 			</div>
-		</div>
 		<br>
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
