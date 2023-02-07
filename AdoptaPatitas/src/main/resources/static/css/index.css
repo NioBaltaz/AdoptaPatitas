@@ -24,6 +24,7 @@ body {
 #us h2{
 	font-size:45px;
 	font-family:ligth italic;
+
 }
 .portada{
   display: block;
@@ -31,37 +32,25 @@ body {
 }   
 
 .v11_30 {
-  width: 100%;
-  height: 1300px;
-  background: url("/img/Salva.png");
-  background-repeat: no-repeat;
-  background-position: center 0%;
-  background-size: cover;
+  width: 98%;
   opacity: 1;
   top: 84px;
   margin: 10px 10px 10px 13px;
   overflow: hidden;
   border-radius: 10px;
+  min-width: 100px;
+  max-width: 2000px;
 }
-
-.v11_31 {
-  width: 838px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 329px;
-  left: 257px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: Regular;
-  font-size: 60px;
-  opacity: 1;
-  text-align: center;
+.v11_30 img{
+  width: 100%;
+  height: 100%;
 }
 .caja1 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
   overflow: hidden;
   margin: 10px auto;
-  width: 1300px;
+  width: 80%;
   text-align: left;
   color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -191,6 +180,7 @@ body {
   width: auto;
   height: 270px;
   margin: 12px;
+  height: auto;
  
 }
 p{

@@ -15,7 +15,7 @@
 <body>
   <div class="containir">
     <div class="container-fluid ">
-	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
+	    <nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,9 +63,10 @@
 		  </div>
 		</nav>
 		</div>
-	</div>
       <div class="Portada">
-            <div class="v11_30"></div>
+            <div class="v11_30">
+                <img src="img/Salva.png" alt="perrito">
+            </div>
       </div>
         <div class="row text-center" id="us">
         <h2> Nosotros</h2>
@@ -136,7 +137,8 @@
           <a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
           <a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>       
         </footer>    
-      </div> 
+      </div>
+    </div>
   <script src="js/index.js"></script>
 </body>
 </html>
