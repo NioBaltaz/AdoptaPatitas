@@ -66,7 +66,54 @@
 				<img src="/img/zona_de_administradores_5.png.png" alt="zona de administradores 5">
 			</div>
 			<br>
-			
+			<div class="container">
+			<h1>Agrega Producto Nuevo</h1>
+			<form:form action="/allproduct/update" method="POST" modelAttribute="newProduct" enctype="multipart/form-data">
+				<input type="hidden" name="_method" value="PUT">
+                <form:hidden path="id" value="${product.getId()}" />
+				<div class="form-group">
+					<form:label path="nombre">Nombre:</form:label>
+					<form:input path="nombre" class="form-control"/>
+					<form:errors path="nombre" class="text-danger"/>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="codigo">Codigo:</form:label>
+					<form:input path="codigo" class="form-control"/>
+					<form:errors path="codigo" class="text-danger"/>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="precio">Precio:</form:label>
+					<form:input path="precio" class="form-control"/>
+					<form:errors path="precio" class="text-danger"/>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="existencia">Existencia:</form:label>
+					<form:input path="existencia" class="form-control"/>
+					<form:errors path="existencia" class="text-danger"/>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="description">Descripción:</form:label>
+					<form:input path="description" class="form-control"/>
+					<form:errors path="description" class="text-danger"/>
+				</div>
+				
+				<div class="form-group">
+					<label>Agrega una imagen</label>
+					<input type="file" name="imagen" class="form-control"/>
+				</div>
+				<input type="submit" value="Añadir Imagen Producto" class="btn btn-info">
+				<div class="buttons has-addons">
+							<input type="submit" value="Update" class="button is-dark" />
+						</div>s
+			</form:form>
+		
+		</div>
+		
+			<br>
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>
 			<br>

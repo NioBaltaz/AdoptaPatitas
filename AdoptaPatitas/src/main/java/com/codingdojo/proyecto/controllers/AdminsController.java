@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.codingdojo.proyecto.models.Form;
 import com.codingdojo.proyecto.models.Option;
 import com.codingdojo.proyecto.models.Pet;
@@ -191,7 +191,53 @@ public class AdminsController {
 
 	}
 	
+	// pagina de edicion de los producto
+		@GetMapping("/allproduct/edit/{products}")
+		public String editPage(@ModelAttribute("product") Product newProduct, @PathVariable("id_producto") Long pId, Model model) {
+			Product product = service.findProductById(pId);
+			model.addAttribute("product", product);
+			return "edit.jsp";
+		}
+		
 
+
+		// actualization producto jejeje
+		@PutMapping("/allproduct/update")
+		public String updateProduct(@Valid @ModelAttribute("product") Product product, BindingResult result, Model model, Principal principal, @RequestParam("imagen") MultipartFile imagen) {
+			if (result.hasErrors()) {
+				return "edit.jsp";
+				
+			} else {
+				  String username = principal.getName();             
+		            //Obtenemos el objeto de Usuario
+		            User currentUser = service.findUserByUsername(username);
+	            if(!imagen.isEmpty()) {
+	            	Path directorioImagenes = Paths.get("src/main/resources/static/img");
+	            	//Ruta Absoluta
+	            	String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+	            	
+	            	try {
+	            		//Imagen en Bytes
+	            		byte[] bytesImg = imagen.getBytes();
+	            		//Ruta completa, con todo y nombre de imagen
+	            		Path rutaCompleta = Paths.get(rutaAbsoluta+"/"+imagen.getOriginalFilename());
+	            		//Guardar mi imagen en la ruta
+	            		Files.write(rutaCompleta, bytesImg);   
+	            		
+	            		//Nombre dentro del atributo image en product
+	            		product.setImage(imagen.getOriginalFilename());
+	           
+	            	}catch(IOException e){
+	            		e.printStackTrace();
+	            	}
+	            }
+				Product theProduct = service.findProductById(product.getId());		
+				model.addAttribute("product", theProduct);
+				service.updateProduct(product);
+				return "redirect:/edit/";
+				
+			}
+		}
 
 	@PostMapping("/search")
 	public String search(@RequestParam(value="pet") String pet) {
