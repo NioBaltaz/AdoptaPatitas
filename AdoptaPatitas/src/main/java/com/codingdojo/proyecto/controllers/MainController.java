@@ -48,9 +48,9 @@ public class MainController {
 
     @PostMapping("/registration")
     public String registration(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-        service.saveWithUserRole(user, result);
+        service.saveWithAdminRole(user, result);
         if(result.hasErrors()) {
-            return "register.jsp";
+            return "login.jsp";
         }else {
             return "redirect:/login";
         }
@@ -65,12 +65,30 @@ public class MainController {
     }
     
     @GetMapping("/blog")
-    public String blog() {    	
+    public String blog(Principal principal, Model model) { 
+    	if(principal == null) {
+    		return "blog.jsp";
+    	}            
+    	String username = principal.getName();
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
     	return "blog.jsp";
     }
     
     @GetMapping("/apadrina")
-    public String apadrina() {    	
+    public String apadrina(Principal principal, Model model) { 
+    	if(principal == null) {
+    		return "apadrina.jsp";
+    	}            
+    	String username = principal.getName();
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
     	return "apadrina.jsp";
     }
     
@@ -94,7 +112,16 @@ public class MainController {
     }
     
     @GetMapping("/tienda")
-    public String tienda(Model model) {  
+    public String tienda(Principal principal, Model model) {  
+    	if(principal == null) {
+    		return "tienda.jsp";
+    	}            
+    	String username = principal.getName();
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
     	List<Product> products = service.findAllProducts();
     	model.addAttribute("products", products);
     	return "tienda.jsp";
@@ -149,7 +176,16 @@ public class MainController {
     }
     
     @GetMapping("/carrito")
-	public String carrito(Model model) {
+	public String carrito(Principal principal, Model model) {
+    	if(principal == null) {
+    		return "index.jsp";
+    	}            
+    	String username = principal.getName();
+        //Obtenemos el objeto de Usuario
+        User currentUser = service.findUserByUsername(username);              
+        //Mandamos el usuario a home.jsp
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("roles", currentUser.getRoles());
 		totalPagar = 0.0;
 		
 		for(int i=0; i<listaCarrito.size(); i++) {

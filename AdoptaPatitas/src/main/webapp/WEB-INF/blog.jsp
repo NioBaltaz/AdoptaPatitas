@@ -44,10 +44,10 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
 		      </li>
-		      		 <li>
+		      		  <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 

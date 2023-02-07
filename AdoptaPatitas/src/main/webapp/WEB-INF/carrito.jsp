@@ -42,7 +42,7 @@
 		      		 <li>
 	       	 			<c:forEach items="${roles}" var="role">
 							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
+								<a class="nav-link" href="/admins">Zona de Administradores</a>
 							</c:if>
 						</c:forEach>
 	       	 		</li> 

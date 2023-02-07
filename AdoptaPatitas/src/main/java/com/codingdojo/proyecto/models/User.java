@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -18,21 +19,39 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 //
 @Entity
 @Table(name="users")
 public class User {
  
  @Id
- @GeneratedValue
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
+ 
+ @NotEmpty(message="El campo de UserName es obligatorio.")
+ @Size(min=2, max=15, message="UserName debe de tener entre 2 y 30 caracteres.")
  private String username;
+ 
+ @NotEmpty(message="El campo de Password es obligatorio.")
+ @Size(min=6, max=128, message="Password debe de tener entre 6 y 128 caracteres.")
  private String password;
+ 
  @Transient
+ @NotEmpty(message="El campo de Confirmación es obligatorio.")
+ @Size(min=6, max=128, message="Confirmación debe de tener entre 6 y 128 caracteres.")
  private String passwordConfirmation;
+ 
  @Column(updatable=false)
+ @DateTimeFormat(pattern="yyyy-MM-dd")
  private Date createdAt;
+ 
+ @DateTimeFormat(pattern="yyyy-MM-dd")
  private Date updatedAt;
+ 
  @ManyToMany(fetch = FetchType.EAGER)
  @JoinTable(
      name = "users_roles", 
@@ -58,19 +77,6 @@ private Boleta boleta;
  	
  public User() {
  }
-
- 
- //public List<Orden> getOrdenes() {
-//	return ordenes;
-//}
-
-
-//public void setOrdenes(List<Orden> ordenes) {
-//	this.ordenes = ordenes;
-//}
-
- 
- 
 
 public List<Product> getProducts() {
 	return products;
