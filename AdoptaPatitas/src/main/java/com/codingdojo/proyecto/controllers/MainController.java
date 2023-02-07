@@ -48,7 +48,7 @@ public class MainController {
 
     @PostMapping("/registration")
     public String registration(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-        service.saveWithAdminRole(user, result);
+        service.saveWithUserRole(user, result);
         if(result.hasErrors()) {
             return "login.jsp";
         }else {
