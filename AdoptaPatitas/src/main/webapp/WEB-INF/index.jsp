@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="containir">
-    <div class="container-fluid ">
+    
 	    <nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 		 <img src="images/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
@@ -62,6 +62,7 @@
 		   </c:if> 
 		  </div>
 		</nav>
+		<div class="container-fluid ">
 		</div>
       <div class="Portada">
             <div class="v11_30">

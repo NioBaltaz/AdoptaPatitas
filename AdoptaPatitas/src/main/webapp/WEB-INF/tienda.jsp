@@ -53,7 +53,7 @@
 		   <c:if test="${currentUser != null}">
 			   <form action="/logout" method="POST">
 			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			       <input type="submit" value="Cerrar Sesi�n" class="btn btn-dark"/>
+			       <input type="submit" value="Cerrar Sesion" class="btn btn-dark"/>
 			   </form>
 		   </c:if> 
 		  </div>
