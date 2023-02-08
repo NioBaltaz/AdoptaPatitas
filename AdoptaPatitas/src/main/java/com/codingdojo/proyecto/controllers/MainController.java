@@ -114,6 +114,8 @@ public class MainController {
     @GetMapping("/tienda")
     public String tienda(Principal principal, Model model) {  
     	if(principal == null) {
+    		List<Product> products = service.findAllProducts();
+        	model.addAttribute("products", products);
     		return "tienda.jsp";
     	}            
     	String username = principal.getName();
