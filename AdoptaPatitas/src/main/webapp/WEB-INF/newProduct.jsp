@@ -17,8 +17,6 @@
 	</style>
 	</head>
 	<body>
-		
-			
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 				 <img src="/img/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
 				  <a class="navbar-brand" href="/">AdoptaPatitas</a>
@@ -56,9 +54,9 @@
 				        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
 				      </li>
 				      		  <li>
-			       	 			<c:forEach items="${roles}" var="role">
+			       	 			<c:forEach items="${roles}" var="role" >
 									<c:if test="${role.name.equals('ROLE_ADMIN')}">
-										<a class="nav-link" href="/admins">Zona de Administradores</a>
+										<a class="nav-link " href="/admins">Zona de Administradores</a>
 									</c:if>
 								</c:forEach>
 			       	 		</li> 
