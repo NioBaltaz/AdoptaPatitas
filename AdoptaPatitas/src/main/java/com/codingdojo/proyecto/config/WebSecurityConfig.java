@@ -38,7 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
             .logout()
                 .permitAll()
-                //Si el cierre de sesión tiene exito, redirige a la página principal
                 .logoutSuccessUrl("/");    			
     }
 
