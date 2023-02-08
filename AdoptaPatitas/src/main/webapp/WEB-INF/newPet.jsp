@@ -11,9 +11,9 @@
 
 	</head>
 	<body>
-		<div class="container-fluid">	
+		
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-				 <img src="images/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
+				 <img src="/img/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
 				  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -68,6 +68,7 @@
 				   	</c:if> 
 				  </div>
 				</nav>
+				<div class="container-fluid">	
 		</div>
 			<div class= "header text-center">	
 				<img src="/img/ingresar_mascota_.png" class="img-thumbnail float-right center" alt="ingresar mascota" width="600" height="600">
