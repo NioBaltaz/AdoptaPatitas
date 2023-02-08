@@ -11,49 +11,7 @@
 	</head>
 	<body>
 	<div class="container-fluid ">
-<<<<<<< HEAD
-			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 		<img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
-		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
-		      </li>	  
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
-		      </li>	
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
-		      </li>			      
-		     <li>
-	       	 			<c:forEach items="${roles}" var="role">
-							<c:if test="${role.name.equals('ROLE_ADMIN')}">
-								<a class="nav-item active" href="/admins">Zona de Administradores</a>
-							</c:if>
-						</c:forEach>
-	       	 		</li>  
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/admins/new/pet">Agrega Mascota<span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/admins/add/product">Agrega Producto<span class="sr-only"></span></a>
-		      </li>			      
-		    </ul> 
-		    <form action="/logout" method="POST">
-=======
-	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
-		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
+
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item active">
@@ -95,18 +53,11 @@
 		   
 		   	<c:if test="${currentUser != null}">
 			    <form action="/logout" method="POST">
->>>>>>> branch 'master' of https://github.com/NioBaltaz/AdoptaPatitas.git
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-<<<<<<< HEAD
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
-=======
-			        <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>				
 			    </form>
 		    </c:if> 
->>>>>>> branch 'master' of https://github.com/NioBaltaz/AdoptaPatitas.git
 		  </div>
-		</nav>
 		</div>
 	<br>
 		<div class="container">
@@ -198,13 +149,7 @@
 						<div class="form-group">
 							<label>Agrega una imagen</label>
 							<input type="file" name="imagen" class="form-control" value="${pet.image}"/>
-						</div>
-						
-						<!--  <div class="form-group">
-							<label>Agrega una imagen</label>
-							<input type="file" name="imagen" class="form-control"/>
-						</div>
-						-->		
+						</div>	
 						<form:hidden path="creator_pet" value="${user.id}"/>
 						<input type="submit" value="Actualizar Información" class="btn btn-info mt-4"/>												
 					</form:form>
@@ -223,7 +168,6 @@
 				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
-		
 		</div>
 	</body>
 </html>

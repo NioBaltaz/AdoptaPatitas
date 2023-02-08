@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
 		   <c:if test="${currentUser != null}">
 			   <form action="/logout" method="POST">
 			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			       <input type="submit" value="Cerrar Sesi�n" class="btn btn-dark"/>
+			       <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
 			   </form>
 		   </c:if> 
 		  </div>
@@ -81,14 +81,14 @@
       <br>
       <div>      
           <figure class="caja1">
-            <a href="/blogs" target="_blank"></a><img src="img/blog-conejo.png" alt="pr-sample15"  height="280px" width="1100px" />
+            <a href="/blog" target="_blank"></a><img src="img/blog-conejo.png" alt="pr-sample15"  height="280px" width="1100px" />
            <div class="image"><img src="img/blog-conejo.png" alt="pr-sample15"  height="280px" width="1100px" /></div>
            <figcaption>
             <h3>Blogs</h3>
             <p>Informacion sobre tu animalito.</p>
           </figcaption><span class="read-more">
             Ver mas <i class="ion-android-arrow-forward"></i></span>
-          <a href="/blogs"></a>
+          <a href="/blog"></a>
          </figure>
         
          <figure class="caja1">
