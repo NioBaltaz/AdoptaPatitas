@@ -40,11 +40,11 @@ public class Product {
 
     @NotNull(message = "Debes especificar el precio")
     @Min(value = 0, message = "El precio mínimo es 0")
-    private Float precio;
+    private double precio;
     
     @NotNull(message = "Debes especificar la existencia")
     @Min(value = 0, message = "La cantidad mínima es 0")
-    private Float existencia;
+    private Integer stock;
     
     private String image;
     
@@ -61,12 +61,7 @@ public class Product {
 	
 
 
-	public Product(Long id,
-			@NotNull(message = "Debes especificar el nombre") @Size(min = 1, max = 50, message = "El nombre debe medir entre 1 y 50") String nombre,
-			@NotNull(message = "Debes especificar el código") @Size(min = 1, max = 50, message = "El código debe medir entre 1 y 50") String codigo,
-			@NotNull(message = "Debes ir una descripción del producto") @Size(min = 1, max = 1000, message = "El código debe medir entre 1 y 1000")String description,
-			@NotNull(message = "Debes especificar el precio") @Min(value = 0, message = "El precio mínimo es 0") Float precio,
-			@NotNull(message = "Debes especificar la existencia") @Min(value = 0, message = "La cantidad mínima es 0") Float existencia,
+	public Product(Long id, String nombre, String codigo, String description, double precio, Integer stock,
 			String image, Date created_at, Date updated_at, User creator_product) {
 		super();
 		this.id = id;
@@ -74,7 +69,7 @@ public class Product {
 		this.codigo = codigo;
 		this.description = description;
 		this.precio = precio;
-		this.existencia = existencia;
+		this.stock = stock;
 		this.image = image;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
@@ -132,28 +127,12 @@ public class Product {
 		this.codigo = codigo;
 	}
 
-	public Float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(Float precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
-	}
-	
-    public void restarExistencia(Float cantidad) {
-        this.existencia -= cantidad;
-    }
-	
-	public boolean sinExistencia() {
-        return this.existencia <= 0;
-    }
-
-	public Float getExistencia() {
-		return existencia;
-	}
-
-	public void setExistencia(Float cantidad) {
-		this.existencia = cantidad;
 	}
 	
 	public String getImage() {
@@ -180,6 +159,14 @@ public class Product {
 		this.updated_at = updated_at;
 	}
     
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+
 	@PrePersist
     protected void onCreate(){
         this.created_at = new Date();

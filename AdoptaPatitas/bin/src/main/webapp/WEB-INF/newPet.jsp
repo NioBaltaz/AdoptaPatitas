@@ -6,17 +6,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Agregar nuevo producto</title>
+		<title>Agregar nueva mascota</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<style>
-	
-	body{
-	backgroung-color:linear-gradient(to bottom right, #99ff99 0%, #00ffcc 100%);
-	}
-	
-	</style>
+
 	</head>
 	<body>
+		
 			<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
 				 <img src="/img/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
 				  <a class="navbar-brand" href="/">AdoptaPatitas</a>
@@ -54,9 +49,9 @@
 				        <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
 				      </li>
 				      		  <li>
-			       	 			<c:forEach items="${roles}" var="role" >
+			       	 			<c:forEach items="${roles}" var="role">
 									<c:if test="${role.name.equals('ROLE_ADMIN')}">
-										<a class="nav-link " href="/admins">Zona de Administradores</a>
+										<a class="nav-link" href="/admins">Zona de Administradores</a>
 									</c:if>
 								</c:forEach>
 			       	 		</li> 
@@ -73,53 +68,65 @@
 				   	</c:if> 
 				  </div>
 				</nav>
-				<div class="container-fluid">
-		<br>
-			<div class= "header text-center">	
-				<img src="/img/ingresa_producto.png" alt="ingresar producto">
-			</div>
+				<div class="container-fluid">	
 		</div>
+			<div class= "header text-center">	
+				<img src="/img/ingresar_mascota_.png" class="img-thumbnail float-right center" alt="ingresar mascota" width="600" height="600">
+			</div>
+		
 		<div class="container">
-			<h1>Agrega Producto Nuevo</h1>
-			<form:form action="/admins/add/product" method="POST" modelAttribute="newProduct" enctype="multipart/form-data">
+			<h1>Agrega una nueva Mascota</h1>
+			<form:form action="/admins/create/pet" method="POST" modelAttribute="newPet" enctype="multipart/form-data">
 				<div class="form-group">
-					<form:label path="nombre">Nombre:</form:label>
-					<form:input path="nombre" class="form-control"/>
-					<form:errors path="nombre" class="text-danger"/>
+					<form:label path="name">Nombre:</form:label>
+					<form:input path="name" class="form-control"/>
+					<form:errors path="name" class="text-danger"/>
 				</div>
 				
 				<div class="form-group">
-					<form:label path="codigo">Codigo:</form:label>
-					<form:input path="codigo" class="form-control"/>
-					<form:errors path="codigo" class="text-danger"/>
+					<form:label path="age">Edad:</form:label>
+					<form:input path="age" class="form-control"/>
+					<form:errors path="age" class="text-danger"/>
 				</div>
 				
 				<div class="form-group">
-					<form:label path="precio">Precio:</form:label>
-					<form:input path="precio" class="form-control"/>
-					<form:errors path="precio" class="text-danger"/>
+					<form:label path="sexo">Sexo (Macho / Hembra):</form:label>
+					<form:input path="sexo" class="form-control"/>
+					<form:errors path="sexo" class="text-danger"/>
+				</div>				
+				
+				<div class="form-group">
+					<form:label path="vaccine">Vacunas:</form:label>
+					<form:input path="vaccine" class="form-control"/>
+					<form:errors path="vaccine" class="text-danger"/>
 				</div>
 				
 				<div class="form-group">
-					<form:label path="stock">Stock:</form:label>
-					<form:input path="stock" class="form-control"/>
-					<form:errors path="stock" class="text-danger"/>
+					<form:label path="deworming">Desparacitado:</form:label>
+					<c:forEach items="${options}" var="option">
+						<form:label path="deworming">${option}</form:label>
+					    <form:radiobutton path="deworming" value="${option}"/>
+					    
+					</c:forEach>
 				</div>
 				
 				<div class="form-group">
-					<form:label path="description">Descripción:</form:label>
-					<form:input path="description" class="form-control"/>
-					<form:errors path="description" class="text-danger"/>
+					<form:label path="chip">Chip:</form:label>
+					<c:forEach items="${options}" var="option">
+						<form:label path="chip">${option}</form:label>
+					    <form:radiobutton path="chip" value="${option}"/>					    
+					</c:forEach>
 				</div>
-				
+				<br>
 				<div class="form-group">
 					<label>Agrega una imagen</label>
 					<input type="file" name="imagen" class="form-control"/>
 				</div>
-				<input type="submit" value="Añadir Imagen Producto" class="btn btn-info">
+				<br>
+				<form:hidden path="creator_pet" value="${user.id}"/>
+				<input type="submit" value="Añadir Mascota" class="btn btn-info">
 			</form:form>
 		</div>
-		<a href="/admins/add/product/allproduct" class="btn btn-dark">Ver Productos</a>
 		<br>
 		<div class="container-fluid py-4" style="background-color: #82B8A0">
 			<h2 class="text-center">Nuestras Fundaciones</h2>

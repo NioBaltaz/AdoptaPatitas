@@ -98,17 +98,16 @@
 						</div>
 						
 						<div class="card-body">
-							<label class="mt-2 mb-2">SubTotal:</label>
+							<label>SubTotal:</label>
 							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
 						
-							<label class="mt-3 mb-2">Descuento:</label>
+							<label>Descuento:</label>
 							<input type="text" value="$.0.0" readonly class="form-control"/>
 						
-							<label class="mt-3">Total a Pagar:</label>
-							<input type="hidden" id="total" value="${totalPagar}" />
-							<div id="paypal-payment-button" class="mt-4"></div>
+							<label>Total a Pagar:</label>
+							<input type="text" value="$.${totalPagar}" readonly class="form-control"/>
 							<br>
-							
+							<a href="/carrito/orden${orden.getId()}" class="btn btn-primary">Comprar</a>
 							
 						</div>						
 					</div>
@@ -128,7 +127,5 @@
 			
 			</footer>
 			</div>
-		<script src="https://www.paypal.com/sdk/js?client-id=ASSPGFSYUvJDWuiUck87o5WfqEfvRUJ0duITfMtmKtVHwluY6X86wuXsPNcega3PSLATKEdYBDSXgFrI&disable-funding=credit,card"></script>
-		<script src="js/paypal.js"></script>
 	</body>
 </html>

@@ -101,9 +101,9 @@
 				</div>
 				
 				<div class="form-group">
-					<form:label path="stock">Stock:</form:label>
-					<form:input path="stock" class="form-control"/>
-					<form:errors path="stock" class="text-danger"/>
+					<form:label path="existencia">Existencia:</form:label>
+					<form:input path="existencia" class="form-control"/>
+					<form:errors path="existencia" class="text-danger"/>
 				</div>
 				
 				<div class="form-group">
