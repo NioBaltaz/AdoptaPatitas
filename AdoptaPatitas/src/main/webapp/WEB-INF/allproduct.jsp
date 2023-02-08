@@ -16,41 +16,61 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
-		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
-		      </li>	  
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
-		      </li>	
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
-		      </li>			       
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/admins/new/pet">Agrega Mascota<span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/admins/add/product">Agrega Producto<span class="sr-only"></span></a>
-		      </li>			      
-		    </ul> 
-		    <form action="/logout" method="POST">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
-					</form>
-		  </div>
-		</nav>
+		<img src="images/adopta_patitas.png" width="90" height="90" class="d-inline-block align-top" alt="Logo">
+			<a class="navbar-brand" href="/">AdoptaPatitas</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+			</button>
+				
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+				  	<li class="nav-item active">
+				    	<a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+				  	</li>
+				  	<li class="nav-item active">
+				    	<a class="nav-link" href="/blog">Blog<span class="sr-only"></span></a>
+				  	</li>	  
+				  	<li class="nav-item active">
+				    	<a class="nav-link" href="/apadrina">Apadrina<span class="sr-only"></span></a>
+				  	</li>
+				  	<li class="nav-item active">
+				    	<a class="nav-link" href="/adopta">Adopta<span class="sr-only"></span></a>
+				  	</li>	
+				  	<li class="nav-item active">
+				    	<a class="nav-link" href="/tienda">AdoptaPatitas Shop<span class="sr-only"></span></a>
+				  	</li>
+				     <li class="nav-item active">
+				       <a class="nav-link" href="/admins/new/pet">Agrega Mascota<span class="sr-only"></span></a>
+				     /li>
+				     <li class="nav-item active">
+				       <a class="nav-link" href="/admins/add/product">Agrega Producto<span class="sr-only"></span></a>
+				     </li>	
+				     <li class="nav-item active">
+				       <a class="nav-link" href="/admins/add/product/allproduct">Productos<span class="sr-only"></span></a>
+				     </li>				      
+				     <li class="nav-item">
+				       <a class="nav-link" href="/carrito"><i class="fas fa-cart-plus"><label style="color: darkorange">${contador}</label></i>Carrito</a>
+				     </li>
+				      		 <li>
+			       	 		<c:forEach items="${roles}" var="role">
+								<c:if test="${role.name.equals('ROLE_ADMIN')}">
+									<a class="nav-link" href="/admins">Zona de Administradores</a>
+								</c:if>
+							</c:forEach>
+			       	 	</li> 
+				   </ul> 
+				<c:if test="${currentUser == null}">
+				   	<a href="/login" class="btn btn-dark">Login/Register</a>
+				   </c:if>
+				   
+				   <c:if test="${currentUser != null}">
+					   <form action="/logout" method="POST">
+					       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					       <input type="submit" value="Cerrar Sesión" class="btn btn-dark"/>
+					   </form>
+				   </c:if> 
+				 </div>
+			</nav>
 			<div class= "header text-center">	
 				<img src="/img/zona_de_administradores_4.png" alt="ingresar mascota 4">
 			</div>
