@@ -81,7 +81,7 @@
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
-				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
 		</div>
@@ -89,7 +89,7 @@
 
 	<c:if test="${currentUser != null}">
 		<nav class="navbar navbar-expand-lg" style="background-color: #D9F0DE">
-		 <img src="images/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+		 <img src="/img/adopta_patitas.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
 		  <a class="navbar-brand" href="/">AdoptaPatitas</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -130,7 +130,7 @@
 		   <c:if test="${currentUser != null}">
 			   <form action="/logout" method="POST">
 			       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			       <input type="submit" value="Cerrar Sesi�n" class="btn btn-dark"/>
+			       <input type="submit" value="Cerrar Sesion" class="btn btn-dark"/>
 			   </form>
 		   </c:if> 
 		  </div>
@@ -231,7 +231,7 @@
 				<a href="https://www.instagram.com/fundacionjacinto//"><img src="/img/fundacion jacinto.jpg" alt="fundacion jacinto" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionvyra/"><img src="/img/fundacion vyra.jpeg" alt="fundacion vyra" width="80" height="80" class="ml-2"></a>
 				<a href="https://www.instagram.com/fundacionanimalia/"><img src="/img/fundacion animalia.jpeg" alt="fundacion animalia" width="80" height="80" class="ml-2"></a>
-				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/adoptafundacion.png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
+				<a href="https://www.instagram.com/fundacion_adopta/"><img src="/img/fundacion adopta .png" alt="fundacion adopta" width="80" height="80" class="ml-2"></a>
 			
 			</footer>
 		</div>

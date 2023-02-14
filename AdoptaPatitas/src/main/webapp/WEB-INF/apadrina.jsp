@@ -115,7 +115,7 @@
 		    <div class="card">
 		      <img src="/img/Miranda.png" class="card-img-top" alt="Miranda" height="600">
 		      <div class="card-body">
-		        <h5 class="card-title"><strong>Nombre: </strong> Suni</h5>
+		        <h5 class="card-title"><strong>Nombre: </strong> Miranda</h5>
 		        <a href="https://www.instagram.com/p/ClhRlQoO98P/" class="btn btn-primary">¡Apadriname!</a>
 		      </div>
 		    </div>
@@ -173,7 +173,7 @@
 		        					 <strong>Número cuenta</strong>19.207.372-3
 		        					 <br>
 		        					 <br>
-		        					 <strong>Email:</strong> donaciones@bunnylovers.cl</p>
+		        					 <strong>Email:</strong> proyectoarcacoquimbo@gmail.com</p>
 		      </div>
 		    </div>
 		  </div>

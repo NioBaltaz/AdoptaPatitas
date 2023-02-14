@@ -138,8 +138,15 @@ public class AdminsController {
 	}
 	
 	@GetMapping("/admins/add/product")
-	public String addProduct(@ModelAttribute("newProduct")Product product){
+	public String addProduct(@ModelAttribute("newProduct")Product product, Principal principal, Model model){
+		if(principal == null) {
+            return "newProduct.jsp";
+        }
+        String username = principal.getName();
+        User currentUser = service.findUserByUsername(username);
+        model.addAttribute("currentUser", currentUser);
 		return "newProduct.jsp";
+		
 	}
 	@PostMapping("/admins/add/product")
 	public String createProduct(@Valid @ModelAttribute("newProduct") Product product, BindingResult result, Principal principal, @RequestParam("imagen") MultipartFile imagen) {
@@ -179,8 +186,14 @@ public class AdminsController {
 	}
 	
 	@GetMapping("/admins/add/product/allproduct")
-    public String allProduct(Model model) {  
-    	List<Product> products = service.findAllProducts();
+    public String allProduct(Model model, Principal principal) {  
+		if(principal == null) {
+            return "index.jsp";
+        }
+        String username = principal.getName();
+        User currentUser = service.findUserByUsername(username);
+        model.addAttribute("currentUser", currentUser);
+		List<Product> products = service.findAllProducts();
     	model.addAttribute("products", products);
     	return "allproduct.jsp";
 	}

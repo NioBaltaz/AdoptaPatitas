@@ -93,7 +93,7 @@
 					<td>${product.nombre}</td>
 					<td>${product.codigo}</td>
 					<td>${product.precio}</td>
-					<td>${product.existencia}</td>
+					<td>${product.stock}</td>
 					<td>
 					</td>
 					<td>
